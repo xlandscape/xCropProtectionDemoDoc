@@ -1,0 +1,61 @@
+site_name: xCropProtection
+site_url: ""
+use_directory_urls: false
+plugins:
+  - search
+
+repo_url: https://github.com/xlandscape/xCropProtectionDemo
+repo_name: xCropProtectionDemo
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: green
+      accent: light blue
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    logo: material/land-plots-marker
+  favicon: img/land-plots-marker.svg
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: 'index.md'
+  - Scenario Creation: 'create-scenario.md'
+  - Templates:
+    - Simple Scenario: 'scenarios/simple-scenario.md'
+    - Tank Mixes: 'scenarios/tank-mixes.md'
+    - Multiple Applications: 'scenarios/multiple-applications.md'
+    - Multiple Application Sequences: 'scenarios/multiple-application-sequences.md'
+    - Multiple Indications: 'scenarios/multiple-indications.md'
+    - Multiple Indications With Choice: 'scenarios/multiple-indications-with-choice.md'
+  - Reference:
+    - PPM Calendars: 'reference/ppm-calendar.md'
+    - Distributions: 'reference/distributions.md'
+  - Troubleshooting: 'troubleshooting/troubleshooting.md'
