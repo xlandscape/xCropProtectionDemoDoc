@@ -11,7 +11,7 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: green
+      primary: blue grey
       accent: light blue
       toggle:
         icon: material/brightness-7 

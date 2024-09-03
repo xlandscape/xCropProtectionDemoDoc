@@ -9,7 +9,7 @@ xCropProtection is a Landscape Model component for simulating applications of pl
 
 ### Option 1: only xCropProtection
 
-A user who only needs the functionality of xCP should clone the repository [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main). Contact Sascha Bub ([sascha.bub@gmx.de](mailto:sascha.bub@gmx.de)) for access to the repository. Cloning steps vary based on the application being used:
+A user who only needs the functionality of xCP should clone the repository [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main). Contact Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@gmx.de)) for access to the repository. Cloning steps vary based on the application being used:
 
 - [Sourcetree](https://support.atlassian.com/bitbucket-cloud/docs/clone-a-git-repository/)
 - [Visual Studio Code](https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=activity-bar)
