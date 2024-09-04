@@ -59,3 +59,13 @@ nav:
     - PPM Calendars: 'reference/ppm-calendar.md'
     - Distributions: 'reference/distributions.md'
   - Troubleshooting: 'troubleshooting/troubleshooting.md'
+  - xLandscape: 
+    - Intro: 'xLandscape/xLandscape-intro.md'
+    - Components: 'xLandscape/xLandscape-components.md'
+    - Landscape Models: 'xLandscape/xLandscape-models.md'
+    - Outlook: 'xLandscape/xLandscape-outlook.md'
+    - References: 'xLandscape/xLandscape-references.md'
+    - Technology: 
+      - Summary: 'xLandscape/xLandscape-technology.md'
+      - Building Components: 'xLandscape/xLandscape-buildingComponents.md'
+      - Building Landscape Models: 'xLandscape/xLandscape-buildingModels.md'
