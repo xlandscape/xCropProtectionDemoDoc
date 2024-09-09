@@ -3,10 +3,14 @@
 Welcome to the xCropProtection (xCP) documentation. This documentation provides an introduction and will walk new users through how to get started with the xCropProtection Landscape Model component, including explanations for sample input files.
 
 ## Intro
-xCropProtection is a Landscape Model component (module) for simulating applications of plant protection products (PPPs) on fields within a given landscape. Multiple PPP uses in multiple crops can be simulated, comprising typical PPP spray sequences as, eg. recommended by plant protection services. This includes chemical and alternative plant protection measures.  
-xCP is basically build to be used in the modular landscape modelling approach xLandscape.
+xCropProtection is a Landscape Model component for simulating applications of plant protection products (PPPs) on fields within a given landscape. Multiple PPP uses in multiple crops can be simulated, comprising typical PPP spray sequences as, eg. recommended by plant protection services. This includes chemical and alternative plant protection measures.  
 
-On each day and field in the simulation, the module checks if there are products to apply. If so, exact application dates, rates etc. are sampled from distributions given by the user.
+The user defines PPP uses in a Crop Protection Calender, including application technology, and mitigation measures for reducing exposure (risk). 
+
+On each time step (eg, day) and field in the simulation, the module checks if there are products to apply. If so, exact application dates, rates etc. are sampled from distributions given by the user.  
+
+As a Landscape Model component, xCP is basically build to be used integrated into the modular landscape modelling approach  [xLandscape](xLandscape/xLandscape-intro.md). However, xCP can be used in any other environment.   
+
 
 ## Installation
 
@@ -18,13 +22,6 @@ A user who only needs the functionality of xCP should clone the repository [xCro
 - [Visual Studio Code](https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=activity-bar)
 
 After cloning the repository, a user will have everything necessary to start using xCropProtection including sample scenarios and parametrization files.
-
-[xLandscape](xLandscape/xLandscape-intro.md)  
-[xLandscape/References](xLandscape/xLandscape-references.md#publications)
-
-  
-[junklink](#xcp_total_loadingipynb)
-
 
 
 ### Option 2: add xCP to an existing Landscape Model

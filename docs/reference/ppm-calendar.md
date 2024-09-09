@@ -32,6 +32,26 @@ The general structure of a PPM calendar is
     </Indications>
 </PPMCalendar>
 ```
+  
+
+## Application
+
+**Type**: N/A
+
+**Unit**: N/A
+
+**Scales**: N/A
+
+**Notes**:
+
+- Each `Application` in an `ApplicationSequence` will be applied to the same field.
+</ul>
+
+``` xml
+<Application>
+    ...
+</Application>
+```
 
 ## Temporal Validity
 
@@ -199,24 +219,6 @@ Example of 2 `ApplicationSequence` elements:
         ...
     </ApplicationSequence>
 
-## Application
-
-**Type**: N/A
-
-**Unit**: N/A
-
-**Scales**: N/A
-
-**Notes**:
-
-- Each `Application` in an `ApplicationSequence` will be applied to the same field.
-</ul>
-
-``` xml
-<Application>
-    ...
-</Application>
-```
 
 ## Tank
 
