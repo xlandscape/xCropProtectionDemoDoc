@@ -55,10 +55,10 @@ nav:
     - Multiple Application Sequences: 'scenarios/multiple-application-sequences.md'
     - Multiple Indications: 'scenarios/multiple-indications.md'
     - Multiple Indications With Choice: 'scenarios/multiple-indications-with-choice.md'
+  - Troubleshooting: 'troubleshooting/troubleshooting.md'
   - Technical Reference:
     - PPM Calendars: 'reference/ppm-calendar.md'
     - Distributions: 'reference/distributions.md'
-  - Troubleshooting: 'troubleshooting/troubleshooting.md'
   - Glossary: 'reference/glossary.md'
   - xLandscape: 
     - Intro: 'xLandscape/xLandscape-intro.md'
