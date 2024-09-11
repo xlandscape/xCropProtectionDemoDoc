@@ -26,6 +26,9 @@ Modelling practice for risk assessment purposes often focuses on active substanc
 ## Application Sequence
 A sequence of individual PPP *Applications*, ie, of the same PPP (PPPs) into the same crop. Eg, fungicides are often applied multiple times during season.  
 
+xxx an *Application Sequence* can also contain *Applications* using different PPPs
+xxx image of proposed fungicide spray sequence, eg by Bayer web page xxx
+
 ## Application Window
  The time when an application is intended. In a modelling experiment using xCP an individual *Application Window* can be a deterministic day or a time span (eg, 1.-14. April). A probability distribution function is assigned to an application window from which actual application dates are sampled during model runtime. 
 
@@ -49,7 +52,8 @@ baseline (typically zero exposure, yet can be a alternative pest control measure
 ## Indication
 Basically, the entirety of measures to protect plants (crop) from a certain pest.  
 In xCP, an *Indication* groups a set of *PPP Application Sequences*. In an *Indication*, defined *Application Sequences* are entirely conducted during simulation, yet, can also be defined as exclusive alternatives. The latter allows to, eg, represent the market share of PPPs or to reflect fractions of chemical and 'organic' ('biological') pest control.      
-xxx
+xxx *Application Sequences* within *Indications* are always alternative (OR related)
+the *Indicaton* defines **alternative** plant protection measures, ie, one option of the defined application sequences are taken and conducted on a field (typically throughout the season)
 
 
 
@@ -77,6 +81,12 @@ PPPs contain one or more active substances and other co-formulants (substances w
 
 ## Risk Mitigation
 
-ref: Magpie xxx
+
+ref:  
+[MAgPie](https://www.openagrar.de/receive/openagrar_mods_00027102)
+
+
+## Simulation
+
 
 ## Spray-reduction
