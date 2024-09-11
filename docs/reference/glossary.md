@@ -1,5 +1,6 @@
 # Glossary
-Basically, all xCP entities are defined close to the real-world objects they represent. 
+Basically, all xCP entities are defined close to the real-world objects they represent.  
+(September 2024: status=work in progress; 'xxx' mark locations to be done)
 
 
 ## Application
@@ -23,11 +24,12 @@ In usual agricultural practice, the amount of PPPs applied to a field is determi
 The farmer typically determines the volume PPP [mL] by field area [ha] (eg, considering the crop development status in preparation).   
 Modelling practice for risk assessment purposes often focuses on active substance (a.s.). Therefore, the *Application Rate* can be defined as [µg a.s./ha] or as product [mL/ha].
 
-## Application Sequence
-A sequence of individual PPP *Applications*, ie, of the same PPP (PPPs) into the same crop. Eg, fungicides are often applied multiple times during season.  
+## Application Sequence (draft)
+A sequence of individual PPP *Applications*. Basically, each individual *Application* within an *Application Sequence* can be defined independently. Thus, an *Application Sequence* can represent the multiple use of the same PPP (PPPs), using the same technology and risk mitigation, yet at individual application rates (eg, as often the case for fungicide uses in orchards). However, an *Application Sequence* can also represent uses of different PPPs in a sequence.   
 
-xxx an *Application Sequence* can also contain *Applications* using different PPPs
-xxx image of proposed fungicide spray sequence, eg by Bayer web page xxx
+![Illustration of a PPP application sequence using different PPPs](../img/PPP%20application%20sequence%20using%20different%20PPPs.png)
+*Illustration of a PPP application sequence using different PPPs  
+(https://rwz.ag/fileadmin2023/Agrarhandel/Weinbau/Mosel/240124_bild_weinbauempfehlung-pflanzenschutz-mosel.png)*
 
 ## Application Window
  The time when an application is intended. In a modelling experiment using xCP an individual *Application Window* can be a deterministic day or a time span (eg, 1.-14. April). A probability distribution function is assigned to an application window from which actual application dates are sampled during model runtime. 
@@ -50,12 +52,14 @@ baseline (typically zero exposure, yet can be a alternative pest control measure
 ## In-crop Buffer
 
 ## Indication
-Basically, the entirety of measures to protect plants (crop) from a certain pest.  
-In xCP, an *Indication* groups a set of *PPP Application Sequences*. In an *Indication*, defined *Application Sequences* are entirely conducted during simulation, yet, can also be defined as exclusive alternatives. The latter allows to, eg, represent the market share of PPPs or to reflect fractions of chemical and 'organic' ('biological') pest control.      
-xxx *Application Sequences* within *Indications* are always alternative (OR related)
-the *Indicaton* defines **alternative** plant protection measures, ie, one option of the defined application sequences are taken and conducted on a field (typically throughout the season)
+Generally, measures to protect plants (crop) from a certain pest.  
+In xCP, an *Indication* is an explicit part of its parameterisation. An *Indication* is made of *PPP Application Sequences*, at minimum one *PPP Application Sequence*. If more than one *Application Sequence* is defined in an *Indication*, these sequences are considered **alternative** *Application sequences*.  
+((or?! xxx If more than one *Application Sequence* is defined in an *Indication*, these sequences can be considered **facultative** or as **alternative** *Application sequences*))
+Thus, the xCP parameterisation entity *Indication* can be used to define alternative PPP use pattern, eg, reflecting product market shares or fractions 'biological' or 'organic' pest control means.  
+Multiple *Indications* can be defined in an xCP parameterisation, as many as necessary to represent a (simple or complex) real-world PPP use pattern in one or many crops. Each individual *Indication* defined will be realised in an xCP simulation. 
 
-
+![xCP Entities and their Relationship](../img/xCP%20entities%20and%20their%20relationship.png "xCP Entities and their Relationship")  
+*xCP entities and their relationship xxx to be replaced by final img*
 
 ## Monte Carlo Run
 
@@ -89,4 +93,4 @@ ref:
 ## Simulation
 
 
-## Spray-reduction
+## Spray-drift Reduction
