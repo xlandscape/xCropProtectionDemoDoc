@@ -1,10 +1,10 @@
 # Glossary
 Basically, all xCP entities are defined close to the real-world objects they represent.  
-(September 2024: status=work in progress; during development, 'xxx' marks sections to be done)
+(September 2024: status=work in progress)
 <br>
 
-## Active Substance (a.s.)
-An active substance in a plant protection product is any chemical, plant extract, pheromone, or micro-organism (including viruses) that acts against pests or affects plants, parts of plants, or plant products (https://food.ec.europa.eu/plants/pesticides_en). Essentially, it's the component that provides the intended protective or pesticidal effect.  
+## Active Substance
+An active substance (a.s.) in a plant protection product is any chemical, plant extract, pheromone, or micro-organism (including viruses) that acts against pests or affects plants, parts of plants, or plant products (https://food.ec.europa.eu/plants/pesticides_en). Essentially, it's the component that provides the intended protective or pesticidal effect.  
 *Active Substances* have physical and chemical properties as well as ecotoxicological endpoints. These data are kept in corresponding databases. 
 
 ## Application
@@ -44,6 +44,11 @@ Also, typically farmers' decisions depend on agricultural and environmental cond
 ## Buffer
 A distance ([m]) that is kept (has to be kept) to a certain entity during an agricultural activity. Buffers are typically used to implement risk mitigation means, eg, to reduce spray-drift depositions into habitats of non-target-organisms. To protect aquatic organisms no-spray buffers are defined as distance to water bodies (eg, a PPP is allowed to be spray no closer than 10 m distance to streams). To protect terrestric organisms, often in-field or in-crop buffers are defined (eg, spraying has to keep a 5 m distance from the cropped/field boundery).
 
+## Configuration xxx
+User settings configuration and [Parameterisation](#parameterisation) 
+The configuration of a model component like xCP 
+besides actual data input 
+
 ## Experiment
 The term *Experiment* has been introduced to [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) model simulations as an analogue to experimental setups.  
 An *Experiment* has a single model parameterisation (including xCP parameterisation) and consists of a number of *Monte Carlo* runs. The latter are independent from each other, ie. in each *Monte Carlo Run* the defined variabilities (Probability Density Functions, PDFs) are independently sampled.  
@@ -72,26 +77,34 @@ Generally, measures to protect plants (crop) from a certain pest.
 In xCP, an *Indication* is an explicit part of its parameterisation. An *Indication* is made of *PPP Application Sequences*, at minimum one *PPP Application Sequence*. If more than one *Application Sequence* is defined in an *Indication*, these sequences are considered **alternative** *Application sequences* ('OR' related). Thus, the xCP parameterisation entity *Indication* can be used to define alternative PPP use pattern, eg, reflecting product market shares or fractions 'biological' or 'organic' pest control means.  
 Multiple *Indications* can be defined in an xCP parameterisation, as many as necessary to represent a simple or complex real-world PPP use pattern in one or many crops. Each individual *Indication* defined will be conducted in an xCP simulation. 
 
-![xCP Entities and their Relationship](../img/xCP%20entities%20and%20their%20relationship.png "xCP Entities and their Relationship")  
-*xCP entities and their relationship xxx to be replaced by final img*
+![xCP Entities and their Relationship](../img/xCP%20entities%20and%20their%20relationship%202.png "xCP Entities and their Relationship")  
+*xCP entities and their relationship*
 
 ## Monte Carlo Run
-Monte Carlo simulations rely on random sampling to obtain numerical results. 
-Monte Carlo methods are mainly used in three distinct problem classes: optimization, numerical integration, and generating draws from a probability distribution. They can also be used to model phenomena with significant uncertainty in inputs, such as calculating the risk of a nuclear power plant failure. Monte Carlo methods are often implemented using computer simulations, and they can provide approximate solutions to problems that are otherwise intractable or too complex to analyze mathematically.
+Monte Carlo simulations rely on random sampling drawn from probability distributions to obtain numerical results. They can be used to model phenomena with significant variability (and uncertainty) in inputs, such as calculating the possible exposure profile of pesticides in streams in a catchment and the variability of possible effects to aquatic organisms. A nested (2D) Monte Carlo approach allows to also assess consequences of uncertainties to model outcome.  
 
-[xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) is a numerical model  
+The [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) model is a numeric approach that works spatially and temporally explicit. Some phenomenons can be considered deterministic, eg, land use at a certain location and time (as derived from satellite data) or when using historic weather data. However, real-world phenomenons are sometimes not exactly known in space and time, eg, farming activities, catchment conditions or local wind conditions. In such cases, variability distributions can be derived (from data and/or expert judgement), modelled using Monte Carlo, in order to assess the range of possible consequences for the environment and for species. This is done in an xLandscape model by defining an [*Experiment*](#experiment) which consists of a number of Monte Carlo runs to sample the range of possible conditions of the defined real-world landscape system.  
 
+## Parameterisation
 
+## Plant Protection Calender
+The *Plant Protection Calender* (PPC) is a key parameterisation element of xCP. It is the entry point of each xCP PPP use scenario.  
+In agricultural practice, pest control measures for a crop are typically planned based on experiance, PPP availability and other factors. Such planning can happen quite early in a season or closer to actual pest control. Crop protection plans are made eg, by official plant protection advisory services, farmers, or PPP producers. The term *Calender* is used to emphasise its temporal (crop development stage) aspects and similarity to everyday calenders we are used to.  adaptation).  
+Besides reflecting ag practice, the approach of using a PPC also addresses modelling practice in risk assessment which typically focus on a certain indication, conducted over long time periods. 
+Beyond these established uses, alternative PPCs can be used to assess the environmental impact of alternative pest control options, or to design new pest control means against established ones, considered as baselines.  
 
-## Plant Protection Calender xxx
-  
-the origin
-driven by crop protection advisory services as well as the practice of farmers
+Summary on PPC characteristics: a PPC
+- is specific to a crop (or group of crops)
+- has a temporal validity, ie it can be constant over the entire model simulation period or can change at any (defined) time step
+- can be adaptive, ie can change during model runtime (eg, reacting on pest pressure)  
 
-can be defined for an entire modelling simulation (experiment)  
+<br>
+
 ![Example Plant Protection Calender](../img/Example%20plant%20protection%20recommendation%20in%20apples.jpg "Example Plant Protection Recommendation in Apple")  
-*Example Plant Protection Recommendation in Apple*
+*Visualisation of plant protection recommendations in apple for the forthcomming season (colors represent insecticides, fungicides, growth regulators and herbicides)*
 
+![Plant Protection Recommendation in Vines (Bayer)](../img/Bayer%20Weinbau%20Spritzplan%202024.png "Plant Protection Recommendation in Vines (Bayer)")  
+*Example plant protection recommendations in vines (Bayer AG)*
 
 ## Plant Protection Measure (PPM)
 An action to prevent or control pests, eg, protecting apples against powdery mildew fungy or protecting olives against the white fly.  
@@ -110,16 +123,24 @@ In xCP, currently the following *Risk Mitigation* measures are implemented:
 - in-crop buffer (a distance a farmer has to keep from the cropped boundery when spraying)
 - use of drift-reducing nozzles (sprayer technology to reduce drift)
 
-## Scenario xxx
-In general, a scenario represents a certain status of the driving conditions of a xxx. 
+## Scenario
+In the context of risk assessment for pesticides, a *Scenario* refers to a set of conditions and assumptions used to model and predict the environmental fate and effects of pesticides. At lower tiers of the risk assessment procedure, *Scenarios* are designed to represent realistic worst-case situations to ensure that the risk assessments are protective of human health and the environment. When getting more realistic, at higher-tier risk assessment levels, *Scenarios* are intended to represent real-world conditions.  
+Some key elements that define a scenario in this context:
 
-the term becomes precise when adding context  
-PPP use scenario  
-landscape scenario
+1. **Abiotic Factors**: These include non-living environmental factors such as soil type, climate/weather, landscape topology, and water bodies. For example, a scenario might consider how a pesticide behaves in sandy soil under high rainfall conditions. 
+2. **Biotic Factors**: These involve living organisms that might be affected by the pesticide, including plants, animals, and microorganisms. The scenario might assess the impact on a specific species or a group of species. 
+3. **Agronomic Practices**: This includes farming practices such as land use, crop rotation, land management, irrigation, and pesticide application methods. Different practices can influence how pesticides are distributed and degraded in the environment. 
+4. **Exposure Pathways**: Scenarios consider how habitats and species might be exposed to pesticides, such as through forage, water, or contact. 
+5. **Temporal Aspects**: The timing of pesticide application, its persistence in the environment and temporal relationship to the occurrence of species are crucial. Scenarios might model short-term (acute) and long-term (chronic) exposures.  
+
+By combining these factors, scenarios build a crucial basis to create a comprehensive picture of the potential risks associated with pesticide use.
+
+In xCP, the term *PPP use scenario* is sometimes used to address a certain *Parameterisation* of xCP (as part of a landscape model). 
+Likewise, modellers often talk about a *landscape scenario* meaning the certain geographic region for which eg, land use/cover, soil, weather and habitat conditions have been defined as basis for landscape-scale pesticide exposure and effect modelling. 
 
 ## Simulation
 The term *Simulation* is not precisely defined and is used somehow colloquial with different meanings. This is not a problem as the actual meaning typically gets clear in its use context:  
 - a model simulation can just mean to parameterise and run a model in general
 - an xLandscape model simulation can mean to conduct an *Experiment*, ie, here the terms are used synonymously
-- a *Simulation* can also address an individual *Monte Carlo* run of an xLandscape model [*Experiment*](#experiment-v01). 
+- a *Simulation* can also address an individual *Monte Carlo* run of an xLandscape model [*Experiment*](#experiment). 
 
