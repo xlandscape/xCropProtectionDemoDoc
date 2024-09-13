@@ -1,6 +1,6 @@
 # Glossary
-Basically, all xCP entities are defined close to the real-world objects they represent.  
-(September 2024: status=work in progress)
+Basically, all xCP entities are defined close to the real-world objects they represent (overview graphic on xCP Entities in [Indication](#indication)).  
+(September 2024: status=draft)
 <br>
 
 ## Active Substance
@@ -44,10 +44,14 @@ Also, typically farmers' decisions depend on agricultural and environmental cond
 ## Buffer
 A distance ([m]) that is kept (has to be kept) to a certain entity during an agricultural activity. Buffers are typically used to implement risk mitigation means, eg, to reduce spray-drift depositions into habitats of non-target-organisms. To protect aquatic organisms no-spray buffers are defined as distance to water bodies (eg, a PPP is allowed to be spray no closer than 10 m distance to streams). To protect terrestric organisms, often in-field or in-crop buffers are defined (eg, spraying has to keep a 5 m distance from the cropped/field boundery).
 
-## Configuration xxx
-User settings configuration and [Parameterisation](#parameterisation) 
-The configuration of a model component like xCP 
-besides actual data input 
+## Configuration
+As for each [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) component and landscape model, user simulation inputs and control settings are separated in two different levels, a *Configuration* and a [*Parameterisation*](#parameterisation) level:  
+- the **configuration** of a component (like xCP) allows to change fundamental model behaviour (eg, minimum sprayed area, in-crop buffer calculation).
+- the [*Parameterisation*](#parameterisation) level of a component represent the actual user interface, ie, the model parameters exposed to the user. Inputs made by the user in the parameterisation file define a landscape modelling [Experiment](#experiment).  
+
+The decision on which model component parameters should be exposed as user interface in the [*Parameterisation*](#parameterisation) level depends on the purpose of the model and the user group. The assignment of model component parameters to either the configuration or the [Parameterisation](#parameterisation) level can be changed with minimum effort ([xLandscape-Parameters](../xLandscape/xLandscape-parameterisation.md#assign-parameters-to-parameter-level)).  
+
+Both, *configuration* and [*Parameterisation*](#parameterisation) refer to direct user inputs (user interaction) and are separated from more extense data inputs like land use data, weather data or pesticide phys-chem properties. Typically, in the user inputs links to such databases to be used in a landscape modelling [Experiment](#experiment) are defined wheras the actual data are taken from these databases.  
 
 ## Experiment
 The term *Experiment* has been introduced to [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) model simulations as an analogue to experimental setups.  
@@ -86,6 +90,13 @@ Monte Carlo simulations rely on random sampling drawn from probability distribut
 The [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) model is a numeric approach that works spatially and temporally explicit. Some phenomenons can be considered deterministic, eg, land use at a certain location and time (as derived from satellite data) or when using historic weather data. However, real-world phenomenons are sometimes not exactly known in space and time, eg, farming activities, catchment conditions or local wind conditions. In such cases, variability distributions can be derived (from data and/or expert judgement), modelled using Monte Carlo, in order to assess the range of possible consequences for the environment and for species. This is done in an xLandscape model by defining an [*Experiment*](#experiment) which consists of a number of Monte Carlo runs to sample the range of possible conditions of the defined real-world landscape system.  
 
 ## Parameterisation
+As for each [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) component and landscape model, user simulation inputs and control settings are separated in two different levels, a *Configuration* and a [*Parameterisation*](#parameterisation) level:  
+- the [*Configuration*](#configuration) of a component (like xCP) allows to change fundamental model behaviour (eg, minimum sprayed area, in-crop buffer calculation).
+- the **parameterisation** level of a component represent the actual user interface, ie, the model parameters exposed to the user. Inputs made by the user in the parameterisation file define a landscape modelling [Experiment](#experiment).  
+
+The decision on which model component parameters should be exposed as user interface in the *parameterisation* level depends on the purpose of the model and the user group. The assignment of model component parameters to either the [*Configuration*](#configuration) or the *parameterisation* level can be changed with minimum effort ([xLandscape-Parameters](../xLandscape/xLandscape-parameterisation.md#assign-parameters-to-parameter-level)).  
+
+Both, [*Configuration*](#configuration) and *parameterisation* refer to direct user inputs (user interaction) and are separated from more extense data inputs like land use data, weather data or pesticide phys-chem properties. Typically, in the user inputs links to such databases to be used in a landscape modelling [Experiment](#experiment) are defined wheras the actual data are taken from these databases.
 
 ## Plant Protection Calender
 The *Plant Protection Calender* (PPC) is a key parameterisation element of xCP. It is the entry point of each xCP PPP use scenario.  
