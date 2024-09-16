@@ -1,6 +1,6 @@
 # Glossary
 Basically, all xCP entities are defined close to the real-world objects they represent (overview graphic on xCP Entities in [Indication](#indication)).  
-(September 2024: status=draft)
+(September 2024: status: draft)
 <br>
 
 ## Active Substance
