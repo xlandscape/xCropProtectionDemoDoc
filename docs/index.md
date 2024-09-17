@@ -33,23 +33,19 @@ xCP is basically built to be used as a **component, integrated into the modular 
 ## Installation
 
 ### Option 1: xCropProtection Demo Model
-
-Basically, xCP needs to be operated in a landscape modelling environment. An example landscape model using xCP was built in the [xLandscape](xLandscape/xLandscape-intro.md) framework.  
-A user who just want to explore xCP or only needs the functionality of xCP should clone the repository [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main). Contact Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)) or Thorsten Schad ([thorsten.schad@bayer.com](mailto:thorsten.schad@bayer.com)) for access to the repository. Cloning steps vary based on the application being used, eg.    
-
-- [Sourcetree](https://support.atlassian.com/bitbucket-cloud/docs/clone-a-git-repository/)
-- [Visual Studio Code](https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=activity-bar)
+As every component, xCP needs to be operated in a landscape modelling environment. An example landscape model using xCP was built in the [xLandscape](xLandscape/xLandscape-intro.md) framework, called **xCropProtectionDemo**.  
+A user who just want to explore xCP or only needs the functionality of xCP should clone the repository [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main). Contact Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)) or Thorsten Schad ([thorsten.schad@bayer.com](mailto:thorsten.schad@bayer.com)) for access to the repository. Cloning steps vary based on the application being used, eg. [Sourcetree](https://support.atlassian.com/bitbucket-cloud/docs/clone-a-git-repository/) or [Visual Studio Code](https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=activity-bar).  
 
 After cloning the repository, a user will have everything necessary to start using xCropProtection including sample scenarios and parametrization files.  
 
 
-### Option 2: add xCropProtection to a Landscape Model
-The typical use of xCP is to integrate it to [xLandscape](xLandscape/xLandscape-intro.md) in order to build a landscape model. 
+### Option 2: add xCropProtection to any Landscape Model
+As any other component, xCP is built to be used (together with other components) in the [xLandscape](xLandscape/xLandscape-intro.md) framework in order to build a landscape model. 
 
 1. The Landscape Model must first be set up; see the Landscape Model Core's [README](https://github.com/xlandscape/LandscapeModel-Core/blob/master/README.md) for detailed instructions.
 2. Create an xCropProtection folder in *\core\components* if it does not already exist.
 3. Copy the xCropProtection component from [GitHub](https://github.com/xlandscape/xCropProtectionDemo/tree/main) into the xCropProtection subfolder.
-4. The file *mc.xml* contains information about the components that are used in the created [xLandscape](xLandscape/xLandscape-intro.md). Make use of the xCropProtection component by adding the following lines:
+4. The file *mc.xml* contains information about the components that are used in the created [xLandscape](xLandscape/xLandscape-intro.md) model. Make use of the xCropProtection component by adding the following lines:
 
 ``` xml
 <xCropProtection module="components" class="xCropProtection">
@@ -87,8 +83,7 @@ The typical use of xCP is to integrate it to [xLandscape](xLandscape/xLandscape-
 ```
 
 ## Getting started
-
-Below is an example of the folder structure of xCropProtection after being cloned:
+Below is an example of the folder structure of the [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main) model after being cloned:
 
 ``` { .yaml .no-copy }
 ├── CropProtection
@@ -147,29 +142,31 @@ Below is an example of the folder structure of xCropProtection after being clone
 └── template.xrun
 ```
 
-To start xCropProtection using the sample scenario, drag *template.xrun* onto *__start_\_.bat*. This will start an xCropProtection run using Rummen-xCP-TestingScenario as input. Output of the model run can be found in the newly created *\run\Rummen-xCP-TestingScenario\mcs\\[mc run ID]\store\arr.dat*.
+To start xCropProtection using the sample scenario, **drag *template.xrun* onto *__start_\_.bat***. This will start an xCropProtection run using Rummen-xCP-TestingScenario as input. Output of the model run can be found in the newly created *\run\Rummen-xCP-TestingScenario\mcs\\[mc run ID]\store\arr.dat*.
 
-!!! note
-    xCropProtection will create a folder for each run using the SimID defined in *template.xrun*. The SimID cannot be the same as a folder already contained in the run folder. Delete this folder to make multiple xCropProtection runs with the same SimID.
+!!! note  
+    **SimIDs need to be unique**. xCropProtection will create a folder for each run using the SimID defined in *template.xrun*. The SimID cannot be the same as a folder already contained in the run folder. In case you want to run a simulation with the same SimID you need to delete this folder first.
+
 
 ## Viewing and analyzing the output
 
-To view the unprocessed output of xCropProtection, open *\run\Rummen-xCP-TestingScenario\mcs\\[mc run ID]\store\arr.dat* with a HDF5 file viewer such as [HDFView](https://hdfgroup.org/downloads/hdfview/). Expand the xCropProtection folder.
+### HDFView 
+[xLandscape](xLandscape/xLandscape-intro.md) makes use of multidimensional data stores. At present, [HDF](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used.  
+To view the raw output of xCropProtection, open *\run\Rummen-xCP-TestingScenario\mcs\\[mc run ID]\store\arr.dat* with a HDF5 file viewer such as [HDFView](https://portal.hdfgroup.org/downloads/index.html). Expand the xCropProtection folder.
 
-<img src="img/hdf5-file-structure.PNG" alt="Screenshot of output file structure" width="350"/>
+<img src="img/hdf5-file-structure.PNG" alt="Screenshot of output file structure" width="300"/>
 
 Right click on an item and click "Open" to view its attributes and data.
 
 !!! warning
-    Opening "AppliedAreas" generated from a large amount of input data using HDFView may cause the program to crash due to its data type. Use *xCP_write_csv.ipynb* to write the data to a csv.
+    Opening "AppliedAreas" generated from a large amount of input data may cause HDFView to crash due to its data type. Use *xCP_write_csv.ipynb* to write the data to a csv.
 
-The *analysis* folder contains Jupyter notebooks which can analyze and visualize the output of xCropProtection. *requirements.txt* lists python packages necessary to run the Jupyter notebooks in this folder.
 
-### *xCP_write_csv.ipynb*
+### Jupyter Notebooks
+The ***analysis* folder** contains Jupyter notebooks which can analyze and visualize the output of xCropProtection. *requirements.txt* lists python packages necessary to run the Jupyter notebooks in this folder.
 
-Version 1.0
-
-Writes the contents of *arr.dat* to a csv file. User parameters:
+#### *xCP_write_csv.ipynb*
+*xCP_write_csv.ipynb* (version 1.0) **writes the contents of *arr.dat* to a csv file**. User parameters:
 
 `xcrop_arrdat_path` : *C:\path\to\arr.dat*
 
@@ -188,21 +185,15 @@ dfs.append(pandas.DataFrame(application_rates_data * geom_project_area_ha, colum
 dfs.append(pandas.DataFrame(drift_reduction_data, columns=["TechnologyDriftReductions"]))
 ```
 
-### *xCP_plots.ipynb*
-
-Version 1.0
-
-Plots application rates (as a scatter plot) of all product applications in a user-defined year. User parameters:
+#### *xCP_plots.ipynb*
+*xCP_plots.ipynb* (version 1.0) **plots application rates** (as a scatter plot) of all product applications in a user-defined year. User parameters:
 
 `xcrop_arrdat_path` : *C:\path\to\arr.dat*
 
 `year_to_chart` : only display data for this year
 
-### *xCP_total_loading.ipynb*
-
-Version 1.0
-
-Charts the total loading over time for a specific field. Total loading is calculated by plotting a cumulative sum of mass applied to a field. User parameters:
+#### *xCP_total_loading.ipynb*
+*xCP_total_loading.ipynb* (version 1.0) **charts the total loading over time** for a specific field. Total loading is calculated by plotting a cumulative sum of mass applied to a field. User parameters:
 
 `xcrop_arrdat_path` : *C:\path\to\arr.dat*
 
@@ -212,11 +203,8 @@ Charts the total loading over time for a specific field. Total loading is calcul
 
 `feature_to_chart` : ID of the field to chart. If a field ID is invalid, the notebook will plot the total loading of the first field it reads.
 
-### *xCP_map_vis.ipynb*
-
-Version 1.0
-
-Visualizes applications on a map with the ability to advance through time. Currently, this is only built and tested for runs using the *Rummen-xCP-TestingScenario*. Users should be aware that the map visualization will need code modification and additional input to work with other scenarios. User parameters:
+#### *xCP_map_vis.ipynb*
+*xCP_map_vis.ipynb* (version 1.0) **visualizes applications on a map** with the ability to advance through time. Currently, this is only built and tested for runs using the *Rummen-xCP-TestingScenario*. Users should be aware that the map visualization will need code modification and additional input to work with other scenarios. User parameters:
 
 `data_store_path` : *C:\path\to\arr.dat*
 
