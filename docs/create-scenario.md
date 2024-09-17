@@ -1,11 +1,21 @@
-# Scenario creation
+# Scenarios
 
-xCropProtection is currently packaged with 3 scenarios located in *\xCropProtection\scenario\\*:
+In the context of risk assessment for pesticides, a *Scenario* refers to a set of conditions and assumptions used to model and predict the environmental fate and effects of pesticides. A *Scenario* is typically composed of 
+
+1. *environmental conditions* (abiotic, biotic, land cover, etc.)
+2. *agricultural practise*, esp. land use and land management,  including the use of PPPs, as refered to as ***PPP use scenario***
+  
+In xCP, the term *PPP use scenario* is simultaneously address as ***Parameterisation* of xCP** (as part of a full parameterisation of a landscape model).  
+For more information please refer to [Glossary/Scenarios](reference/glossary.md#scenario). 
+
+
+## Example Environmental/Ag Scenarios xxx
+
+ [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main) is currently packaged with 3 scenarios located in *\xCropProtection\scenario\\*:
 
 - Rummen-full
     - A landscape scenario in Rummen, Belgium.
-    ??? info "Image"
-        ![Rummen full geo](img/rummen-full-geo.jpg){width="60%"}
+    <img src="img/rummen-full-geo.jpg" width="400" >  
 
 - Rummen-xCP-TestingScenario
     - A subset of the Rummen-full scenario in Rummen, Belgium.

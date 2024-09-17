@@ -2,6 +2,10 @@
 
 This page will cover common error messages, what they mean, and how to resolve them.
 
+## HDFview error xxx
+Opening "AppliedAreas" generated from a large amount of input data may cause HDFView to crash due to its data type. Use *xCP_write_csv.ipynb* to write the data to a csv.
+
+
 ## AttributeError
 
 ``` { .yaml .no-copy }

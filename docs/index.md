@@ -154,12 +154,9 @@ To start xCropProtection using the sample scenario, **drag *template.xrun* onto 
 [xLandscape](xLandscape/xLandscape-intro.md) makes use of multidimensional data stores. At present, [HDF](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used.  
 To view the raw output of xCropProtection, open *\run\Rummen-xCP-TestingScenario\mcs\\[mc run ID]\store\arr.dat* with a HDF5 file viewer such as [HDFView](https://portal.hdfgroup.org/downloads/index.html). Expand the xCropProtection folder.
 
-<img src="img/hdf5-file-structure.PNG" alt="Screenshot of output file structure" width="300"/>
+<img src="img/hdf5-file-structure.PNG" alt="Screenshot of output file structure" width="280"/>
 
 Right click on an item and click "Open" to view its attributes and data.
-
-!!! warning
-    Opening "AppliedAreas" generated from a large amount of input data may cause HDFView to crash due to its data type. Use *xCP_write_csv.ipynb* to write the data to a csv.
 
 
 ### Jupyter Notebooks

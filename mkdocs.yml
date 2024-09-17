@@ -47,7 +47,7 @@ markdown_extensions:
 
 nav:
   - Home: 'index.md'
-  - Scenario Creation: 'create-scenario.md'
+  - Scenarios: 'create-scenario.md'
   - Templates:
     - Simple Scenario: 'scenarios/simple-scenario.md'
     - Tank Mixes: 'scenarios/tank-mixes.md'
