@@ -1,6 +1,6 @@
 # Simple scenario
 
-This scenario represents the most basic use case of xCropProtection: one application of a product that occurs every year.
+This scenario represents the most basic use case of xCropProtection: **one application of a product into one crop that occurs every year**.
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -90,6 +90,7 @@ An application will occur if the field's area is greater than or equal to 0 m²:
 <MinimumAppliedArea type="float" unit="m²" scales="global">0</MinimumAppliedArea>
 ```
 
-## Flow chart
+## Illustration
+See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.
 
 ![flow chart](../img/simple-scenario.PNG)
