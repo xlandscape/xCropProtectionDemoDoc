@@ -24,10 +24,10 @@ The [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree
 
 
 ## Custom Scenarios
-To create a new landscape scenario for use with xCropProtection, users should follow these steps.
+To create a new scenario for use with xCropProtection, users should follow these steps.
 
-1. In *\xCropProtection\scenario\\*, create a new folder with the scenario name. In this example, the scenario will be called "test-scenario".
-2. In *\xCropProtection\scenario\test-scenario\\*, create a folder named "geo". Copy a *scenario.xproject* file from a different scenario or create a new file and copy the following xml text:
+1. In folder *scenario\\*, create a new folder with the scenario name. In this example, the scenario will be called "test-scenario".
+2. In folder *scenario\test-scenario\\*, create a folder named "geo". Copy a *scenario.xproject* file from a different scenario or create a new file and copy the following xml text:
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project 
@@ -58,6 +58,13 @@ xsi:schemaLocation="urn:xLandscapeModelScenarioInfo ../../model/core/base/scenar
 </Project>
 ```
 Add correct values for all elements in *scenario.xproject*.  
+Preferably, use an XML capable editor (eg, VSCode, PyCharm xxx) and build the *scenario.xproject* using such a template or from scratch.  
+Note: It is important to link the XML to its schema:  
+```xml
+xmlns="urn:xLandscapeModelScenarioInfo"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="urn:xLandscapeModelScenarioInfo ../../model/core/base/scenario.xsd">
+```
 
 3. In the geo folder:
     1. Place the shapefiles of the spatial data to be used in the scenario.
@@ -85,10 +92,10 @@ Add correct values for all elements in *scenario.xproject*.
     <supplementary_shapefiles/>
     </landscape_package>
     ```
-    `base_landscape_geometries` defines the name of the shapefile contained in the geo folder. `feature_id_attribute` defines the field used to distinguish individual fields/features. It is not recommended to use OBJECTID for this. `feature_type_attribute` defines the field that specifies a feature's LULC type. The TargetCrops value in *PPMCalendar.xml* refers to the field defined in `feature_type_attribute`.
-4. In *xCropProtection\CropProtection\\*, create a file named *xCropProtection-test-scenario.xml*. It can be left blank for the moment.
-5. In *xCropProtection\CropProtection\PPMCalendars\\*, create a folder with the same name as the new scenario. In that folder, place all *PPMCalendar.xml* files that should be included with the new scenario. Note that not every file in this folder will be used during a run of xCropProtection, file names must first be added to *xCropProtection-test-scenario.xml*. Examples of *PPMCalendar.xml* files can be found in [Templates](scenarios/simple-scenario.md).
-6. Modify *xCropProtection\CropProtection\xCropProtection-test-scenario.xml* to include PPMCalendars. Sample:
+    `base_landscape_geometries` defines the name of the shapefile contained in the geo folder. `feature_id_attribute` defines the column of the shape file which is used to distinguish individual fields/features. It is not recommended to use OBJECTID for this xxx. `feature_type_attribute` defines the column of the shape file to specifies a field/feature's LULC type. The TargetCrops value in *PPMCalendar.xml* refers to the field defined in `feature_type_attribute`. 
+4. In *CropProtection\\*, create a file named *xCropProtection-test-scenario.xml*. It can be left blank for the moment.  
+5. In *CropProtection\PPMCalendars\\*, create a folder with the same name as the new scenario. In that folder, place all *PPMCalendar.xml* files that should be included with the new scenario. Note that not every file in this folder will be used during a run of xCropProtection, files must first be added to *xCropProtection-test-scenario.xml*. Examples of *PPMCalendar.xml* files can be found in [Templates](scenarios/simple-scenario.md).  
+6. Modify *CropProtection\xCropProtection-test-scenario.xml* to include PPMCalendars. Sample:
 ```xml
 <xCropProtection xmlns="urn:xCropProtectionLandscapeScenarioParametrization"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -101,9 +108,9 @@ Add correct values for all elements in *scenario.xproject*.
 </xCropProtection>
 ```
 *Technologies.xml* will exist after cloning xCropProtection. However, if a PPMCalendar contains a Technology not already included in *Technologies.xml*, it must be added to the file in a manner consistent with the elements already present.  
-7. Make a copy of *template.xrun* (the *.xrun* file represents the actual xCP user parameterisation); rename the copy with a unique name. Change elements in the file so that xCropProtection uses the new scenario files. Be sure to change:
+7. Make a copy of *template.xrun* (the *.xrun* file represents the actual landscape model parameterisation); rename the copy with a unique name. Change elements in the file so that xCropProtection uses the new scenario files. Be sure to change:
 
-    - Project: scenario/test-scenario
+    - LandscapeScenario: scenario/test-scenario
     - CropProtectionScenario: test-scenario
     - SimID: a string that does not already exist in the run folder
     - SimulationStart and SimulationEnd: set the first and last date to be simulated
@@ -127,4 +134,4 @@ After these steps are completed, the **new scenario files should have the follow
 └── template-test-scenario.xrun
 ```
 
-Drag *template-test-scenario.xrun* onto *__start_\_.bat* to run xCropProtection using the new scenario.
+**Drag *template-test-scenario.xrun* onto *__start_\_.bat*** to run xCropProtection using the new scenario.
