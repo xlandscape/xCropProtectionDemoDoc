@@ -1,39 +1,33 @@
 # Scenarios
 
-In the context of risk assessment for pesticides, a *Scenario* refers to a set of conditions and assumptions used to model and predict the environmental fate and effects of pesticides. A *Scenario* is typically composed of 
+In the context of risk assessment for pesticides, a *Scenario* refers to a set of conditions and assumptions used to model and predict the environmental fate and effects of pesticides ([Glossary/Scenarios](reference/glossary.md#scenario)). A *Scenario* is typically composed of 
 
 1. *environmental conditions* (abiotic, biotic, land cover, etc.)
 2. *agricultural practise*, esp. land use and land management,  including the use of PPPs, as refered to as ***PPP use scenario***
   
-In xCP, the term *PPP use scenario* is simultaneously address as ***Parameterisation* of xCP** (as part of a full parameterisation of a landscape model).  
-For more information please refer to [Glossary/Scenarios](reference/glossary.md#scenario). 
+In xCP, the term *PPP use scenario* is simultaneously addressed as ***Parameterisation* of xCP** (as part of a full parameterisation of a landscape model). The environmental conditions together with the land use are often called a ***landscape scenario***.   
+In an xCP parameterisation, PPP use are typically defined related to land use types (eg, the use of a fungicide in apples). During runtime xCP evaluates actual land use, ie. land use data can be static or dynamic. 
+
+Note: This section provides an introduction to xCP scenarios on a technical level with the intention to enable colleagues with technical experiance to build scenarios and to use xCP. However, we plan to develop a **graphical user interface** (GUI) that allows any user to intuitively build xCP scenarios. 
+
+## Example Scenarios
+The [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main) models is packaged with example scenarios located in *\xCropProtection\scenario\\*. Example scenarios are of static land use types.  
+
+- A landscape scenario in Rummen, Belgium (*Rummen-full*):  
+<img src="img/rummen-full-geo.jpg" width="400" >  
+
+- A subset of the Rummen-full scenario in Rummen, Belgium (*Rummen-xCP-TestingScenario*) which contains 1,000 fields with land use (LULC) codes equally split between 222 and 444:  
+<img src="img/rummen-subset-geo.png" width="400" >  
+
+- A small scenario located in the Wetterau (Hessian, Germany) (*Wetterau-scenario-subset*)  
+<img src="img/wetterau-geo.jpg" width="350" >  
 
 
-## Example Environmental/Ag Scenarios xxx
-
- [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main) is currently packaged with 3 scenarios located in *\xCropProtection\scenario\\*:
-
-- Rummen-full
-    - A landscape scenario in Rummen, Belgium.
-    <img src="img/rummen-full-geo.jpg" width="400" >  
-
-- Rummen-xCP-TestingScenario
-    - A subset of the Rummen-full scenario in Rummen, Belgium.
-    - Contains 1,000 fields with LULC values equally split between 222 and 444.
-    ??? info "Image"
-        ![Rummen subset geo](img/rummen-subset-geo.png){width="60%"}
-
-- Wetterau-scenario-subset
-    - A small scenario which serves as a demonstration and test case for xCropProtection.
-    ??? info "Image"
-        ![Wetterau geo](img/wetterau-geo.jpg){width="60%"}
-
-## Custom scenarios
-
-To create a new scenario for use in xCropProtection, users should follow these steps.
+## Custom Scenarios
+To create a new landscape scenario for use with xCropProtection, users should follow these steps.
 
 1. In *\xCropProtection\scenario\\*, create a new folder with the scenario name. In this example, the scenario will be called "test-scenario".
-2. In *\xCropProtection\scenario\test-scenario\\*, create a folder named "geo". Copy a *scenario.xproject* file from a different scenario or create a new file and copy the following text:
+2. In *\xCropProtection\scenario\test-scenario\\*, create a folder named "geo". Copy a *scenario.xproject* file from a different scenario or create a new file and copy the following xml text:
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project 
@@ -43,12 +37,12 @@ xsi:schemaLocation="urn:xLandscapeModelScenarioInfo ../../model/core/base/scenar
     <Name>SCENARIO NAME</Name>
     <Version>1.0</Version>
     <SupportedRuntimeVersions>
-        <Version variant="xKnowRes" number="0.1"/>
+        <Version variant="xCropProtectionDemo" number="0.1"/>
     </SupportedRuntimeVersions>
     <Description>DESCRIPTION</Description>
     <TemporalExtent>
         <FromDate>2000-01-01</FromDate>
-        <ToDate>2000-12-31</ToDate>
+        <ToDate>2019-12-31</ToDate>
     </TemporalExtent>
     <Changelog>
         <Version number="1.0" date="2000-01-01">
@@ -63,7 +57,8 @@ xsi:schemaLocation="urn:xLandscapeModelScenarioInfo ../../model/core/base/scenar
     </Contacts>
 </Project>
 ```
-Add correct values for all elements in *scenario.xproject*.
+Add correct values for all elements in *scenario.xproject*.  
+
 3. In the geo folder:
     1. Place the shapefiles of the spatial data to be used in the scenario.
     2. Create *package.xinfo*. Copy from another scenario or use the following text:
@@ -105,14 +100,15 @@ Add correct values for all elements in *scenario.xproject*.
     <Technologies include="Technologies.xml"/>
 </xCropProtection>
 ```
-*Technologies.xml* will exist after cloning xCropProtection. However, if a PPMCalendar contains a Technology not already included in *Technologies.xml*, it must be added to the file in a manner consistent with the elements already present.
-7. Make a copy of *template.xrun*; rename the copy with a unique name. Change elements in the file so that xCropProtection uses the new scenario files. Be sure to change:
+*Technologies.xml* will exist after cloning xCropProtection. However, if a PPMCalendar contains a Technology not already included in *Technologies.xml*, it must be added to the file in a manner consistent with the elements already present.  
+7. Make a copy of *template.xrun* (the *.xrun* file represents the actual xCP user parameterisation); rename the copy with a unique name. Change elements in the file so that xCropProtection uses the new scenario files. Be sure to change:
+
     - Project: scenario/test-scenario
     - CropProtectionScenario: test-scenario
     - SimID: a string that does not already exist in the run folder
     - SimulationStart and SimulationEnd: set the first and last date to be simulated
 
-After these steps are completed, the new scenario files should have the following structure:
+After these steps are completed, the **new scenario files should have the following structure**:
 
 ``` { .yaml .no-copy }
 ├── CropProtection
