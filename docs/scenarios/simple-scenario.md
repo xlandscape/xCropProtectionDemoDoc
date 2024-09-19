@@ -1,6 +1,6 @@
-# Simple scenario
+# Simple Scenario
 
-This scenario represents the most basic use case of xCropProtection: **one application of a product into one crop that occurs every year**.
+This scenario represents the most basic use case of xCropProtection: **1 application of a product into 1 crop that occurs every year**.
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -35,7 +35,7 @@ This scenario represents the most basic use case of xCropProtection: **one appli
 </PPMCalendar>
 ```
 
-## Scenario explanation
+## Explanation
 
 Product 1 is applied every year for the whole duration of the simulation:
 
@@ -91,6 +91,7 @@ An application will occur if the field's area is greater than or equal to 0 m²:
 ```
 
 ## Illustration
-See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.
 
-![flow chart](../img/simple-scenario.PNG)
+<img src="../img/simple-scenario.PNG" alt="xCP parameterisation entities and their relationship" width="700"/>
+
+See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.

@@ -1,5 +1,10 @@
-# Multiple applications
+# Multiple Applications
 
+## Background
+For some pest control measures in agricultural practice a *sequence* of PPP application is conducted. A typical example is to control fungal pests where a number of fungicide applications are recommended in a sequence during cultivation season. This can be represented (parameterised) in xCP. For more information see eg, [Indication](../reference/glossary.md#indication) in the [Glossary](../reference/glossary.md).   
+In xCP, each individual application in an *Application Sequence* can be independently defined. This allows eg, to use different PPPs within the individual application of an *Application Sequence*.  
+
+## Parameterisation
 An `ApplicationSequence` can contain multiple `Application` elements, each with independent attributes.
 
 Adding multiple `Application` elements to an `ApplicationSequence` should be used when applications are dependent on each other, though the attributes of each `Application` need not be the same.
@@ -72,7 +77,7 @@ Adding multiple `Application` elements to an `ApplicationSequence` should be use
 </PPMCalendar>
 ```
 
-## Scenario explanation
+## Explanation
 
 In this example, two applications will occur each year for fields with LULC type 10:
 
@@ -120,8 +125,11 @@ The same field will also receive an application of Product 2 between June 5th an
 </InCropBuffer>
 ```
 
-For explanations of each element, see [simple scenario](simple-scenario.md).
+For explanations of each element, see [Simple Scenario](simple-scenario.md).
 
-## Flow chart
 
-![flow chart](../img/multiple-applications.PNG)
+### Illustration
+
+<img src="../img/multiple-applications.PNG" alt="xCP parameterisation entities and their relationship" width="700"/>  
+
+See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.

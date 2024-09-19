@@ -1,10 +1,15 @@
 # Tank mixes
 
-Multiple products can be defined in one tank to ensure that they will be applied on the same date and with the same values for `InCropBuffer`, `InFieldMargin`, and `MinimumAppliedArea`. Additionally, if the `ApplicationRates` are defined as probability distributions, the sampling of all `ApplicationRates` will occur with the same parameters.
+## Background
+When farmers put **multiple PPPs in the same spray tank**, this is called a *Tank mix*. Tank mixes allow farmers to reduce the ressorce needs for pest control (time, fuel), to increase pest control efficacy, or for pest resistance management. 
+As a consequence, the products in a tank mix are **applied at the same field (space), at the same time, using the same technology and risk mitigation**. This can cause different environmental effects than a more variable product use. In order to reflect this PPP use pattern (eg, in pesticide risk assessment) xCP allows to define *Tank mixes*.  
 
-The number of `Products` in a `Tank` and the number of `ApplicationRates` must be the same; however, no warnings will appear if the numbers are not equal. The first `ApplicationRate` applies to the first product in the `Tank`, the second `ApplicationRate` applies to the second product in the `Tank`, etc.
 
-!!! note
+## Parameterisation
+xCP has an entity `Tank`. Multiple products can be defined in one tank to ensure that they will be applied on the same date and with the same values for `InCropBuffer`, `InFieldMargin` (and `MinimumAppliedArea`). Additionally, if the `ApplicationRates` are defined as probability distributions, the sampling of all `ApplicationRates` will occur with the same parameters.
+
+!!! note  
+    The number of `Products` in a `Tank` and the number of `ApplicationRates` must be the same; however, no warnings will appear if the numbers are not equal. The first `ApplicationRate` applies to the first product in the `Tank`, the second `ApplicationRate` applies to the second product in the `Tank`, etc.  
     Multiple product names must be separated with a '|' character.
 
 
@@ -44,12 +49,15 @@ The number of `Products` in a `Tank` and the number of `ApplicationRates` must b
 </PPMCalendar>
 ```
 
-## Scenario explanation
+### Explanation
 
 In this example, Product 1 and Product 2 have been added to one `Tank`. Each year of the simulation, they will both be applied on the same day between May 1st and May 10th (a random day will be selected each year with each day being equally likely). Product 1 will receive an application rate of 100 g/ha and Product 2 will receive an application rate of 150 g/ha. Values for `Technology`, `InCropBuffer`, `InFieldMargin`, and `MinimumAppliedArea` will apply to both product applications.
 
-For explanations of each element, see [simple scenario](simple-scenario.md).
+For explanations of each element, see [Simple Scenario](simple-scenario.md).
 
-## Flow chart
+### Illustration
 
-![flow chart](../img/tank-mixes.PNG)
+<img src="../img/tank-mixes.PNG" alt="xCP parameterisation entities and their relationship" width="700"/>  
+
+See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.
+
