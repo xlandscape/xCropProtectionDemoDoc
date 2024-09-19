@@ -1,6 +1,10 @@
-# Choice between multiple indications
+# Choice Between Multiple Indications
 
-An example of one `ApplicationSequence` selected from **each** `Indication` was shown in [Multiple Indications](multiple-indications.md). However, the `Indications` element can also be used to select only 1 `Indication` based on probability values. The following example demonstrates a situation where some fields will receive product applications with further choices and some fields will receive no applications.
+## Background
+Pest control can be a rather complex undertaking. Modern integrated pest control tries to optimise control efficacy, at moderate economic cost and by minimising adverse environmental side effects. In such context, xCP offers the capability to evaluate alternative *Indications* in a *Crop Protection Calender*, ie, alternative measures against a certain pest in a crop, eg, alternative control of powdery mildew in vines, brown rot in apple, whitefly in olives, or blackgras in wheat. The choice of *Indications* might  represent *conventional* versus *organic* or *biological* pest control schemes. See also [Indications](../reference/glossary.md#indication) in the [Glossary](../reference/glossary.md).  
+
+## Parameterisation
+An example of one `ApplicationSequence` selected from **each** `Indication` was shown in [Multiple Indications](multiple-indications.md). However, the `Indications` element can also be used to select only 1 `Indication` based on probability values. The following example demonstrates a situation where some fields (of a certain crop type) will receive product applications with further choices and some fields will receive no applications.
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,7 +110,7 @@ An example of one `ApplicationSequence` selected from **each** `Indication` was 
 </PPMCalendar>
 ```
 
-## Scenario explanation
+### Explanation
 
 In this example, all fields have a 30% chance of receiving "no treatment" and a 70% chance of receiving a series of applications sampled from the first `Indication`. If a field does receive an application, it will receive an application of either Product 1 **OR** Product 2, followed by an application of Product 3.
 
@@ -156,8 +160,11 @@ In this example, all fields have a 30% chance of receiving "no treatment" and a 
 </Indications>
 ```
 
-In this situation, an `ApplicationSequence` may still contain more than one `Application`. If that `ApplicationSequence` is selected, all `Application` elements contained in the selected `ApplicationSequence` will still be applied to the field. For explanations of each element, see [simple scenario](simple-scenario.md).
+In this situation, an `ApplicationSequence` may still contain more than one `Application`. If that `ApplicationSequence` is selected, all `Application` elements contained in the selected `ApplicationSequence` will still be applied to the field. For explanations of each element, see [Simple Scenario](simple-scenario.md).
 
-## Flow chart
 
-![flow chart](../img/Multiple-indications-with-choice.PNG)
+### Illustration
+
+<img src="../img/Multiple-indications-with-choice.PNG" alt="xCP parameterisation entities and their relationship" width="600"/>  
+
+See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.

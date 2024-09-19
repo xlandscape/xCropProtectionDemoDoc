@@ -1,13 +1,12 @@
 # Multiple Indications
 
 ## Background
-In agricultural practice, an *Indication* basically represents control measures against a certain pest (eg, to control powdery mildew in vines, brown rot in apple, whitefly in olives, or blackgras in wheat). 
-
-
-See also ['Indications'](../reference/glossary.md#indication).
+In agricultural practice, an *Indication* basically represents control measures against a certain pest in a crop, eg, to control powdery mildew in vines, brown rot in apple, whitefly in olives, or blackgras in wheat.  
+A composition of *Indications* defines a *Crop Protection Calender*, eg, all the *Indications* to control fungy, insects pests and weeds in vines across a growing season. See also [Indications](../reference/glossary.md#indication) in the [Glossary](../reference/glossary.md).
 
 ## Parameterisation
-Indications hold one or more `ApplicationSequence` elements which each have a probability associated with them. A PPMCalendar can have 1 or more `Indication` elements in its list of `Indications`. When xCropProtection runs, one `ApplicationSequence` from each `Indication` will be chosen.
+A PPMCalendar can have 1 or more `Indication` elements in its list of `Indications`. When xCropProtection runs, all `Indication` elements are executed within which one `ApplicationSequence` from each `Indication` will be chosen. Indications hold one or more `ApplicationSequence` elements which each have a probability associated with them.   
+Multiple `Indication` elements should be used when multiple `Products` need to be applied to a field type.  
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -162,9 +161,7 @@ In this example, a field with LULC type 10 will receive 1 application of either 
         </Indication>
 </Indications>
 ```
-
-`Indication` elements can be used when a product needs to be selected from a group of products, such as to choose from separate options for herbicide and fungicide applications. In other words, multiple `Indication` elements should be used when multiple `Products` need to be applied to a field that are highly independent of each other.
-
+  
 For explanations of each element, see [Simple Scenario](simple-scenario.md).
 
 
