@@ -1,5 +1,12 @@
-# Multiple indications
+# Multiple Indications
 
+## Background
+In agricultural practice, an *Indication* basically represents control measures against a certain pest (eg, to control powdery mildew in vines, brown rot in apple, whitefly in olives, or blackgras in wheat). 
+
+
+See also ['Indications'](../reference/glossary.md#indication).
+
+## Parameterisation
 Indications hold one or more `ApplicationSequence` elements which each have a probability associated with them. A PPMCalendar can have 1 or more `Indication` elements in its list of `Indications`. When xCropProtection runs, one `ApplicationSequence` from each `Indication` will be chosen.
 
 ``` xml
@@ -100,7 +107,7 @@ Indications hold one or more `ApplicationSequence` elements which each have a pr
 </PPMCalendar>
 ```
 
-## Scenario explanation
+### Explanation
 
 In this example, a field with LULC type 10 will receive 1 application of either Product 1 or Product 2, **AND** 1 application of either Product 3 or Product 4. Note that the dates of each of these applications are completely independent of each other.
 
@@ -158,8 +165,11 @@ In this example, a field with LULC type 10 will receive 1 application of either 
 
 `Indication` elements can be used when a product needs to be selected from a group of products, such as to choose from separate options for herbicide and fungicide applications. In other words, multiple `Indication` elements should be used when multiple `Products` need to be applied to a field that are highly independent of each other.
 
-For explanations of each element, see [simple scenario](simple-scenario.md).
+For explanations of each element, see [Simple Scenario](simple-scenario.md).
 
-## Flow chart
 
-![Flow chart](../img/Multiple-indications.PNG)
+### Illustration
+
+<img src="../img/Multiple-indications.PNG" alt="xCP parameterisation entities and their relationship" width="600"/>  
+
+See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.

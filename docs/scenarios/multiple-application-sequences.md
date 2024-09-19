@@ -1,6 +1,10 @@
-# Multiple application sequences
+# Multiple Application Sequences
 
-To be able to model real-world phenomena like market share, `ApplicationSequence` XML elements have a probability value associated with them.
+## Background
+In agricultural landscapes, a number of pesticides are being used for pest control. This even applies to individual crop types. Typically, **a range of alternative pest control measures are available to the farmer as optional tool sets to control the same pest**. Eg, to control fungal deseases in vines, >100 products are available from different producers in Germany plus organic/biological control means. In order to reflect such alternative pest control measures, eg, in a landscape-level risk assessment and risk management analysis, xCP allows to define alternative *Application Sequences* within an *Indication*. Such alternative can eg, reflect market share of products. 
+
+## Parameterisation
+To be able to model real-world alternative pest control means, `ApplicationSequence` XML elements have a **probability value** associated with them.
 
 !!! note
     For each `Indication`, the sum of all `ApplicationSequence` probability values must sum to exactly 1.0. 
@@ -61,7 +65,7 @@ An `ApplicationSequence` has a probability of occurring for each field according
 </PPMCalendar>
 ```
 
-## Scenario explanation
+### Explanation
 
 In this example, the first `ApplicationSequence` will be selected for 70% of applications each year, while the second `ApplicationSequence` will be selected for the remaining 30% of applications each year.
 
@@ -71,8 +75,10 @@ In this example, the first `ApplicationSequence` will be selected for 70% of app
 <ApplicationSequence probability="0.3">
 ```
 
-For explanations of each element, see [simple scenario](simple-scenario.md).
+For explanations of each element, see [Simple Scenario](simple-scenario.md).
 
-## Flow chart
+### Illustration
 
-![flow chart](../img/multiple-application-sequences.PNG)
+<img src="../img/multiple-application-sequences.PNG" alt="xCP parameterisation entities and their relationship" width="700"/>  
+
+See also ['Indications'](../reference/glossary.md#indication) for the full picture of xCP entities and their relationship.

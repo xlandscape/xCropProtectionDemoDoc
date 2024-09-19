@@ -77,7 +77,7 @@ Adding multiple `Application` elements to an `ApplicationSequence` should be use
 </PPMCalendar>
 ```
 
-## Explanation
+### Explanation
 
 In this example, two applications will occur each year for fields with LULC type 10:
 
@@ -103,7 +103,7 @@ One application of Product 1 will occur between May 1st and May 10th with an app
 </ApplicationWindow>
 ```
 
-The same field will also receive an application of Product 2 between June 5th and June 25th with an application rate of 200 g/ha and an in-crop buffer of 5 meters:
+The same field types will also receive an application of Product 2 between June 5th and June 25th with an application rate of 200 g/ha and an in-crop buffer of 5 meters:
 
 ``` xml
 <Tank>
