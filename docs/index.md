@@ -212,3 +212,8 @@ dfs.append(pandas.DataFrame(drift_reduction_data, columns=["TechnologyDriftReduc
 `product_table` : *C:...\xCropProtection\analysis\ProductTypes.csv*. This table defines product names and their type.
 
 `product_colors` : *C:..\xCropProtection\analysis\ProductNames.csv*. This file defines product names and the color they will be symbolized with.
+
+## Acknowledgements
+The need and the development of the xCP component was initiated by Thorsten Schad (thorsten.schad@bayer.com). It's realisation was only possibly due to the contribution of colleagues listed below and the sponsoring by Bayer AG.  
+
+<img src="img/Contributions.png" alt="Contributors and Roles" width="800"/>

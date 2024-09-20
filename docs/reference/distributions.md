@@ -13,6 +13,16 @@ Correspondingly, some elements of xCropProtection can be parameterized with prob
 - `InFieldMargin`
 - `MinimumAppliedArea`
 
+Distribution types currently not available in xCP can be implemented on demand.
+<br>
+
+Illustration of distributions (https://2.bp.blogspot.com/-SpjgitfNMb0/TteevRR_Y2I/AAAAAAAAAFQ/IZgd32z2AI8/s1600/distributions.png)
+:  
+
+<img src="../img/distributions.png" alt="Distributions Illustration" width="1000"/>
+
+
+
 ## Uniform distribution
 
 This defines a numeric distribution with an arbitrary outcome between *a* and *b* where each outcome is equally likely. *a* and *b* are the minimum and maximum values, respectively. Users define the bounds of a uniform distribution with the following steps:

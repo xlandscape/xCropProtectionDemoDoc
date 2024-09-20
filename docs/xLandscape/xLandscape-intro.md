@@ -1,7 +1,7 @@
 # xLandscape
 
-
-See the xLandscape core's [README](https://github.com/xlandscape/LandscapeModel-Core/blob/master/README.md) at GitHub for detailed instructions.
+  
+See the xLandscape core's [README](https://github.com/xlandscape/LandscapeModel-Core/blob/master/README.md) at GitHub for detailed instructions at technical level.
 
 ## Modules and Components 
 
