@@ -1,11 +1,12 @@
-# PPM calendar documentation and technical details
+# PPM Calendar Technical Details
 
-This file contains technical details about PPM Calendar elements. Examples of PPM Calendar files and explanations are located in the [Templates](../scenarios/simple-scenario.md).
+This section contains technical details about PPM Calendar elements. Examples of PPM Calendar files and explanations are located in the [Templates](../scenarios/simple-scenario.md).
 
 !!! note
     '|' symbols are used to separate options in a list.
 
-The general structure of a PPM calendar is
+## General Structure
+The **general structure** of a PPM calendar is
 
 ``` xml
 <PPMCalendar>
