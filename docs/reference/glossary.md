@@ -1,13 +1,16 @@
 # Glossary
+
 Basically, all xCP entities are defined close to the real-world objects they represent (overview graphic on xCP Entities in [Indication](#indication)).  
-(September 2024: status=draft)
+(September 2024: status: draft)
 <br>
 
 ## Active Substance
+
 An active substance (a.s.) in a plant protection product is any chemical, plant extract, pheromone, or micro-organism (including viruses) that acts against pests or affects plants, parts of plants, or plant products (https://food.ec.europa.eu/plants/pesticides_en). Essentially, it's the component that provides the intended protective or pesticidal effect.  
 *Active Substances* have physical and chemical properties as well as ecotoxicological endpoints. These data are kept in corresponding databases. 
 
 ## Application
+
 When a PPP is/PPPs are applied to a certain crop at a certain field we call this an *Application*. Typically, a farmer puts a PPP (or a set of PPPs) into a spraying tank, fills the tank up with water, drives to the field and sprays the solution onto the field (into the crop). In xCP context, the term *Application* is used close to agricultural practice, yet, is related to its use in pesticide risk assessment, especially the exposure modelling part.  
  An *Application* is defined by  
  - the PPP (or PPPs) to be applied  
@@ -24,11 +27,13 @@ Remark: Influenced by classic exposure modelling, at the current development sta
 
 
 ## Application Rate
+
 In agricultural practice, the amount of PPPs applied to a field is usually determined as amount PPP by field area. 
 The farmer typically determines the volume PPP [mL] by field area [ha] (eg, considering the crop development status, *'the higher the crop the more PPP needed'*).   
 As risk assessment often focuses on active substance (a.s.), so does modelling. Therefore, in xCP the *Application Rate* can be defined as amount a.s. or PPP per field ares (eg, [µg a.s./ha], [mL PPP/ha]).
 
 ## Application Sequence
+
 A sequence of individual PPP *Applications*. Each individual *Application* within an *Application Sequence* can be defined independently. Thus, an *Application Sequence* can represent, eg, the multiple use of the same PPP (PPPs) using the same technology and risk mitigation, yet, at individual application rates (eg, as often the case for fungicide uses in orchards). However, an *Application Sequence* can also represent uses of different PPPs in a sequence (as illustrated in the graphic below).   
 
 ![Illustration of a PPP application sequence using different PPPs](../img/PPP%20application%20sequence%20using%20different%20PPPs.png)
@@ -36,12 +41,14 @@ A sequence of individual PPP *Applications*. Each individual *Application* withi
 (https://rwz.ag/fileadmin2023/Agrarhandel/Weinbau/Mosel/240124_bild_weinbauempfehlung-pflanzenschutz-mosel.png)
 
 ## Application Window
+
  The time when an application is planned to be conducted. In a modelling experiment using xCP, an *Application Window* can be a deterministic day or a time span (eg, 1.-14. April). In the latter case, a probability distribution function is assigned to an application window from which actual application dates are sampled during model runtime. 
 
 Remark: Influenced by classic exposure modelling, at the current development status, the definition of an *Application* includes the definition of an application timing (*Application Window*), although in agricultural practice typically the use of a PPP is related to crop development stages. Thus, currently, the modeller has to determine the dependence of regional crop development with time. Future xCP versions are planned to allow defining an *Application* related to crop development stage (which can bw provided by databases or crop development modelling).  
 Also, typically farmers' decisions depend on agricultural and environmental conditions. xCP is planned to allow the definition of such dependency rules, eg, not to conduct a certain spray application when a rainstorm is predicted by weather forecast.  
 
 ## Buffer
+
 A distance ([m]) that is kept (has to be kept) to a certain entity during an agricultural activity. Buffers are typically used to implement risk mitigation means, eg, to reduce spray-drift depositions into habitats of non-target-organisms. To protect aquatic organisms no-spray buffers are defined as distance to water bodies (eg, a PPP is allowed to be spray no closer than 10 m distance to streams). To protect terrestric organisms, often in-field or in-crop buffers are defined (eg, spraying has to keep a 5 m distance from the cropped/field boundery).
 
 ## Configuration
@@ -52,6 +59,25 @@ As for each [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) component
 The decision on which model component parameters should be exposed as user interface in the [*Parameterisation*](#parameterisation) level depends on the purpose of the model and the user group. The assignment of model component parameters to either the configuration or the [Parameterisation](#parameterisation) level can be changed with minimum effort ([xLandscape-Parameters](../xLandscape/xLandscape-parameterisation.md#assign-parameters-to-parameter-level)).  
 
 Both, *configuration* and [*Parameterisation*](#parameterisation) refer to direct user inputs (user interaction) and are separated from more extense data inputs like land use data, weather data or pesticide phys-chem properties. Typically, in the user inputs links to such databases to be used in a landscape modelling [Experiment](#experiment) are defined wheras the actual data are taken from these databases.  
+
+## Crop Protection Calender
+The *Crop Protection Calender* (CPC) is a key parameterisation element of xCP. It is the entry point of each xCP PPP use scenario.  
+In agricultural practice, pest control measures for a crop are typically planned based on experiance, PPP availability and other factors. Such planning can happen quite early in a season or closer to actual pest control. Crop protection plans are made eg, by official plant protection advisory services, farmers, or PPP producers. The term *Calender* is used to emphasise its temporal (crop development stage) aspects and similarity to everyday calenders we are used to.  adaptation).  
+Besides reflecting ag practice, the approach of using a CPC also addresses modelling practice in risk assessment which typically focus on a certain indication, conducted over long time periods. 
+Beyond these established uses, alternative CPCs can be used to assess the environmental impact of alternative pest control options, or to design new pest control means against established ones, considered as baselines.  
+
+Summary on CPC characteristics: a CPC
+- is specific to a crop (or group of crops)
+- has a temporal validity, ie it can be constant over the entire model simulation period or can change at any (defined) time step
+- can be adaptive, ie can change during model runtime (eg, reacting on pest pressure)  
+
+<br>
+
+![Example Plant Protection Calender](../img/Example%20plant%20protection%20recommendation%20in%20apples.jpg "Example Plant Protection Recommendation in Apple")  
+*Visualisation of plant protection recommendations in apple for the forthcomming season (colors represent insecticides, fungicides, growth regulators and herbicides)*
+
+![Plant Protection Recommendation in Vines (Bayer)](../img/Bayer%20Weinbau%20Spritzplan%202024.png "Plant Protection Recommendation in Vines (Bayer)")  
+*Example plant protection recommendations in vines (Bayer AG)*
 
 ## Experiment
 The term *Experiment* has been introduced to [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) model simulations as an analogue to experimental setups.  
@@ -97,25 +123,6 @@ As for each [xLandscape](../xLandscape/xLandscape-intro.md#xlandscape) component
 The decision on which model component parameters should be exposed as user interface in the *parameterisation* level depends on the purpose of the model and the user group. The assignment of model component parameters to either the [*Configuration*](#configuration) or the *parameterisation* level can be changed with minimum effort ([xLandscape-Parameters](../xLandscape/xLandscape-parameterisation.md#assign-parameters-to-parameter-level)).  
 
 Both, [*Configuration*](#configuration) and *parameterisation* refer to direct user inputs (user interaction) and are separated from more extense data inputs like land use data, weather data or pesticide phys-chem properties. Typically, in the user inputs links to such databases to be used in a landscape modelling [Experiment](#experiment) are defined wheras the actual data are taken from these databases.
-
-## Plant Protection Calender
-The *Plant Protection Calender* (PPC) is a key parameterisation element of xCP. It is the entry point of each xCP PPP use scenario.  
-In agricultural practice, pest control measures for a crop are typically planned based on experiance, PPP availability and other factors. Such planning can happen quite early in a season or closer to actual pest control. Crop protection plans are made eg, by official plant protection advisory services, farmers, or PPP producers. The term *Calender* is used to emphasise its temporal (crop development stage) aspects and similarity to everyday calenders we are used to.  adaptation).  
-Besides reflecting ag practice, the approach of using a PPC also addresses modelling practice in risk assessment which typically focus on a certain indication, conducted over long time periods. 
-Beyond these established uses, alternative PPCs can be used to assess the environmental impact of alternative pest control options, or to design new pest control means against established ones, considered as baselines.  
-
-Summary on PPC characteristics: a PPC
-- is specific to a crop (or group of crops)
-- has a temporal validity, ie it can be constant over the entire model simulation period or can change at any (defined) time step
-- can be adaptive, ie can change during model runtime (eg, reacting on pest pressure)  
-
-<br>
-
-![Example Plant Protection Calender](../img/Example%20plant%20protection%20recommendation%20in%20apples.jpg "Example Plant Protection Recommendation in Apple")  
-*Visualisation of plant protection recommendations in apple for the forthcomming season (colors represent insecticides, fungicides, growth regulators and herbicides)*
-
-![Plant Protection Recommendation in Vines (Bayer)](../img/Bayer%20Weinbau%20Spritzplan%202024.png "Plant Protection Recommendation in Vines (Bayer)")  
-*Example plant protection recommendations in vines (Bayer AG)*
 
 ## Plant Protection Measure (PPM)
 An action to prevent or control pests, eg, protecting apples against powdery mildew fungy or protecting olives against the white fly.  

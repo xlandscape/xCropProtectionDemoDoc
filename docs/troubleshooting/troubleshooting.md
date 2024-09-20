@@ -2,6 +2,7 @@
 
 This page will cover common error messages, what they mean, and how to resolve them.
 
+
 ## AttributeError
 
 ``` { .yaml .no-copy }
@@ -20,17 +21,20 @@ This error occurs when `Indication` or `Indications` elements are misconfigured.
 
 ``` { .yaml .no-copy }
 FileExistsError: [WinError 183] Cannot create a file when that file already exists:
-'C:\\...\\xCropProtection\\run\\Rummen-xCP-TestingScenario'
+'C:\\...\\run\\Rummen-xCP-TestingScenario'
 ```
 
 **Explanation**:
 
-A folder with the same name as `SimID` exists in the *\xCropProtection\run\\* folder.
+A folder with the same name as `SimID` exists in the *\...\run\\* folder.
 
 **Possible solutions**:
 
 - Delete or move the folder to run xCropProtection using that `SimID`.
-- Change the `SimID` value to one that does not already exist in the *\xCropProtection\run\\* folder.
+- Change the `SimID` value to one that does not already exist in the *\...\run\\* folder.
+
+## HDFview error
+In rare cases, opening "AppliedAreas" generated from a large amount of input data may cause HDFView to crash due to its data type. Use *xCP_write_csv.ipynb* to write the data to a csv.
 
 ## KeyError
 
