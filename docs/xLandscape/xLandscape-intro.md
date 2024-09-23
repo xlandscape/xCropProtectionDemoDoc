@@ -14,7 +14,21 @@ For futher information you might contact Thorsten Schad (thorsten.schad@bayer.co
 ## Our Vision
 ### *in what situation did we start?!*
 In the 2000s, pesticide risk assessment was based on a combination of conservative (worst-case) exposure scenario assumptions and ecotoxicological testing conditions. Although this risk assessment design assures a high level of protectiveness (when passing the risk assessment) it does not allow to define effective and efficient risk management measures, nor does it provide answers in cases where unacceptable risk was indicated for worst-case conditions.  
-With the central goal of a better understanding of real-world pesticide risk, in a phase of improved availability of environmental (geo)data together with process models (eg, FOCUS xxx), 
+
+ Sustainable Use Directive (EC 2009b) , Water Framework Directive (WFD, EC 2000) , e European Workshop on Probabilistic RA for the Environmental Impacts of PPPs (EUPRA, Hart 2001) , FOCUS Working Group on Landscape and Mitigation Factors in Ecological RA (FOCUS 2007a, 2007b): , United Nations 'Millennium Ecosystem Assessment' (UNEP 2013) 
+f FOCUS Landscape and Mitigation (FOCUS 2007a, 2007b), 
+the EUFRAM project (Hart 2006), projects of the German Federal Environment Agency (UBA, 
+GeoRISK, UBA 2010; Schulz et al. 2007, 2009), a project of the German Crop Protection 
+Association (IVA, GeoPERA, Schad et al. 2006b, 2006c, 2007), work of the Julius Kühn Institute 
+(JKI, Golla et al. 2008a, 2008b, Strassemeyer et al. 2009)
+
+
+In a phase of improved availability of environmental (geo)data together with the establishment of mechanistic models (eg, [EC/Joined Research Centre](https://esdac.jrc.ec.europa.eu/projects/surface-water)), first approaches were built to refine exposure assessment at landscape-level, with the aim of a better understanding of real-world pesticide risk and its management (eg, [Almass](https://projects.au.dk/almass/publications), [IVA/GeoPERA](https://www.york.ac.uk/media/environment/documents/people/brown/schad.pdf), [Julius-Kühn-Institut/GIS](https://www.openagrar.de/receive/openagrar_mods_00058550), [UBA/GeoRISK](https://www.umweltbundesamt.de/publikationen/georeferenced-probabilistic-risk-assessment-of)). These early approaches had particular deficiencies in how naturally given variability was propagated to outcome and tended to be rather large and intransparent monoliths. Interoperability was impossible.   
+Schad (2013) 
+
+Topping CJ.  
+
+
 In recent years, data has improved xxx remote sensing, xxx,   
 effect models  
 
@@ -28,9 +42,9 @@ holitstic view to pesticide risk
 big picture  
 develop integrated 
 
-today called *Digital Twins*  
 
-### *where we want to go to!*
+
+### *where we want to go to?!*
 a system that allows to build models that can operate on landscape-scales,  
 
 Imagine, 
@@ -40,6 +54,9 @@ Imagine,
 - models can be data-driven or mechanistic  
 
 **build for exchange with the regulatory scientific community**  
+manage the naturally given complexity of 
+
+today called *Digital Twins*  
 
 ## History
 The development of xLandscape was initiated due to shortcomings or even missing approaches 
@@ -81,3 +98,7 @@ currently, [HDF](xLandscape/xLandscape-intro.md#multidimensional-data-store) is 
 
 Jupyter notebooks
 
+## References
+
+
+Schad 2013: xplicit xxx
