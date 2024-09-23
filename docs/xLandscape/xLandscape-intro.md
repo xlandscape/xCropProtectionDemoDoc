@@ -1,10 +1,19 @@
 # xLandscape
-In one sentence, xLandscape is a **modular framework** that allow **to build models** that simulate processes (phenomenons) in real-world landscapes.  
-xLandscape is not a model, but a framework to build models. This is done by composing [*components*](#modules-and-components) and to a model. This landscape model xxx integrated xxx inner consistancy 
+**xLandscape is not a model**. It's **a modular framework** that allows **to build models**. The models to build are typically intended to simulate processes (phenomenons) in **real-world landscapes**.  
+Therefore, the ***core*** of the xLandscape approach implements characteristics of **spatiotemporally e*x*plicit** modelling using geoinformation. Beyond space and time, further dimensions and scales are explicitelly represented. The prefix ***x*** shall indicate this. This intends to simulate pattern of real-world landscape conditions using a *Monte Carlo* approach.  
+Another fundamental principle is that xLandscape has a **modular design**.  
 
-lego bricks
 
-The '*x*' represent the explicit paradigm of xLandscape framework. 
+<img src="../img/xAquatic.png" alt="XAquatic" width="800"/>  
+
+*Illustration of a model composition using the xLandscape framework. The model, called xAquatic, simulates pesticide use in catchments, exposure of streams, pesticide transport and fate, as well as effects to aquatic invertebrate species* xxx revise the graphic
+
+
+<br>
+
+This is done by composing [*components*](#modules-and-components) and to a model. This landscape model xxx integrated xxx inner consistancy 
+
+
 
 <br>
 
@@ -12,14 +21,24 @@ The corrent major version level is *1.x* which essentially means that we have a 
   
 See the xLandscape core's [README](https://github.com/xlandscape/LandscapeModel-Core/blob/master/README.md) at GitHub for detailed instructions at technical level.
 
+**open source**  
+**build for exchange with the regulatory scientific community**  
 
-## Vision
+
+## Our Vision
+
+a system that allows to build models that can operate on landscape-scales,  
+
 
 Imagine, 
 - modular system available which you can make use of and add your modules
 - Integrated Development Environment
+- make use of existing models and data, extend them by your model and so focus on your developments 
 
 ## History
+The development of xLandscape was initiated due to shortcomings or even missing approaches 
+
+With its advent Available approaches on landscape modelling (Schad 2013). some developments were effectively stopped with the end of the research initiative, some were treated highly protective (Inra), 
 Early 
 early work on landscape-level risk assessment had a focus on making exposure modelling more realistic.  our key critics on approaches at that time (mid 2000s) was about the sampling methods xxx generated non-realistic conditions, hence, distributions of exposure and so risk assessment.  pattern, units, scales where missing  
 tested working within GIS, close to big-data spatial databases (eg rasdaman), Almass, OpenMI, xxx and a range of related approaches which all ended up in dead ends for the purposes and needs of our work in environmental risk assessment, risk management and more generic related fields. 
@@ -41,6 +60,7 @@ Characteristics
 
 You will read the term ***component*** quite often in the context of *xLandscape* and so *xCP*.  = Mo-Based Software
 
+lego bricks
 
 
 ### Multidimensional Data Store
