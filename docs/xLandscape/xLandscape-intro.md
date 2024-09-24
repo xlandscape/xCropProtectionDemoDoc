@@ -24,7 +24,7 @@ A stepping stone towards addressing these shortcomings and so, recent developmen
 <img src="../img/xplicit nta fachoekotoxtagung.png" alt="xplicit NTA case study" width="600"/>  
 
 *Illustration of the application of **xplicit** to a NTA study in hops in Germany (Fachökotox-Tagung Landau 2010)*  
-
+<br>
 
 ### *where we want to go to?!*
 
@@ -45,36 +45,43 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 
 <br>
 
+This **sets the scene for making steps towards a next generation approach - a modular one.**   
+Design principles: 
+1. **Landscape modelling**: the modelling approach operate with geodata
+1. 1. Modular: 
+1. Core functionality: 
+1. Landscape-modelling driven: 
+1. explicit
+1. allow to integrate existing models and reuse models
 
-This **sets the scene for a next generation approach - a modular one**. These tools need to address 
+
 - pesticide risk assessment 
+- developed and/or transfered to a digital twin  
 - risk management decision support 
 - generic landscape design questions like *biodiversity enhancement*
 
-open minded  
-the future is in collaboration (in each and evary level, technical, )
+open minded  , agile development , collaboration 
 
-modularisation  
-[Bub, Schad, Gao 2020](https://www.sciencedirect.com/science/article/pii/S235271102030323X)
+Example module  [xDrift- Bub, Schad, Gao 2020](https://www.sciencedirect.com/science/article/pii/S235271102030323X)
 
 develop integrated 
 
 a system that allows to build models that can operate on landscape-scales,  
 
-Imagine, 
+
+### *imagine...* 
+- 
 - modular system available which you can make use of and add your modules
 - Integrated Development Environment
 - make use of existing models and data, extend them by your model and so focus on your developments 
 - models can be data-driven or mechanistic  
 
 **build for exchange with the regulatory scientific community**  
+**agile**  
+**with applicable software products at any time**  
 manage the naturally given complexity of 
 
-today called *Digital Twins*  
 
-
-
-With its advent Available approaches on landscape modelling (Schad 2013). some developments were effectively stopped with the end of the research initiative, some were treated highly protective (Inra), 
 Early 
 early work on landscape-level risk assessment had a focus on making exposure modelling more realistic.  our key critics on approaches at that time (mid 2000s) was about the sampling methods xxx generated non-realistic conditions, hence, distributions of exposure and so risk assessment.  pattern, units, scales where missing  
 tested working within GIS, close to big-data spatial databases (eg rasdaman), Almass, OpenMI, xxx and a range of related approaches which all ended up in dead ends for the purposes and needs of our work in environmental risk assessment, risk management and more generic related fields. 
@@ -92,6 +99,15 @@ Characteristics
 - numeric, Monte Carlo
 - multidimensional, 
 - Python
+
+
+
+<img src="../img/xLandscape - moduls core models.png" alt="xLandscape - Modules, Core, Models" width="900"/>  
+
+*xLandscape - Modules, Core, Models*  
+
+<br>
+
 
 ### Modules and Components 
 
