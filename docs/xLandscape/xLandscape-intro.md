@@ -48,17 +48,21 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 ### *today - an applicable product*
 
 [Experiance](#in-what-situation-did-we-start) together with [future directions](#current-developments-and-future-directions) set the scene for making steps towards **a next generation landscape modelling approach:**   
+
 **General requirements and design principles:**  
 1. A **modular** approach that allows to integrate existing models into a landscape modelling context. 
 1. The integration assures (inner) **data and information consistancy**, making use of *semantics*. 
-1. Modules can be developed by everyone. 
-1. A **core** implements the key landscape modelling functionality (not more). Modules interact with the core.
+1. Modules can be developed by everyone. External modules (the actual function-providing models) become integrated **components** using a *wrapper*. 
+1. A **core** implements the key landscape modelling functionality and semantics (not more). Modules interact with the core.
 1. The **composed landscape model** appears to the user as any other model, ie it takes inputs (parameterisation, data) and generates outputs. 
-1. The implementation process is **agile**. It focuses on todays' demands (*working product*) whilst being open for anticipated developments. 
+1. The implementation process is **agile**. It is driven by todays' demands (*working product*) whilst being adaptable in the frame of anticipated developments. 
 
-**Landscape modelling Requirements**: 
+<br>
 
-1. Landscape modelling comes with a strong spatial component. Spatial entities can be represented in any format (eg, raster, vector) and scale. The model core  ('maps') 
+**Landscape Modelling requirements**: 
+
+1. Landscape modelling comes with a strong **spatial** perception ('maps'). Spatial entities can be represented in any format (eg, raster, vector), scales and shape. Data extent is only limited by computing ressources. The model core, together with corresponding components (modules) inputs external data into inner data stores, which operates semantically-enriched and assures data consistency throughout consuming components. 
+1. 
 1. multidimensional databases ('cubes')
 1. open for any entities, scales and units
 1. Core functionality: 
