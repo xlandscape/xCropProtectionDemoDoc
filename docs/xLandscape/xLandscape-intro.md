@@ -26,7 +26,7 @@ A stepping stone towards addressing these shortcomings and so, recent developmen
 *Illustration of the application of **xplicit** to a NTA study in hops in Germany (Fachökotox-Tagung Landau 2010)*  
 <br>
 
-### *where we want to go to?!*
+### *current developments and future directions*
 
 In recent years, **the demand for more realistic and holistic risk assessment of pesticide, their more targeted use and integrated pest control has ever increased** (eg, [EU Green Deal](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en), [EU Farm-to-Fork](https://food.ec.europa.eu/horizontal-topics/farm-fork-strategy_en), [EC Biodiversity Strategy](https://environment.ec.europa.eu/strategy/biodiversity-strategy-2030_en), [EC Nature Restoration Law](https://environment.ec.europa.eu/topics/nature-and-biodiversity/nature-restoration-law_en), [UNEP](https://www.unep.org/news-and-stories/press-release/new-initiative-aims-curb-toxic-impacts-agriculture), [Endangered Species](https://www.fws.gov/law/endangered-species-act), [Reduction of Pesticide Use (JRC)](https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/reducing-pesticide-use-more-data-and-innovative-solutions-needed-2024-07-04_en), [EC Protection of Bees](https://food.ec.europa.eu/plants/pesticides/protection-bees_en), [EC Integrated Pest Management](https://food.ec.europa.eu/plants/pesticides/sustainable-use-pesticides/integrated-pest-management-ipm_en), [Mixture Toxicity](https://enveurope.springeropen.com/articles/10.1186/s12302-022-00594-3)). These are **global trends** and already **ongoing implementations**.  
 Simultaneously, **data availability** has been increased whilst cost were reduced (eg, [EEA Data Hub](https://www.eea.europa.eu/en/datahub), [EU Crop Cover](https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/eu-crop-map-2021-10-18_en), [BDTOPO France](https://geoservices.ign.fr/bdtopo), [Biodiversity](https://www.gbif.org/), [Species Monitoring](https://datasources.speciesmonitoring.org/)), especially with **remote sensing** and related data preparation workflows (eg [Copernicus](https://www.copernicus.eu/en), [Google Earth Engine](https://earthengine.google.com/), [Drones](https://openaerialmap.org/)). **Computing** ressources have been increased significanty. With **effect modelling** (eg, [ModelLink](https://setac.onlinelibrary.wiley.com/doi/10.1002/ieam.1704), [Good Modelling Practice](https://www.efsa.europa.eu/en/efsajournal/pub/3589)) model  predictions have reached the level of species' populations and ecosystems. Accross topics and initiatives we increasingly see an ***open source* culture**.  
@@ -45,14 +45,34 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 
 <br>
 
-This **sets the scene for making steps towards a next generation approach - a modular one.**   
-Design principles: 
-1. **Landscape modelling**: the modelling approach operate with geodata
-1. 1. Modular: 
+### *today - an applicable product*
+
+[Experiance](#in-what-situation-did-we-start) together with [future directions](#current-developments-and-future-directions) set the scene for making steps towards **a next generation landscape modelling approach:**   
+**General requirements and design principles:**  
+1. A **modular** approach that allows to integrate existing models into a landscape modelling context. 
+1. The integration assures (inner) **data and information consistancy**, making use of *semantics*. 
+1. Modules can be developed by everyone. 
+1. A **core** implements the key landscape modelling functionality (not more). Modules interact with the core.
+1. The **composed landscape model** appears to the user as any other model, ie it takes inputs (parameterisation, data) and generates outputs. 
+1. The implementation process is **agile**. It focuses on todays' demands (*working product*) whilst being open for anticipated developments. 
+
+**Landscape modelling Requirements**: 
+
+1. Landscape modelling comes with a strong spatial component. Spatial entities can be represented in any format (eg, raster, vector) and scale. The model core  ('maps') 
+1. multidimensional databases ('cubes')
+1. open for any entities, scales and units
 1. Core functionality: 
+1. interface definitions
 1. Landscape-modelling driven: 
 1. explicit
-1. allow to integrate existing models and reuse models
+1. allow to integrate existing models and reuse models  
+
+also,  
+1. make use of modern, established IT systems architecture and tools
+1. common implementation language
+1. versioning
+1. open accessability ()
+1. A GUI shall be developed for easy landscape model composition 
 
 
 - pesticide risk assessment 
