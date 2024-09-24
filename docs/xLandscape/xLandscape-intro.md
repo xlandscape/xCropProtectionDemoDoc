@@ -11,38 +11,40 @@ The **current major release level is *1.x***, which essentially means that we ha
 
 For futher information you might contact Thorsten Schad (thorsten.schad@bayer.com) or Sascha Bub (sascha.bub@rptu.de).  
 
-## Our Vision
+## Vision
 ### *in what situation did we start?!*
-In the 2000s, pesticide risk assessment was based on a combination of conservative (worst-case) exposure scenario assumptions and ecotoxicological testing conditions. Although this risk assessment design assures a high level of protectiveness it does not allow to define effective and efficient risk management measures, nor does it provide answers in cases where unacceptable risk was indicated for worst-case conditions.  
-Beyond risk assessment, different initiatives asked for approaches for more realistic 
- Sustainable Use Directive (EC 2009b) , Water Framework Directive (WFD, EC 2000) , e European Workshop on Probabilistic RA for the Environmental Impacts of PPPs (EUPRA, Hart 2001) , FOCUS Working Group on Landscape and Mitigation Factors in Ecological RA (FOCUS 2007a, 2007b): , United Nations 'Millennium Ecosystem Assessment' (UNEP 2013) 
-f FOCUS Landscape and Mitigation (FOCUS 2007a, 2007b), 
-the EUFRAM project (Hart 2006), projects of the German Federal Environment Agency (UBA, 
-GeoRISK, UBA 2010; Schulz et al. 2007, 2009), a project of the German Crop Protection Association (IVA, GeoPERA, Schad et al. 2006b, 2006c, 2007), work of the Julius Kühn Institute (JKI, Golla et al. 2008a, 2008b, Strassemeyer et al. 2009)
+In the 2000s, pesticide risk assessment was largely based on a combination of **conservative (worst-case) exposure scenarios and ecotoxicological testing conditions**. Although this risk assessment design assures a high level of protectiveness, it does not allow to define effective and efficient risk management measures, nor does it provide approaches in cases where unacceptable risk was indicated for worst-case conditions.   
+The need for more realistic risk assessment was also identified in different pesticide risk assessment related workgroups (eg, European Workshop on Probabilistic Risk Assessment for the Environmental Impacts of PPPs (EUPRA, Hart 2001), FOCUS Landscape and Mitigation (FOCUS 2007a, 2007b)), as well as in more generic initiatives (eg, Water Framework Directive (WFD, EC 2000), Sustainable Use Directive (EC 2009b), United Nations 'Millennium Ecosystem Assessment' (2005)).  
+In a phase of improved availability of environmental (geo)data together with the establishment of mechanistic models (eg, [EC/Joined Research Centre](https://esdac.jrc.ec.europa.eu/projects/surface-water)), early approaches were built for more realistic exposure and risk assessment at landscape-level (eg, [Almass](https://projects.au.dk/almass/publications), [IVA/GeoPERA](https://www.york.ac.uk/media/environment/documents/people/brown/schad.pdf), [Julius-Kühn-Institut/GIS](https://www.openagrar.de/receive/openagrar_mods_00058550), [UBA/GeoRISK](https://www.umweltbundesamt.de/publikationen/georeferenced-probabilistic-risk-assessment-of)). These early approaches had particular deficiencies in how naturally given variability was propagated to outcome and tended to be rather large and intransparent monoliths. The models were not publically available and interoperability was not possible.  
+Steps towards addressing these shortcomings were made in the Xplicit approach ([Schad & Schulz 2011](https://pubmed.ncbi.nlm.nih.gov/21538833/), [Schad 2013](https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=idn%3D1037920015)). Xplicit intended to reproduce natural pattern of exposure in space and time and to get more modular and open. Xplicit was applied to a range of pesticide risk assessment studies.  
+
+<img src="../img/xplicit nta fachoekotoxtagung.png" alt="xplicit NTA case study" width="600"/>  
+
+*Illustration of the application of **xplicit** to a NTA study in hops in Germany (Fachökotox-Tagung Landau 2010).*  
 
 
-In a phase of improved availability of environmental (geo)data together with the establishment of mechanistic models (eg, [EC/Joined Research Centre](https://esdac.jrc.ec.europa.eu/projects/surface-water)), first approaches were built to refine exposure assessment at landscape-level, with the aim of a better understanding of real-world pesticide risk and its management (eg, [Almass](https://projects.au.dk/almass/publications), [IVA/GeoPERA](https://www.york.ac.uk/media/environment/documents/people/brown/schad.pdf), [Julius-Kühn-Institut/GIS](https://www.openagrar.de/receive/openagrar_mods_00058550), [UBA/GeoRISK](https://www.umweltbundesamt.de/publikationen/georeferenced-probabilistic-risk-assessment-of)). These early approaches had particular deficiencies in how naturally given variability was propagated to outcome and tended to be rather large and intransparent monoliths. Interoperability was impossible.   
-Schad (2013) 
+### *where we want to go to?!*
+In recent years, the demand for more realistic and holistic risk assessment of pesticide, their more targeted use and integration into a range of pest control measures has ever increased.  (eg, Green Deal).  
 
-Topping CJ.  
-
+beyond the initial motivation described above, today much extended requirements and views to the use of pesticides has emerged 
+Green Deal, pesticide use reductions  , integrated pest management, minimise the use of chemicals  
 
 In recent years, data has improved xxx remote sensing, xxx,   
 effect models  
 
+This sets the scene for which a new generation of tools are needed. These tools need to address 
+- pesticide risk assessment 
+- risk management decision support 
+- generic landscape design questions like *biodiversity enhancement*
 
-<br>
+open minded  
+the future is in collaboration (in each and evary level, technical, )
 
-beyond the initial motivation described above, today much extended requirements and views to the use of pesticides has emerged 
-Green Deal, pesticide use reductions  , integrated pest management, minimise the use of chemicals  
- more general approach was i
-holitstic view to pesticide risk  
-big picture  
+modularisation  
+[Bub, Schad, Gao 2020](https://www.sciencedirect.com/science/article/pii/S235271102030323X)
+
 develop integrated 
 
-
-
-### *where we want to go to?!*
 a system that allows to build models that can operate on landscape-scales,  
 
 Imagine, 
@@ -56,8 +58,7 @@ manage the naturally given complexity of
 
 today called *Digital Twins*  
 
-## History
-The development of xLandscape was initiated due to shortcomings or even missing approaches 
+
 
 With its advent Available approaches on landscape modelling (Schad 2013). some developments were effectively stopped with the end of the research initiative, some were treated highly protective (Inra), 
 Early 
@@ -100,3 +101,8 @@ Jupyter notebooks
 
 
 Schad 2013: xplicit xxx
+
+Schad, T. Schulz R, Görlitz G, Neumann P. 2011. Xplicit - Concepts and Model Development for 
+Probabilistic Spatiotemporally Explicit Exposure and Risk Assessment (ERA) for Plant 
+Protection Products - Introduction and Example Study for Non-Target-Arthropods (NTA). 
+SETAC Europe 21st Annual Meeting, 15-19 May 2011, Milan, Italy. 
