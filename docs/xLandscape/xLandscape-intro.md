@@ -1,4 +1,5 @@
 # xLandscape
+
 **xLandscape is not a model**. It's **a modular framework** that allows **to build models**. The models to build are typically intended to simulate processes (phenomenons) in **real-world landscapes**.  
 Therefore, the ***core*** of the xLandscape approach implements characteristics of **spatiotemporally eXplicit** modelling using geoinformation. Beyond space and time, further dimensions and scales are explicitelly represented. The prefix ***x*** shall indicate this. This design intends to simulate pattern of real-world landscape conditions using a *Monte Carlo* approach.  
 Another fundamental principle is that xLandscape has a **modular design**. Modules are called ***components*** as the software architecture is based on *Component-Based Software Enginieering* (CBSE). The graphic below shows the **composition** of a catchment-scale model *xAquatic* (Github: [xAquatic](https://github.com/xlandscape/xAquaticRisk)).  
@@ -12,27 +13,40 @@ The **current major release level is *1.x***, which essentially means that we ha
 For futher information you might contact Thorsten Schad (thorsten.schad@bayer.com) or Sascha Bub (sascha.bub@rptu.de).  
 
 ## Vision
+
 ### *in what situation did we start?!*
+
 In the 2000s, pesticide risk assessment was largely based on a combination of **conservative (worst-case) exposure scenarios and ecotoxicological testing conditions**. Although this risk assessment design assures a high level of protectiveness, it does not allow to define effective and efficient risk management measures, nor does it provide approaches in cases where unacceptable risk was indicated for worst-case conditions.   
-The need for more realistic risk assessment was also identified in different pesticide risk assessment related workgroups (eg, European Workshop on Probabilistic Risk Assessment for the Environmental Impacts of PPPs (EUPRA, Hart 2001), FOCUS Landscape and Mitigation (FOCUS 2007a, 2007b)), as well as in more generic initiatives (eg, Water Framework Directive (WFD, EC 2000), Sustainable Use Directive (EC 2009b), United Nations 'Millennium Ecosystem Assessment' (2005)).  
-In a phase of improved availability of environmental (geo)data together with the establishment of mechanistic models (eg, [EC/Joined Research Centre](https://esdac.jrc.ec.europa.eu/projects/surface-water)), early approaches were built for more realistic exposure and risk assessment at landscape-level (eg, [Almass](https://projects.au.dk/almass/publications), [IVA/GeoPERA](https://www.york.ac.uk/media/environment/documents/people/brown/schad.pdf), [Julius-Kühn-Institut/GIS](https://www.openagrar.de/receive/openagrar_mods_00058550), [UBA/GeoRISK](https://www.umweltbundesamt.de/publikationen/georeferenced-probabilistic-risk-assessment-of)). These early approaches had particular deficiencies in how naturally given variability was propagated to outcome and tended to be rather large and intransparent monoliths. The models were not publically available and interoperability was not possible.  
-Steps towards addressing these shortcomings were made in the Xplicit approach ([Schad & Schulz 2011](https://pubmed.ncbi.nlm.nih.gov/21538833/), [Schad 2013](https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=idn%3D1037920015)). Xplicit intended to reproduce natural pattern of exposure in space and time and to get more modular and open. Xplicit was applied to a range of pesticide risk assessment studies.  
+The need for more realistic risk assessment was also identified in different **pesticide risk assessment related workgroups** (eg, European Workshop on Probabilistic Risk Assessment for the Environmental Impacts of PPPs (EUPRA, Hart 2001), FOCUS Landscape and Mitigation (FOCUS 2007a, 2007b)), as well as in more **generic initiatives** (eg, Water Framework Directive (WFD, EC 2000), Sustainable Use Directive (EC 2009b), United Nations 'Millennium Ecosystem Assessment' (2005)).  
+In a phase of improved availability of environmental (geo)data together with the establishment of mechanistic models (eg, [EC/Joined Research Centre](https://esdac.jrc.ec.europa.eu/projects/surface-water)), **early approaches** were built for more realistic exposure and risk assessment at landscape-level (eg, [Almass](https://projects.au.dk/almass/publications), [IVA/GeoPERA](https://www.york.ac.uk/media/environment/documents/people/brown/schad.pdf), [Julius-Kühn-Institut/GIS](https://www.openagrar.de/receive/openagrar_mods_00058550), [UBA/GeoRISK](https://www.umweltbundesamt.de/publikationen/georeferenced-probabilistic-risk-assessment-of)). Although significant progress was made, these early approaches had particular deficiencies in how naturally given variability was propagated to outcome and tended to be rather large and intransparent monoliths. The models were not publically available and interoperability was not possible.  
+A stepping stone towards addressing these shortcomings and so, recent developments was provided with the **Xplicit** approach ([Schad & Schulz 2011](https://pubmed.ncbi.nlm.nih.gov/21538833/), [Schad 2013](https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=idn%3D1037920015)). Xplicit intended to reproduce natural pattern of exposure in space and time and to get more modular and open. Xplicit was applied to a range of pesticide risk assessment studies.  
 
 <img src="../img/xplicit nta fachoekotoxtagung.png" alt="xplicit NTA case study" width="600"/>  
 
-*Illustration of the application of **xplicit** to a NTA study in hops in Germany (Fachökotox-Tagung Landau 2010).*  
+*Illustration of the application of **xplicit** to a NTA study in hops in Germany (Fachökotox-Tagung Landau 2010)*  
 
 
 ### *where we want to go to?!*
-In recent years, the demand for more realistic and holistic risk assessment of pesticide, their more targeted use and integration into a range of pest control measures has ever increased.  (eg, Green Deal).  
 
-beyond the initial motivation described above, today much extended requirements and views to the use of pesticides has emerged 
-Green Deal, pesticide use reductions  , integrated pest management, minimise the use of chemicals  
+In recent years, **the demand for more realistic and holistic risk assessment of pesticide, their more targeted use and integrated pest control has ever increased** (eg, [EU Green Deal](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en), [EU Farm-to-Fork](https://food.ec.europa.eu/horizontal-topics/farm-fork-strategy_en), [EC Biodiversity Strategy](https://environment.ec.europa.eu/strategy/biodiversity-strategy-2030_en), [EC Nature Restoration Law](https://environment.ec.europa.eu/topics/nature-and-biodiversity/nature-restoration-law_en), [UNEP](https://www.unep.org/news-and-stories/press-release/new-initiative-aims-curb-toxic-impacts-agriculture), [Endangered Species](https://www.fws.gov/law/endangered-species-act), [Reduction of Pesticide Use (JRC)](https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/reducing-pesticide-use-more-data-and-innovative-solutions-needed-2024-07-04_en), [EC Protection of Bees](https://food.ec.europa.eu/plants/pesticides/protection-bees_en), [EC Integrated Pest Management](https://food.ec.europa.eu/plants/pesticides/sustainable-use-pesticides/integrated-pest-management-ipm_en), [Mixture Toxicity](https://enveurope.springeropen.com/articles/10.1186/s12302-022-00594-3)). These are **global trends** and already **ongoing implementations**.  
+Simultaneously, **data availability** has been increased whilst cost were reduced (eg, [EEA Data Hub](https://www.eea.europa.eu/en/datahub), [EU Crop Cover](https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/eu-crop-map-2021-10-18_en), [BDTOPO France](https://geoservices.ign.fr/bdtopo), [Biodiversity](https://www.gbif.org/), [Species Monitoring](https://datasources.speciesmonitoring.org/)), especially with **remote sensing** and related data preparation workflows (eg [Copernicus](https://www.copernicus.eu/en), [Google Earth Engine](https://earthengine.google.com/), [Drones](https://openaerialmap.org/)). **Computing** ressources have been increased significanty. With **effect modelling** (eg, [ModelLink](https://setac.onlinelibrary.wiley.com/doi/10.1002/ieam.1704), [Good Modelling Practice](https://www.efsa.europa.eu/en/efsajournal/pub/3589)) model  predictions have reached the level of species' populations and ecosystems. Accross topics and initiatives we increasingly see an ***open source* culture**.  
+<br>
+Todays' demands for modelling systems range from scenario-based integrated landscape models up to digital twins (eg, [BioDT](https://biodt.eu/), [Destination Earth](https://destination-earth.eu/)).  
 
-In recent years, data has improved xxx remote sensing, xxx,   
-effect models  
 
-This sets the scene for which a new generation of tools are needed. These tools need to address 
+<img src="../img/EU DestinE innovation-last-4096x2470-1-768x463.png" alt="EU Digital Twin DestinE" width="500"/>  
+
+*EU Digital Twin (DestinE), as an illustration for a vision to integrate data and models of different topics to build a new model to simulate real-world phenomenons for decision support. Individual contributions are made according to individual domain expertise. A loop of monitoring and modelling improves the system.*  
+
+<br>
+
+> Given the complexity of real-world systems, hence approaches, together with the range of disciplines needed,  
+> it is no longer advisable, nor justifiable, to try real-world (landscape) modelling in isolation - **Collaboration is the paradigm.**  
+
+<br>
+
+
+This **sets the scene for a next generation approach - a modular one**. These tools need to address 
 - pesticide risk assessment 
 - risk management decision support 
 - generic landscape design questions like *biodiversity enhancement*
@@ -71,6 +85,7 @@ today, we have
 
 
 ## xLandscape Version 1.x 
+
 Characteristics
 
 - 
