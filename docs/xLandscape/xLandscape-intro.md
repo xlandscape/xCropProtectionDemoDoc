@@ -18,7 +18,7 @@ For futher information you might contact Thorsten Schad (thorsten.schad@bayer.co
 
 In the 2000s, pesticide risk assessment was largely based on a combination of **conservative (worst-case) exposure scenarios and ecotoxicological testing conditions**. Although this risk assessment design assures a high level of protectiveness, it does not allow to define effective and efficient risk management measures, nor does it provide approaches in cases where unacceptable risk was indicated for worst-case conditions.   
 The need for more realistic risk assessment was also identified in different **pesticide risk assessment related workgroups** (eg, European Workshop on Probabilistic Risk Assessment for the Environmental Impacts of PPPs (EUPRA, Hart 2001), FOCUS Landscape and Mitigation (FOCUS 2007a, 2007b)), as well as in more **generic initiatives** (eg, Water Framework Directive (WFD, EC 2000), Sustainable Use Directive (EC 2009b), United Nations 'Millennium Ecosystem Assessment' (2005)).  
-In a phase of improved availability of environmental (geo)data together with the establishment of mechanistic models (eg, [EC/Joined Research Centre](https://esdac.jrc.ec.europa.eu/projects/surface-water)), **early approaches** were built for more realistic exposure and risk assessment at landscape-level (eg, [Almass](https://projects.au.dk/almass/publications), [IVA/GeoPERA](https://www.york.ac.uk/media/environment/documents/people/brown/schad.pdf), [Julius-Kühn-Institut/GIS](https://www.openagrar.de/receive/openagrar_mods_00058550), [UBA/GeoRISK](https://www.umweltbundesamt.de/publikationen/georeferenced-probabilistic-risk-assessment-of)). Although significant progress was made, these early approaches had particular deficiencies in how naturally given variability was propagated to outcome and tended to be rather large and intransparent monoliths. The models were not publically available and interoperability was not possible.  
+In a phase of improved availability of environmental (geo)data together with the establishment of mechanistic models (eg, [EC/Joined Research Centre](https://esdac.jrc.ec.europa.eu/projects/surface-water)), **early approaches** were built for more realistic exposure and risk assessment at landscape-level (eg, [Almass](https://projects.au.dk/almass/publications), [IVA/GeoPERA](https://www.york.ac.uk/media/environment/documents/people/brown/schad.pdf), [Julius-Kühn-Institut/GIS](https://www.openagrar.de/receive/openagrar_mods_00058550), [UBA/GeoRISK](https://www.umweltbundesamt.de/publikationen/georeferenced-probabilistic-risk-assessment-of)). Although significant progress was made, these early approaches had particular deficiencies in how naturally given variability was propagated to outcome (resulting in unrealstic system conditions) and tended to be rather large and intransparent monoliths. The models were not publically available and interoperability was not possible.  
 A stepping stone towards addressing these shortcomings and so, recent developments was provided with the **Xplicit** approach ([Schad & Schulz 2011](https://pubmed.ncbi.nlm.nih.gov/21538833/), [Schad 2013](https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=idn%3D1037920015)). Xplicit intended to reproduce natural pattern of exposure in space and time and to get more modular and open. Xplicit was applied to a range of pesticide risk assessment studies.  
 
 <img src="../img/xplicit nta fachoekotoxtagung.png" alt="xplicit NTA case study" width="600"/>  
@@ -73,7 +73,8 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 
 **further aspects**: 
 
-1. Given its fundamental context, the design of the Landscape Model has at least **roots in pesticide risk assessment and risk management** (decision support) and related topics like landscape biodiversity enhancements.  
+1. Given its fundamental context, the design of the Landscape Model has at least **roots in pesticide risk assessment and risk management** (decision support) and related topics like landscape biodiversity enhancements. It is build for use in the **regulatory scientific community**.   
+1. *Components* and their inner models (modules) can be **data-driven, mechanistic or hybrid**.  
 1. A common and easy to learn programming language is used for the implementation of the *core* and its functionality. **Phyton** was selected for this. However, *components* (moduls) can be implemented in basically any language (eg, C, C++, Go, netlogo). The same applies to *core* functionalities that might have specific needs, eg for speed or parallelisation.  
 1. A basic paradigm is **scalability**. Basically, the spatial and temporal extent of simulations shall not be limited by design, but only by given computing ressources. 
 1. The development, use and work around a Landscape Model come with differnt roles. **Roles** have a specific purpose and require different skills, documentation, and traing. Thus, *roles* need an explicit awareness and definition: eg, 'Core Developer', 'Module Developer', 'Landscape Model Builder', 'Landscape Model User (expert, trained)', 'API Consumer'. 
@@ -81,28 +82,13 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 1. The implementation shall make use of modern **versioning** and **collaboration** approaches and systems (eg, [Github](https://github.com/xlandscape)). 
 1. The development shall not be done in isolation, but of **open minded culture** (agile). Whilst trying to get a working product, continued exchange with the communities and research on technologies facilitate adaptivity. 
 1. The products basically persue an **open source** culture and paradigm. This applies eg, to the Landscape Model *core* [xlandscape](https://github.com/xlandscape) and the majority of *components* and *Landscape Models* (eg, [xAquatic](https://github.com/xlandscape/xAquaticRisk)). However, due to insitutional licence policies some *components* might be **open access**, ie are open for use but without the source code of the actual model (eg, [Cascade-Toxswa](https://github.com/xlandscape/CascadeToxswa-Component)). Of course, the entire Landscape Modelling approach can be used for entirely internal and **private developments**. This allows hybrid Landscape Models for which some functionality can even get patented.  
-1. Last but not least: *imagine...*  - you are about to develop a specific 
-separation of concern 
-- modular system available which you can make use of and add your modules
-- make use of existing models and data, extend them by your model and so focus on your developments 
-- models can be data-driven or mechanistic  
+1. Last but not least: **imagine** you are about to develop a specific population model, say an amphibian model, for pesticide RA. **Without a modular Landscape Modelling system** you'll need to develop anything outside your model yourself, eg, landscape environmental and agricultural scenarios, PPP use, exposure and efate. **With** such an approach, you can make use of all data and *components* available, add specific needs (eg, a microclimate model) and focus on your key model development. This is what is called *separation of concern*.  
 
-
-**build for exchange with the regulatory scientific community**  
-**with applicable software products at any time**  
-manage the naturally given complexity of 
-
-
-Early 
-early work on landscape-level risk assessment had a focus on making exposure modelling more realistic.  our key critics on approaches at that time (mid 2000s) was about the sampling methods xxx generated non-realistic conditions, hence, distributions of exposure and so risk assessment.  pattern, units, scales where missing  
-tested working within GIS, close to big-data spatial databases (eg rasdaman), Almass, OpenMI, xxx and a range of related approaches which all ended up in dead ends for the purposes and needs of our work in environmental risk assessment, risk management and more generic related fields. 
-
-early module: xDrift (ref)  
-modular approach  
-today, we have  
+Remark: Intense research and trials to work within existing systems (eg, tested working within GIS, close to big-data spatial databases (eg rasdaman), Almass, OpenMI, xxx and a range of related approaches) all ended up in dead ends for the purposes and needs of our work in environmental risk assessment, risk management and more generic related fields (as outlined above). This is why we indentified the need for own developments. 
 
 
 ## xLandscape Version 1.x 
+
 
 
 As a CBSE, xLandscape is not a model but a framework to build models with a core for numeric, multidimensional landscape modelling 
@@ -112,7 +98,7 @@ Characteristics
 - numeric, Monte Carlo
 - multidimensional, 
 - Python
-
+early module: xDrift (ref)  
 
 
 <img src="../img/xLandscape - moduls core models.png" alt="xLandscape - Modules, Core, Models" width="900"/>  
