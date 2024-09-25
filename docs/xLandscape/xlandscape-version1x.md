@@ -14,19 +14,17 @@ The first major release (version 1.x) implements key goals as summarised the [In
 **Characteristics**:
 
 1. **Numeric approach** that works with discretised entities: time is discretised in time steps (any step possible, 'hour' and 'day' are typical in different processes). Spatial entities can be eg, vector polygons or raster cells. This makes xLandscape a spatiotemporally explicit model.
-1. **Explicit representation of scales**: phenomenons like variability are assigned to specific scales. Eg, variability of wind direction, as defined in a is 
-1. Multidimensional data storage
-1. Monte Carlo
-1. Variability propagation ... Probability Density Functions (PDFs)
-1. **Semantics**: 
-1. Analysis- and Reporting Elements
-1. Sequential processing
+1. **Explicit representation of scales**: phenomenons like variability are assigned to specific scales. Eg, variability of spray-drift deposition might be observed on a *field*-scale. Likewise, explicit *scales* serve as important units in the analysis of landscape modelling outcome, eg. to provide endpoints that fit to the definition of [Specific Protection Goals](https://www.efsa.europa.eu/en/efsajournal/pub/1821).
+1. **Monte Carlo**: variability (and uncertainty) are represented by Probability Density Functions (PDFs). This, together with the spatiotemporally explicit approach, provides the functionality to propagate variability of landscape processes, activities and dynamics to landscape model outputs.  
+1. **Multidimensional data storage**: Environmental characteristics, agriculture, PPP use, exposure, effects and their attributes, space and time, make xLandscape a multidimensional approach. These data are stored in a  multidimensional storage. Currently, the Hierarchical Data Format ([HDF](https://www.hdfgroup.org/)) is used. At the end of a xLandscape-based model simulation all data resides in the HDF store.
+1. **Semantics**: xLandscape introduces *semantics* to improve meaning of data. This is done in a stepwise way. Currently, values have a unit and scale assigned.
+1. **Sequential processing**: in version 1.x *components* are executed in a sequential order.
+1. **Analysis- and Reporting Elements**: example analysis code and outputs (eg, tables, graphics) are prepared. Typically, [Jupyter](https://jupyter.org/) notebooks are used, each focusing on a certain analysis topic.
+1. **'xcopy' distribution**: an xLandscape-based model can be copied (downloaded) and used without installation. The xLandscape *core* comes with its Python environment and each *component* with their required runtime environment.
+1. **Scalability**: basically, the spatial and temporal extent, as well as other simulation characteristics (eg, the number and detail of endpoints) are only limited by computing ressources. 
+1. **Scenarios**: xxx Scenarios can be of any spatial shape.  [scenarios](../reference/glossary.md#scenario)
 
-
-
-- numeric, Monte Carlo
-- multidimensional,
-- Python
+The xLandscape *core* and building *components* software are written in Python
 early module: xDrift (ref)  
 
 
