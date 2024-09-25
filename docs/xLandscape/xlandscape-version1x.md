@@ -21,12 +21,11 @@ The first major release (version 1.x) implements key goals as summarised the [In
 1. **Sequential processing**: in version 1.x *components* are executed in a sequential order.
 1. **Analysis- and Reporting Elements**: example analysis code and outputs (eg, tables, graphics) are prepared. Typically, [Jupyter](https://jupyter.org/) notebooks are used, each focusing on a certain analysis topic.
 1. **'xcopy' distribution**: an xLandscape-based model can be copied (downloaded) and used without installation. The xLandscape *core* comes with its Python environment and each *component* with their required runtime environment.
-1. **Scalability**: basically, the spatial and temporal extent, as well as other simulation characteristics (eg, the number and detail of endpoints) are only limited by computing ressources. 
-1. **Scenarios**: xxx Scenarios can be of any spatial shape.  [scenarios](../reference/glossary.md#scenario)
+1. **Scalability**: basically, the spatial and temporal extent, as well as other simulation characteristics (eg, the number and detail of endpoints) are only limited by computing ressources. Scaleability is a central requirement, also to the design of *components*. Ideally, processes should show a linear scaling behaviour. Besides actual landscape models build with xLandscape, the related analysis software need to cope with (large) raw data volumes typically generated.
+1. **Scenarios**: each specific model built with the xLandscape approach has its specific scenario requirements. As long as data requirements can be fulfilled, scenarios of any (global) region and any time period can be used as model input. Scenarios can be of any spatial shape. See also [scenarios](../reference/glossary.md#scenario) in the [Glossary](../reference/glossary.md).
 
-The xLandscape *core* and building *components* software are written in Python
-early module: xDrift (ref)  
-
+The xLandscape *core* and *components* building software are written in Python.  
+early module: [xDrift](../xLandscape/xLandscape-components.md#xdrift).
 
 ## Core
 
