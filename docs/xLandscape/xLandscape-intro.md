@@ -50,14 +50,12 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 [Experiance](#in-what-situation-did-we-start) together with [future directions](#current-developments-and-future-directions) set the scene for making steps towards **a next generation landscape modelling approach:**   
 
 **General requirements and design principles:**  
-1. A **modular** approach that allows to integrate existing models into a landscape modelling context. 
-1. The integration assures (inner) **data and information consistancy**, making use of *semantics*. 
-1. Modules can be developed by everyone. External modules (the actual function-providing models) become integrated **components** using a *wrapper*. 
-1. A **core** implements the key landscape modelling functionality and semantics (not more). Modules interact with the core.
-1. The **composed landscape model** appears to the user as any other model, ie it takes inputs (parameterisation, data) and generates outputs. 
-1. The implementation process is **agile**. It is driven by todays' demands (*working product*) whilst being adaptable in the frame of anticipated developments. 
-
-<br>
+1. A **modular** approach that allows to integrate existing models into a landscape modelling context.  
+1. The integration assures (inner) **data and information consistancy**, making use of *semantics*.  
+1. Modules can be developed by everyone. External modules (the actual function-providing models) become integrated **components** using a *wrapper*.  
+1. A **core** implements the key landscape modelling functionality and semantics (not more). Modules interact with the core.  
+1. The **composed landscape model** appears to the user as any other model, ie it takes inputs (parameterisation, data) and generates outputs.  
+1. The implementation process is **agile**. It is driven by todays' demands (*working product*) whilst being adaptable in the frame of anticipated developments.  
 
 **Landscape Modelling requirements and design principles**: 
 
