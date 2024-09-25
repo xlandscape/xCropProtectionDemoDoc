@@ -50,6 +50,7 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 [Experiance](#in-what-situation-did-we-start) together with [future directions](#current-developments-and-future-directions) set the scene for making steps towards **a next generation landscape modelling approach:**   
 
 **General requirements and design principles:**  
+
 1. A **modular** approach that allows to integrate existing models into a landscape modelling context.  
 1. The integration assures (inner) **data and information consistancy**, making use of *semantics*.  
 1. Modules can be developed by everyone. External modules (the actual function-providing models) become integrated **components** using a *wrapper*.  
