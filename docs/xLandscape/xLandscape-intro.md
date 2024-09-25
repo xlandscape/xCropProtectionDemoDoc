@@ -45,7 +45,7 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 
 <br>
 
-### *today - an applicable product*
+### *today -> we need an applicable product*
 
 [Experiance](#in-what-situation-did-we-start) together with [future directions](#current-developments-and-future-directions) set the scene for making steps towards **a next generation landscape modelling approach:**   
 
@@ -59,49 +59,36 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 
 <br>
 
-**Landscape Modelling requirements**: 
+**Landscape Modelling requirements and design principles**: 
 
+1. The landscape model works discrete (numeric). Its core dimensions are space and time. It is **spatiotemporally explicit**. 
+1. Further modelling **dimensions** can be introduced by the modelled topics, eg, exposure (of different landscape entities) and effects (and their *Specific Protection Goals* dimensions, eg, biological entity and attributes).
 1. Landscape modelling comes with a strong **spatial** perception ('maps'). Spatial entities can be represented in any format (eg, raster, vector), scales and shape. Data extent is only limited by computing ressources. The model core, together with corresponding components (modules) inputs external data into inner data stores, which operates semantically-enriched and assures data consistency throughout consuming components. 
-1. 
-1. multidimensional databases ('cubes')
-1. open for any entities, scales and units
-1. Core functionality: 
-1. interface definitions
-1. Landscape-modelling driven: 
-1. explicit
-1. allow to integrate existing models and reuse models  
+1. Likewise, the **temporal dimension** can use the units as needed to represent dynamics of the modelled systems. These can be different in the different *components*.
+1. Data for this multidimensional modelling are held in a **multidimensional datastore**. The technical representation is independent from the conceptual, ie different data store technologies can be used. 
+1. The Landscape Model basically implements a **Monte Carlo** approach. This allows to propagate variabilities (uncertainties) of the natural system (eg, land use, PPP use, weather conditions) to variabilities of the outcome (eg, exposure, effects to organisms). 
+1. The model works with **Semantics** to assure mutual *'understanding'* of data and models. Semantics are stepwise implemented, starting with physical units, scales and metadata, and are developed up to the use of *ontologies*. 
+1. The model is open to introduce new entities, scales and units. 
+1. The design is based on ***Component Based Software Engineering*** (CBSE). The ***core*** is considered to work as a *microkernel*, the *components* represent the models that bring the actual functionality. 
 
-also,  
-1. make use of modern, established IT systems architecture and tools
-1. common implementation language
-1. versioning
-1. open accessability ()
-1. A GUI shall be developed for easy landscape model composition 
+**further aspects**: 
 
-
-- pesticide risk assessment 
-- developed and/or transfered to a digital twin  
-- risk management decision support 
-- generic landscape design questions like *biodiversity enhancement*
-
-open minded  , agile development , collaboration 
-
-Example module  [xDrift- Bub, Schad, Gao 2020](https://www.sciencedirect.com/science/article/pii/S235271102030323X)
-
-develop integrated 
-
-a system that allows to build models that can operate on landscape-scales,  
-
-
-### *imagine...* 
-- 
+1. Given its fundamental context, the design of the Landscape Model has at least **roots in pesticide risk assessment and risk management** (decision support) and related topics like landscape biodiversity enhancements.  
+1. A common and easy to learn programming language is used for the implementation of the *core* and its functionality. **Phyton** was selected for this. However, *components* (moduls) can be implemented in basically any language (eg, C, C++, Go, netlogo). The same applies to *core* functionalities that might have specific needs, eg for speed or parallelisation.  
+1. A basic paradigm is **scalability**. Basically, the spatial and temporal extent of simulations shall not be limited by design, but only by given computing ressources. 
+1. The development, use and work around a Landscape Model come with differnt roles. **Roles** have a specific purpose and require different skills, documentation, and traing. Thus, *roles* need an explicit awareness and definition: eg, 'Core Developer', 'Module Developer', 'Landscape Model Builder', 'Landscape Model User (expert, trained)', 'API Consumer'. 
+1. During initial development phase, the Landscape Model **usability** mainly addresses the *expert* user, ie those who know the purpose, have experiance with modelling on a technical level (eg, understanding the meaning of a certain parameterisation, using xml). Of course, **Graphical User Interfaces** (eg, an Integrated Development Environment (IDE) for Landscape Model composition) and **web-browser-based** interaction (eg, for Landscape Model execution and analysis) is important and envisaged. 
+1. The implementation shall make use of modern **versioning** and **collaboration** approaches and systems (eg, [Github](https://github.com/xlandscape)). 
+1. The development shall not be done in isolation, but of **open minded culture** (agile). Whilst trying to get a working product, continued exchange with the communities and research on technologies facilitate adaptivity. 
+1. The products basically persue an **open source** culture and paradigm. This applies eg, to the Landscape Model *core* [xlandscape](https://github.com/xlandscape) and the majority of *components* and *Landscape Models* (eg, [xAquatic](https://github.com/xlandscape/xAquaticRisk)). However, due to insitutional licence policies some *components* might be **open access**, ie are open for use but without the source code of the actual model (eg, [Cascade-Toxswa](https://github.com/xlandscape/CascadeToxswa-Component)). Of course, the entire Landscape Modelling approach can be used for entirely internal and **private developments**. This allows hybrid Landscape Models for which some functionality can even get patented.  
+1. Last but not least: *imagine...*  - you are about to develop a specific 
+separation of concern 
 - modular system available which you can make use of and add your modules
-- Integrated Development Environment
 - make use of existing models and data, extend them by your model and so focus on your developments 
 - models can be data-driven or mechanistic  
 
+
 **build for exchange with the regulatory scientific community**  
-**agile**  
 **with applicable software products at any time**  
 manage the naturally given complexity of 
 
@@ -117,6 +104,8 @@ today, we have
 
 ## xLandscape Version 1.x 
 
+
+As a CBSE, xLandscape is not a model but a framework to build models with a core for numeric, multidimensional landscape modelling 
 Characteristics
 
 - 
