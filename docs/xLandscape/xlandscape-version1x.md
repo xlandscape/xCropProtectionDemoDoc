@@ -1,4 +1,4 @@
-# Version 1.x
+# xLandscape Version 1.x
 
 The first major release (version 1.x) implements key goals as summarised the [Introduction](../xLandscape/xLandscape-intro.md#today---we-need-an-applicable-product). The design is based on *Component-Base-Software-Engineering* (CBSE). So, xLandscape is not a model but a framework to build models, with a core functionality for numeric, multidimensional landscape modelling.  
 **Main entities**:
@@ -11,13 +11,17 @@ The first major release (version 1.x) implements key goals as summarised the [In
 
 *Illustration of the xLandscape ecosystem: components, Core, Models, as well as 'Analysis&Reporting Elements'*  
 
-**Further entities and characteristics**:
+**Characteristics**:
 
-1. Explicit representation of
+1. **Numeric approach** that works with discretised entities: time is discretised in time steps (any step possible, 'hour' and 'day' are typical in different processes). Spatial entities can be eg, vector polygons or raster cells. This makes xLandscape a spatiotemporally explicit model.
+1. **Explicit representation of scales**: phenomenons like variability are assigned to specific scales. Eg, variability of wind direction, as defined in a is 
 1. Multidimensional data storage
 1. Monte Carlo
+1. Variability propagation ... Probability Density Functions (PDFs)
+1. **Semantics**: 
 1. Analysis- and Reporting Elements
 1. Sequential processing
+
 
 
 - numeric, Monte Carlo
