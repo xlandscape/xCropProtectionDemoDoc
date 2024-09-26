@@ -29,18 +29,19 @@ The first major release (version 1.x) implements key goals as summarised the [In
 
 The xLandscape *core* and *components* building software are written in **Python**. This language was choosen for its properties, popularity and ease to learn. However, compute demanding processes can be written in basically any language (eg, C, C++, Go) and be integrated as Python packages.  
 The inner model of *components* can be written basically in any language. The *component* building process wraps such software, typically including the software (model) specific runtime environment.  
+Development is **versioned** and currently done using **Github** ([Github/xLandscape](https://github.com/xlandscape)).
 
 ## Core
 
 The modular approach of xLandscape does not intend to loosely couple models. There is a 'framing' element necessary to represent characteristics that make a landscape model according to the use context, goals and requirements (see [Intro](../xLandscape/xLandscape-intro.md)).  
-The '*core* and *component*' design was inspired by microkernel architecture in CBSE context. Represents key features of the modular landscape modelling approach.  
+The '*core* and *component*' design was inspired by microkernel architecture in Component-based Software Engineering (CBSE) context. Represents key features of the modular landscape modelling approach.  
 Key *core* functionality and characteristics:
-1. *Components* are connected to the core
-1. *Components* are controlled by the core (necessary minimum: initialisation, data exchange, status request, resource control)
-1. Provides a multidimensional data store
-1. Semantics
-1. External data (scenarios) input
-1. xxx
+
+1. The *core* provides the (Python) **framework to build *components*** (eg, interfaces for data exchange, data semantics, initialisation, control, *component* self-description, status request)
+1. The *core* provides the **framework to build compositions**, ie actual landscape models (currently implemented as XML)
+1. The *core* provides the **framework for a 'semantic context'** that enables operating with explicit entities (eg, scales) and assures inner landscape model data **consistency**
+1. The *core* provides the **framework for operating with multidimensional data**
+1. The *core* provides functionality for landscape **simulation control, status observer, ressources and logging**
 
 This is illustrated as the blue **'L'** together with the light blue background in xLandscape model schemes:  
 
@@ -48,11 +49,18 @@ This is illustrated as the blue **'L'** together with the light blue background 
 
 *xlandscape core illustration*
 
+## Model Building
+
+<img src="../img/xLandscape model building scheme.png" alt="xlandscape" width="1000"/>  
+
+*xlandscape xxx*
+
+
 
 ### Propagation of Variability
 
 
-<img src="../img/variability propagation.png" alt="Propagation of Variability" width="900"/>  
+<img src="../img/variability propagation 1a.png" alt="Propagation of Variability" width="900"/>  
 
 *Propagation of landscape system variability to variability of model predictions*
 
@@ -103,3 +111,5 @@ At version 1.x, xLandscape has a linear processing sequence
 
 
 [Today-need for a model]: ../xLandscape/xLandscape-intro.md#today---applicable-landscape-models-needed
+
+## Technical Implementation
