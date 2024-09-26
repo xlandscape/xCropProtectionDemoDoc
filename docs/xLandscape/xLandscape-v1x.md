@@ -27,8 +27,7 @@ The first major release (version 1.x) implements key goals as summarised the [In
 
 ## Applicability
 
-not limited to its original key purpose for RA xxx
-any spatiotemporally phenomenon, exposre, effects, bee forage, environmental data, PPP use
+The application of xLandscape framework is not limited to its original key purpose for RA, ie to generate model results for RA endpoints (exposure, effects). xLandscape can be employed for modelling quite a large range of spatiotemporally phenomenon, eg, to model the spatiotemporally occurrence of bee forage (nectar, pollen), the use of pesticides in cultivated landscapes, the toxic loads of chemicals in landscapes, etc.
 
 ## Programming Language
 
@@ -62,8 +61,9 @@ Essentially all functionality is represented by *components*.
 
 - Mechanistic simulation models (eg, PRZM, PEARL, Macro, Cascade-Toxswa, GUTS, Mastep, Streamcom), typically modelling rather complex processes
 - Data-driven models (eg, [xDrift](../xLandscape/xLandscape-components.md#xdrift))
+- Small calculations
 - (Geo)data inputs
-- small calculations
+- ..etc.
 
 The graphic below shows xxx
 
