@@ -25,7 +25,12 @@ The first major release (version 1.x) implements key goals as summarised the [In
 1. **Scenarios**: each specific model built with the xLandscape approach has its specific scenario requirements. As long as data requirements can be fulfilled, scenarios of any (global) region and any time period can be used as model input. Scenarios can be of any spatial shape. See also [scenarios](../reference/glossary.md#scenario) in the [Glossary](../reference/glossary.md).
 1. **Analysis- and Reporting Elements**: example analysis code and outputs (eg, tables, graphics) are prepared. Typically, [Jupyter](https://jupyter.org/) notebooks are used, each focusing on a certain analysis topic.
 
-## Implementation
+## Applicability
+
+not limited to its original key purpose for RA xxx
+any spatiotemporally phenomenon, exposre, effects, bee forage, environmental data, PPP use
+
+## Programming Language
 
 The xLandscape *core* and *components* building software are written in **Python**. This language was choosen for its properties, popularity and ease to learn. However, compute demanding processes can be written in basically any language (eg, C, C++, Go) and be integrated as Python packages.  
 The inner model of *components* can be written basically in any language. The *component* building process wraps such software, typically including the software (model) specific runtime environment.  
@@ -49,7 +54,18 @@ This is illustrated as the blue **'L'** together with the light blue background 
 
 *xlandscape core illustration*
 
-## Model Building
+## Core & Components
+
+Essentially all functionality is represented by *components*.  
+*Components* are initiated and operate in the framework of the *core*.  
+*Components* can represent
+
+- Mechanistic simulation models (eg, PRZM, PEARL, Macro, Cascade-Toxswa, GUTS, Mastep, Streamcom), typically modelling rather complex processes
+- Data-driven models (eg, [xDrift](../xLandscape/xLandscape-components.md#xdrift))
+- (Geo)data inputs
+- small calculations
+
+The graphic below shows xxx
 
 <img src="../img/xLandscape model building scheme.png" alt="xlandscape" width="1000"/>  
 
@@ -77,7 +93,10 @@ You will read the term ***component*** quite often in the context of *xLandscape
 [*components*](#modules-and-components)  
 early module: [xDrift](../xLandscape/xLandscape-components.md#xdrift).
 
-## Multidimensional Data Store
+## Multidimensional Data Store - *'The Landscape'*
+
+might ask *'what is actually the landscape in your landscape model'*  
+> There is only those data in the data store that is required by the modelling purposes and defined valuable for analysis by the user  
 
 currently, [HDF](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used.  
 
