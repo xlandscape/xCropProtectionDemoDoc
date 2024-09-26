@@ -39,9 +39,16 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 > Given the complexity of real-world systems, hence approaches, together with the range of disciplines needed,  
 > it is no longer advisable, nor justifiable, to try real-world (landscape) modelling in isolation - **Collaboration is the paradigm.**  
 
-### *today -> we need an applicable product*
+### *today - applicable landscape models needed*
 
-[Experiance](#in-what-situation-did-we-start) together with [future directions](#current-developments-and-future-directions) set the scene for making steps towards **a next generation landscape modelling approach:**  
+Today, the **landscape level has been established in pesticide RA** throughout species groups (eg, aquatic, nta, bees, ntp, birds, mammals,endangered species) and global regions. This, either as an explicit RA level (eg, [EFSA Aquatic Guidance](https://www.efsa.europa.eu/en/efsajournal/pub/3290), graphic below) or implicitely as to provide the real-world context for system behavious (eg, population recovery option [EFSA Recovery Option](https://efsa.onlinelibrary.wiley.com/doi/abs/10.2903/j.efsa.2016.4313)). Beyond actual RA, this is accompanied by numerous research activities towards holistic RA in the regulatory scientific community (eg, global conference progams of the Society of Environmental Toxicology and Chemistry, [SETAC](https://www.setac.org/)).  
+> Landscape modelling approaches are needed to address these demands. However, heterogeneous complex approaches for each and every study question are unlikely to succeed in the long run. **An open, modular, and so collaborative approach seems more promising.**  
+
+<img src="../img/efsa aquatic tier4.png" alt="EFSA Aquatic Tier4 RA" width="400"/>  
+
+*[EFSA Aquatic Guidance](https://www.efsa.europa.eu/en/efsajournal/pub/3290) Tier4 landscape risk assessment level*  
+
+[Experiance](#in-what-situation-did-we-start) together with [future directions](#current-developments-and-future-directions) (above) set the scene for making steps towards **a next generation landscape modelling approach:**  
 
 **General requirements and design principles:**  
 
@@ -77,4 +84,4 @@ Todays' demands for modelling systems range from scenario-based integrated lands
 1. The products basically persue an **open source** culture and paradigm. This applies eg, to the Landscape Model *core* [xlandscape](https://github.com/xlandscape) and the majority of *components* and *Landscape Models* (eg, [xAquatic](https://github.com/xlandscape/xAquaticRisk)). However, due to insitutional licence policies some *components* might be **open access**, ie are open for use but without the source code of the actual model (eg, [Cascade-Toxswa](https://github.com/xlandscape/CascadeToxswa-Component)). Of course, the entire Landscape Modelling approach can be used for entirely internal and **private developments**. This allows hybrid Landscape Models for which some functionality can even get patented.  
 1. Last but not least: **imagine** you are about to develop a specific population model, say an amphibian model, for pesticide RA. **Without a modular Landscape Modelling system** you'll need to develop anything outside your model yourself, eg, landscape environmental and agricultural scenarios, PPP use, exposure and efate. **With** such an approach, you can make use of all data and *components* available, add specific needs (eg, a microclimate model) and focus on your key model development. This is what is called *separation of concern*.  
 
-Remark: Intense research and trials to work within existing systems (eg, working within GIS systems, close to big-data spatial databases (eg rasdaman), Almass, OpenMI, and a range of related approaches) all ended up in dead ends for the purposes and needs of our work in environmental risk assessment, risk management and the more generic fields (as outlined above). This is why we indentified the need for own developments.
+>Remark: Intense research and trials to work within existing systems (eg, working within GIS systems, close to big-data spatial databases (eg rasdaman), Almass, OpenMI, and a range of related approaches) all ended up in dead ends for the purposes and needs of our work in environmental risk assessment, risk management and the more generic fields (as outlined above). This is why we indentified the need for own developments.
