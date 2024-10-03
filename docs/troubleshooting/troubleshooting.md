@@ -1,6 +1,6 @@
 # Troubleshooting
 
-This page will cover common error messages, what they mean, and how to resolve them.
+This page covers common error messages, what they mean, and how to resolve them.
 
 
 ## AttributeError
@@ -21,7 +21,7 @@ This error occurs when `Indication` or `Indications` elements are misconfigured.
 
 ``` { .yaml .no-copy }
 FileExistsError: [WinError 183] Cannot create a file when that file already exists:
-'C:\\...\\run\\Rummen-xCP-TestingScenario'
+'C:\\xCropProtection\\run\\Rummen-xCP-TestingScenario'
 ```
 
 **Explanation**:
@@ -33,6 +33,20 @@ A folder with the same name as `SimID` exists in the *\...\run\\* folder.
 - Delete or move the folder to run xCropProtection using that `SimID`.
 - Change the `SimID` value to one that does not already exist in the *\...\run\\* folder.
 
+## FileNotFoundError
+
+``` { .yaml .no-copy}
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\xCropProtection\\run\\T1EJS3N0CON7NRN3.xml'
+```
+
+**Explanation**:
+
+No *run* folder exists in the xCropProtection directory. This usually occurs the first time the repository is cloned from GitHub.
+
+**Possible solutions**:
+
+- Create a new folder with the name run in the root directory of xCropProtection. This should be on the same level as the *model* and *scenario* folders.
+
 ## HDFview error
 In rare cases, opening "AppliedAreas" generated from a large amount of input data may cause HDFView to crash due to its data type. Use *xCP_write_csv.ipynb* to write the data to a csv.
 
@@ -40,7 +54,7 @@ In rare cases, opening "AppliedAreas" generated from a large amount of input dat
 
 ``` { .yaml .no-copy }
 appl_window = self._applicationWindow.get((day, field), ("time/day, space/base_geometry"))
-  File "C:\...\xCropProtection\model\core\components\xCropProtection\distributions.py", line 264, in get
+  File "C:\xCropProtection\model\core\components\xCropProtection\distributions.py", line 264, in get
     return self._value[conv_index]
 KeyError: (730121,)
 ```
