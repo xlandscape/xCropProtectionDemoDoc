@@ -47,7 +47,9 @@ markdown_extensions:
 
 nav:
   - Home: 'index.md'
-  - Scenarios: 'create-scenario.md'
+  - Scenarios:
+    - Create a scenario: 'create-scenario.md'
+    - Rummen: 'scenarios/rummen-scenario.md'
   - Templates:
     - Intro: 'scenarios/templates-intro.md'
     - Simple Scenario: 'scenarios/simple-scenario.md'
