@@ -22,13 +22,11 @@ Field information:
 
 ## Application information
 
+Location of PPM Calendars: *CropProtection\PPMCalendars\Rummen-full*
+
 Application information obtained by surveying apple growers in 2021 was used to paramaterize xCropProtection. An application window of 5 days before and after the source application date was added (e.g., application date of May 16<sup>th</sup> -> application window of May 11<sup>th</sup> - May 21<sup>st</sup>).
 
 This scenario is split into two sub-scenarios: scenario A and scenario B. In scenario A, all applications in the source table map directly to `Application` elements in the PPM Calendars. This means that applications with the same application date in the source table may not actually be applied on the same day. In scenario B, any applications defined with the same application date are added to a tank mix. In scenario B, any products applied on the same day in the source data are applied on the same day in xCropProtection.
-
-Scenario A - (add link to download xml file if not confidential)
-
-Scenario B - (add link to download xml file if not confidential)
 
 The following is an example of the differences between scenario A and scenario B:
 
@@ -97,9 +95,3 @@ The following is an example of the differences between scenario A and scenario B
 ## Results
 
 <img src="../img/rummen-app-rate-type.png" width="50%">
-
-To add if information can be shared:
-
-- Application rate by product (and active substance?)
-- Cumulative loading by product (and active substance?)
-- xToxicLoad results?
