@@ -92,13 +92,16 @@ Example *components* are introduced in section [Components](../xLandscape/xLands
 
 ## Landscape Model Composition
 
-**A composition of *components* and the *core* builds a landscape model.**  
-[Example Landscape Models](../xLandscape/xLandscape-models.md) built using the xLandscape framework are [xAquatic](../xLandscape/xLandscape-models.md#xaquatic-invertebrates), to simulate exposure and effects of aquatic organisms in catchments, or [xOff-Field-Soil](../xLandscape/xLandscape-models.md#xofffieldsoil), to calculate exposure of soil organisms living next to fields. 
+**A composition of *components* and the *core* builds a landscape model.** [Example Landscape Models](../xLandscape/xLandscape-models.md) built are [xAquatic](../xLandscape/xLandscape-models.md#xaquatic-invertebrates), to simulate exposure and effects of aquatic organisms in catchments, [xOff-Field-Soil](../xLandscape/xLandscape-models.md#xofffieldsoil), to calculate exposure of soil organisms living next to fields, or [xPollinator](../xLandscape/xLandscape-models.md#xpollinator) to simulate nectar and pollen occurrence for building bee modelling scenarios.
 
 The graphic below shows the composition of a very simple Landscape Model that inputs a stream network, together with weather data, in order to calculate stream temperature:
 
-- 
-- the Landscape Model is **parameterised using an XML file** (eg, to define the landscape scenario and simulation time period)
+- The model is built using **2 *components***: 'Weather_MARS' inputs (external) weather data (from the EU 'MARS' database) and writes defined data (eg, air temperature, T_air) into the landscape model storage, whereas *component* 'Stream_Temperature' takes T_air from the store and transfers this to an estimated stream temperature (T_stream) using a model.
+- The **blue 'L' represents the xLandscape [*core*](#core)**. The light blue rectancle-shaped background represents the semantically-enriched space of this specific model (eg, T_air is defined with a unit and assigned spatial and temporal scales; T_air is consistantly available to all *components* of the model).
+- The Landscape Model is **parameterised using an XML file** (eg, to define the landscape scenario and simulation time period; grey box)
+- Typical landscape model input data (green box) comprises land use/cover, weather, habitats and pesticide use, yet, depends on the landscape model.
+- The ***Data Storage*** contains all data defined by the landscape model designer, as relevant to the landscape model application (inputs, interim, and model outputs). Thus, the *Data Storage* can be recognised as representing *'the landscape'* from the view of the model purpose. Eg, [xAquatic](../xLandscape/xLandscape-models.md#xaquatic-invertebrates) stores data on land use, weather, hydrology, PPP use, stream exposure and effects on aquatic invertegrates, whereas [xPollinator](../xLandscape/xLandscape-models.md#xpollinator) outputs stores nectar and pollen occurrence by space and time. 
+
 
 <img src="../img/xLandscape model building scheme.png" alt="xlandscape" width="1000"/>  
 
@@ -126,6 +129,9 @@ You will read the term ***component*** quite often in the context of *xLandscape
 early module: [xDrift](../xLandscape/xLandscape-components.md#xdrift).
 
 ## Multidimensional Data Store - *'The Landscape'*
+
+
+represents 'the landscape', ie such data that is defined (by model design and configuration) to be input or generated, representing the landscape information that is inteded to be kept for the model purpose (outcome)  
 
 might ask *'what is actually the landscape in your landscape model'*  
 > There is only those data in the data store that is required by the modelling purposes and defined valuable for analysis by the user  
