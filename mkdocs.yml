@@ -49,6 +49,7 @@ nav:
   - Home: 'index.md'
   - Scenarios:
     - Create a scenario: 'create-scenario.md'
+    - North Rhine-Westphalia: 'scenarios/north-rhine-westphalia.md'
     - Rummen (full): 'scenarios/rummen-scenario.md'
     - Rummen (subset): 'scenarios/rummen-subset.md'
     - Wetterau: 'scenarios/wetterau-scenario.md'
