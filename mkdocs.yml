@@ -77,6 +77,8 @@ nav:
       - Building Components: 'xLandscape/xLandscape-buildingComponents.md'
       - Building Landscape Models: 'xLandscape/xLandscape-buildingModels.md'
     - References: 'xLandscape/xLandscape-references.md'
-  - xToxicLoad: 'xToxicLoad/xToxicLoad-intro.md'
-  
+  - xToxicLoad:
+    - Introduction: 'xToxicLoad/xToxicLoad-intro.md'
+    - Parameterization: 'xToxicLoad/xToxicLoad-parameterization.md'
+    - Output: 'xToxicLoad/xToxicLoad-output.md'
     
