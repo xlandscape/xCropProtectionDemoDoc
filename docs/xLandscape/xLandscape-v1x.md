@@ -98,18 +98,19 @@ The graphic below shows the composition of a very simple Landscape Model that in
 
 - The model is built using **2 *components***: 'Weather_MARS' inputs (external) weather data (from the EU 'MARS' database) and writes defined data (eg, air temperature, T_air) into the landscape model storage, whereas *component* 'Stream_Temperature' takes T_air from the store and transfers this to an estimated stream temperature (T_stream) using a model.
 - The **blue 'L' represents the xLandscape [*core*](#core)**. The light blue rectancle-shaped background represents the semantically-enriched space of this specific model (eg, T_air is defined with a unit and assigned spatial and temporal scales; T_air is consistantly available to all *components* of the model).
-- The Landscape Model is **parameterised using an XML file** (eg, to define the landscape scenario and simulation time period; grey box)
+- The Landscape Model is **parameterised and configured using XML and YAML files** (eg, to define the landscape scenario and simulation time period; grey box)
 - Typical landscape model input data (green box) comprises land use/cover, weather, habitats and pesticide use, yet, depends on the landscape model.
-- The ***Data Storage*** contains all data defined by the landscape model designer, as relevant to the landscape model application (inputs, interim, and model outputs). Thus, the *Data Storage* can be recognised as representing *'the landscape'* from the view of the model purpose. Eg, [xAquatic](../xLandscape/xLandscape-models.md#xaquatic-invertebrates) stores data on land use, weather, hydrology, PPP use, stream exposure and effects on aquatic invertegrates, whereas [xPollinator](../xLandscape/xLandscape-models.md#xpollinator) outputs stores nectar and pollen occurrence by space and time. 
-
+- The ***Data Storage*** contains all data defined by the landscape model designer, as relevant to the landscape model application (inputs, interim, and model outputs). Thus, the *Data Storage* can be recognised as representing *'the landscape'* from the view of the model purpose. Eg, [xAquatic](../xLandscape/xLandscape-models.md#xaquatic-invertebrates) stores data on land use, weather, hydrology, PPP use, stream exposure and effects on aquatic invertegrates, whereas [xPollinator](../xLandscape/xLandscape-models.md#xpollinator) outputs stores nectar and pollen occurrence by space and time. The *Data Storage* is multidimensional. 
 
 <img src="../img/xLandscape model building scheme.png" alt="xlandscape" width="1000"/>  
 
 *Illustration of a simple Landscape Model, built from 2 *components* (Weather_MARS, Stream_Temperature) and the xlandscape core*
 
-
 ### Propagation of Variability
 
+xLandscape follows two approaches to 
+1. Making explicitness (descretisation, eg, )
+1. Variability propagation, using *Probability Density Functions*
 
 <img src="../img/variability propagation 1a.png" alt="Propagation of Variability" width="900"/>  
 
