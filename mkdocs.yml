@@ -55,6 +55,7 @@ nav:
     - Wetterau: 'scenarios/wetterau-scenario.md'
   - Templates:
     - Intro: 'scenarios/templates-intro.md'
+    - Simple Excel Interface: 'xCropProtection-templates/simple-excel-interface.md'
     - Simple Scenario: 'scenarios/simple-scenario.md'
     - Tank Mixes: 'scenarios/tank-mixes.md'
     - Multiple Applications: 'scenarios/multiple-applications.md'
