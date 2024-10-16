@@ -106,11 +106,22 @@ The graphic below shows the composition of a very simple Landscape Model that in
 
 *Illustration of a simple Landscape Model, built from 2 *components* (Weather_MARS, Stream_Temperature) and the xlandscape core*
 
-### Propagation of Variability
+### Propagation of Variability (in preparation)
 
-xLandscape follows two approaches to 
+Taking the protection of species' populations in cultivated landscapes as an example topic for xLandscape, from the use of PPPs in landscapes to the exposure pattern of non-target-organisms many processes and phenomenons come with a range of variabilities (eg, weather conditions, land use/cover dynamics, agricultural management and PPP use, species occurrence and behaviour, etc.).  
+
+xLandscape basically 'resolves' such variabilities by discretisation, ie by making things ***explicit*** (this is, what the suffix 'x' represents). Eg, the actually continuous (simulation) time is discretised into time steps (of any interval, often [day] or [hour]), spatial entities are discretised using resolutions depending on the individual process (eg, [1m2] for local spray-drift exposure, [100m] segments of stream networks).  
+However, *explicitness* alone is not a sufficient means to represent natural variability of phenomenons, events and processes, of natural systems, eg, an *explicit* representation of land use (in space and time) requires that land use is deterministically know for the simulation region and the simulation period (eg use satellite classification). This is often not the case and only general knowledge is available (eg, statistical data and crop cultivation and rotation). Even if full deterministic data is available for a phenomenon (eg, for weather representation by using long-term records) the ***purpose*** of a landscape simulation might require to go beyond actual data and consider situations (eg, extremes) which are not part of an actual record. This is a typical situation in regulatory risk assessment where the *range of conditions* that might happen has to be considered as the (prospective) decision making should cover these.  
+This is where the use of  ***distributions*** come in. (*Probability Density Functions*) 
+
+This ***expliciteness*** is accompanied by introducing ***scales*** (or certain 'units' as synonyms). ***Scales*** 
+applies two approaches to 
 1. Making explicitness (descretisation, eg, )
 1. Variability propagation, using *Probability Density Functions*
+
+
+at a certain location, at a certain point in time,  
+
 
 <img src="../img/variability propagation 1a.png" alt="Propagation of Variability" width="900"/>  
 
