@@ -106,41 +106,30 @@ The graphic below shows the composition of a very simple Landscape Model that in
 
 *Illustration of a simple Landscape Model, built from 2 *components* (Weather_MARS, Stream_Temperature) and the xlandscape core*
 
-### Propagation of Variability (in preparation)
+### Propagation of Variability
 
 Taking the protection of species' populations in cultivated landscapes as an example topic for xLandscape, from the use of PPPs in landscapes to the exposure pattern of non-target-organisms many processes and phenomenons come with a range of variabilities (eg, weather conditions, land use/cover dynamics, agricultural management and PPP use, species occurrence and behaviour, etc.).  
 
 xLandscape basically 'resolves' such variabilities by discretisation, ie by making things ***explicit*** (this is, what the suffix 'x' represents). Eg, the actually continuous (simulation) time is discretised into time steps (of any interval, often [day] or [hour]), spatial entities are discretised using resolutions depending on the individual process (eg, [1m2] for local spray-drift exposure, [100m] segments of stream networks).  
-However, *explicitness* alone is not a sufficient means to represent natural variability of phenomenons, events and processes, of natural systems, eg, an *explicit* representation of land use (in space and time) requires that land use is deterministically know for the simulation region and the simulation period (eg use satellite classification). This is often not the case and only general knowledge is available (eg, statistical data and crop cultivation and rotation). Even if full deterministic data is available for a phenomenon (eg, for weather representation by using long-term records) the ***purpose*** of a landscape simulation might require to go beyond actual data and consider situations (eg, extremes) which are not part of an actual record. This is a typical situation in regulatory risk assessment where the *range of conditions* that might happen has to be considered as the (prospective) decision making should cover these.  
-This is where the use of  ***distributions*** come in. (*Probability Density Functions*) 
-
-This ***expliciteness*** is accompanied by introducing ***scales*** (or certain 'units' as synonyms). ***Scales*** 
-applies two approaches to 
-1. Making explicitness (descretisation, eg, )
-1. Variability propagation, using *Probability Density Functions*
-
-
-at a certain location, at a certain point in time,  
-
+However, *explicitness* alone is not a sufficient means to represent natural variability of phenomenons, events and processes, of natural systems, eg, an *explicit* representation of land use (in space and time) requires that land use is deterministically know for the simulation region and the simulation period (eg use satellite classification). This is often not the case and only general knowledge is available (eg, statistical data and crop cultivation and rotation). Even if full deterministic data is available for a phenomenon (eg, for weather representation by using long-term records) the ***purpose*** of a landscape simulation might require to go beyond actual data and consider situations (eg, extremes) which are not part of an actual record. This is a typical situation in regulatory risk assessment where the *range of conditions* that might happen has to be considered in order for the (prospective) decision making to cover these.  
+This is where the use of ***distributions*** comes in. In xLandscape, variability can be represented as ***Probability Density Functions*** (PDFs). Examples for using PDFs are wind direction distributions, PPP application windows and application rates, local spray-drift depositions in the ([xDrift](../xLandscape/xLandscape-components.md#xdrift)) *component* or drift-filtering by riparian vegetation.  
+The scope of validity of a *PDF* and its elements have to be defined, eg, a weather conditions representing *PDF* might be valid for a certain geographic regions and a certain time period, it's elements might be valid for a certain day. Thus, samples drawn from this *PDF* are associated to the scales [region,day]. Irrespective which *component* asks for weather conditions, the result should be the same for the same region and day, but different for different regions and/or days (corresponding to the random sample of the *PDF*).  
+This mechanism of scale-dependent definition and use of *PDFs* enables to build a **Monte Carlo** approach that **generates naturally occuring pattern of the simulated agro-environmental system**. In other words, **real-world variability comes with pattern**, ie, is not just random (an overly simple, independently sampling Monte Carlo approach would just generate chaotic situations).  
 
 <img src="../img/variability propagation 1a.png" alt="Propagation of Variability" width="900"/>  
 
-*Propagation of landscape system variability to variability of model predictions*
-
-**Real-world variability has structure**, it is not purely random. 
+*Propagation of landscape agro-environmental system variability to variability of model predictions*
 
 <img src="../img/variability propagation 2.png" alt="Propagation of Variability" width="1000"/>  
 
-*Real-world variability has structure*
+*Real-world variability has structure, ie, comes with pattern*
 
+## Components, Modules and Models
 
-## Modules and Components
+You will read the term ***component*** quite often in the context of *xLandscape*. xLandscape is a modular landscape modelling framework that architecture is derived from *Component-Based Software Engineering (CBSE)*. This is, why the elements of a modular xLandscape model are called [*components*](#modules-and-components) ([xDrift](../xLandscape/xLandscape-components.md#xdrift) is an example for a frequently used *component*).  
+*Components* contain *moduls*. *Modules* represent the software that provides the actual functionality of a *component*, typically a *model* (eg, an exposure or environmental fate model).  
 
-You will read the term ***component*** quite often in the context of *xLandscape* and so *xCP*.  = Mo-Based Software
-[*components*](#modules-and-components)  
-early module: [xDrift](../xLandscape/xLandscape-components.md#xdrift).
-
-## Multidimensional Data Store - *'The Landscape'*
+## Multidimensional Data Store - *'The Landscape'* (in preparation)
 
 
 represents 'the landscape', ie such data that is defined (by model design and configuration) to be input or generated, representing the landscape information that is inteded to be kept for the model purpose (outcome)  
