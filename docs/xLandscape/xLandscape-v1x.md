@@ -27,8 +27,7 @@ The first major release (version 1.x) implements key goals as summarised the [In
 
 ## Applicability
 
-not limited to its original key purpose for RA xxx
-any spatiotemporally phenomenon, exposre, effects, bee forage, environmental data, PPP use
+The application of xLandscape framework is not limited to its original key purpose for RA, ie to generate model results for RA endpoints (exposure, effects). xLandscape can be employed for modelling quite a large range of spatiotemporally phenomenon, eg, to model the spatiotemporally occurrence of bee forage (nectar, pollen), the use of pesticides in cultivated landscapes, the toxic loads of chemicals in landscapes, etc.
 
 ## Programming Language
 
@@ -47,6 +46,7 @@ Key *core* functionality and characteristics:
 1. The *core* provides the **framework for a 'semantic context'** that enables operating with explicit entities (eg, scales) and assures inner landscape model data **consistency**
 1. The *core* provides the **framework for operating with multidimensional data**
 1. The *core* provides functionality for landscape **simulation control, status observer, ressources and logging**
+1. The *core* provides functionality for reading the ***parameterisation*** and ***configuration*** of a Landscape Model as defined by the user
 
 This is illustrated as the blue **'L'** together with the light blue background in xLandscape model schemes:  
 
@@ -54,26 +54,73 @@ This is illustrated as the blue **'L'** together with the light blue background 
 
 *xlandscape core illustration*
 
-## Core & Components
+## Components
 
-Essentially all functionality is represented by *components*.  
-*Components* are initiated and operate in the framework of the *core*.  
-*Components* can represent
+Essentially all **functionality is represented by *components***.  
+*Components* are initiated by and operated in the framework of the *core*. A composition of the *core* and *components* make a Landscape Model.  
+*Components* can contain and represent basically any simulation model, eg,
 
-- Mechanistic simulation models (eg, PRZM, PEARL, Macro, Cascade-Toxswa, GUTS, Mastep, Streamcom), typically modelling rather complex processes
-- Data-driven models (eg, [xDrift](../xLandscape/xLandscape-components.md#xdrift))
-- (Geo)data inputs
-- small calculations
+- (Large) **Mechanistic models**, eg, simulating substance exposure, fate and effects (eg, PRZM, PEARL, Macro, Cascade-Toxswa, GUTS, Mastep, Streamcom)
+- **Data-driven models**, eg, representing variability of spray-drift deposition (eg, [xDrift](../xLandscape/xLandscape-components.md#xdrift), AgDrift), results from ecotoxicologial studies (eg, Dose-response, Species Sensitivity Distributions, Toxic-Load), or lookup tables (eg, bee forage production by vegetation and time)
+- **Hybrid models**, eg, for simulating residues of substances in plants and commodities
+- Models simulating **agricultural management**, eg, **PPP use** (eg, [xCropProtection](../xLandscape/xLandscape-components.md#xcropprotection))
+- **Small calculations**, eg for modelling specific environmental conditions (eg, sunshine hours, water temperature)
+- **(Geo)data inputs**: external data is imported into a Landscape Model using specific *components*, eg, weather, land use, or soil data. Besides such explicit data inputs. This applies, eg, when complex mechanistic models bring some default settings with them which are loaded using text-files.
+- **Analysis**: when a simulation is done it might be nice to see some analysis automatically. So, *components* can be build and integrated into a Landscape Model for analysis purposes
 
-The graphic below shows xxx
+> Colloquially, we might call the pieces of a modular Landscape Model *modules*, eg say *'xDrift is a module in the xAquatic landscape model'*, or *'in which repository can I find the module for PPP use?'*.  
+However, following the terminology of Component-Based-Software-Engineering (CBSE), we need to be more precise and talk about *components*. A *component* contains a *model* which is also called a *module*. *Models* (*modules*) represent the actual functionality.  
+A *model* (*module*) becomes a xLandscape *component* when it is wrapped using the xLandscape *core* framework.
+
+The graphic below shows the design of a *component*:  
+
+<img src="../img/Component - stream temperature.png" alt="xlandscape" width="300"/>  
+
+*Component 'Stream_Temperature' representing a model to estimate stream temperature (T_stream) from air temperature (T_air). (a blue background indicates connection to an internal source (semantically enriched), whereas a grey background represents connection to external sources; the diamond represents the actual model ('module'))*
+
+A *component* has the following elements: 
+
+1. **Input**: the data input to be processed by the *component*. Inputs can be connected to external data sources (eg, files, data bases, APIs) (grey background) or to the internal *multidimensional store* (blue background)
+1. **Init/Control**: inputs for the initialisation and control of a *component* and its *module* (*model*). Init/Control can come from  external data sources (eg, xml/text files) (grey background) or from the internal *multidimensional store* (blue background)
+1. **Output**: the data output of a *component*. Outputs are typically written to the internal *multidimensional store* (blue background) yet, can also be written to external data storages (eg, Relational Database Management Systems, files, cloud storage) (grey background)
+1. **Module (model)**: the actual *model* (*module*) that provides the functionality, ie, conducts the simulation (blue diamond element)
+  
+All internal data (information) is semantically-enriched (see [Semantics](#semantics)).  
+*Components* typically have multiple in- and outputs.  
+Example *components* are introduced in section [Components](../xLandscape/xLandscape-components.md).  
+
+
+## Landscape Model Composition
+
+**A composition of *components* and the *core* builds a landscape model.** [Example Landscape Models](../xLandscape/xLandscape-models.md) built are [xAquatic](../xLandscape/xLandscape-models.md#xaquatic-invertebrates), to simulate exposure and effects of aquatic organisms in catchments, [xOff-Field-Soil](../xLandscape/xLandscape-models.md#xofffieldsoil), to calculate exposure of soil organisms living next to fields, or [xPollinator](../xLandscape/xLandscape-models.md#xpollinator) to simulate nectar and pollen occurrence for building bee modelling scenarios.
+
+The graphic below shows the composition of a very simple Landscape Model that inputs a stream network, together with weather data, in order to calculate stream temperature:
+
+- The model is built using **2 *components***: 'Weather_MARS' inputs (external) weather data (from the EU 'MARS' database) and writes defined data (eg, air temperature, T_air) into the landscape model storage, whereas *component* 'Stream_Temperature' takes T_air from the store and transfers this to an estimated stream temperature (T_stream) using a model.
+- The **blue 'L' represents the xLandscape [*core*](#core)**. The light blue rectancle-shaped background represents the semantically-enriched space of this specific model (eg, T_air is defined with a unit and assigned spatial and temporal scales; T_air is consistantly available to all *components* of the model).
+- The Landscape Model is **parameterised and configured using XML and YAML files** (eg, to define the landscape scenario and simulation time period; grey box)
+- Typical landscape model input data (green box) comprises land use/cover, weather, habitats and pesticide use, yet, depends on the landscape model.
+- The ***Data Storage*** contains all data defined by the landscape model designer, as relevant to the landscape model application (inputs, interim, and model outputs). Thus, the *Data Storage* can be recognised as representing *'the landscape'* from the view of the model purpose. Eg, [xAquatic](../xLandscape/xLandscape-models.md#xaquatic-invertebrates) stores data on land use, weather, hydrology, PPP use, stream exposure and effects on aquatic invertegrates, whereas [xPollinator](../xLandscape/xLandscape-models.md#xpollinator) outputs stores nectar and pollen occurrence by space and time. The *Data Storage* is multidimensional. 
 
 <img src="../img/xLandscape model building scheme.png" alt="xlandscape" width="1000"/>  
 
-*xlandscape xxx*
+*Illustration of a simple Landscape Model, built from 2 *components* (Weather_MARS, Stream_Temperature) and the xlandscape core*
+
+### Propagation of Variability (in preparation)
+
+Taking the protection of species' populations in cultivated landscapes as an example topic for xLandscape, from the use of PPPs in landscapes to the exposure pattern of non-target-organisms many processes and phenomenons come with a range of variabilities (eg, weather conditions, land use/cover dynamics, agricultural management and PPP use, species occurrence and behaviour, etc.).  
+
+xLandscape basically 'resolves' such variabilities by discretisation, ie by making things ***explicit*** (this is, what the suffix 'x' represents). Eg, the actually continuous (simulation) time is discretised into time steps (of any interval, often [day] or [hour]), spatial entities are discretised using resolutions depending on the individual process (eg, [1m2] for local spray-drift exposure, [100m] segments of stream networks).  
+However, *explicitness* alone is not a sufficient means to represent natural variability of phenomenons, events and processes, of natural systems, eg, an *explicit* representation of land use (in space and time) requires that land use is deterministically know for the simulation region and the simulation period (eg use satellite classification). This is often not the case and only general knowledge is available (eg, statistical data and crop cultivation and rotation). Even if full deterministic data is available for a phenomenon (eg, for weather representation by using long-term records) the ***purpose*** of a landscape simulation might require to go beyond actual data and consider situations (eg, extremes) which are not part of an actual record. This is a typical situation in regulatory risk assessment where the *range of conditions* that might happen has to be considered as the (prospective) decision making should cover these.  
+This is where the use of  ***distributions*** come in. (*Probability Density Functions*) 
+
+This ***expliciteness*** is accompanied by introducing ***scales*** (or certain 'units' as synonyms). ***Scales*** 
+applies two approaches to 
+1. Making explicitness (descretisation, eg, )
+1. Variability propagation, using *Probability Density Functions*
 
 
-
-### Propagation of Variability
+at a certain location, at a certain point in time,  
 
 
 <img src="../img/variability propagation 1a.png" alt="Propagation of Variability" width="900"/>  
@@ -95,10 +142,19 @@ early module: [xDrift](../xLandscape/xLandscape-components.md#xdrift).
 
 ## Multidimensional Data Store - *'The Landscape'*
 
+
+represents 'the landscape', ie such data that is defined (by model design and configuration) to be input or generated, representing the landscape information that is inteded to be kept for the model purpose (outcome)  
+
 might ask *'what is actually the landscape in your landscape model'*  
 > There is only those data in the data store that is required by the modelling purposes and defined valuable for analysis by the user  
 
+the *multidimensional store* provides the landscape 'status' (eg, including the parameterisation and configuration)
+
 currently, [HDF](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used.  
+
+<img src="../img/multidimensional data store HDF.png" alt="Multidimensional Data Store" width="880"/>  
+
+*Multidimensional Data Store xxx*
 
 ## Sequential Processing
 

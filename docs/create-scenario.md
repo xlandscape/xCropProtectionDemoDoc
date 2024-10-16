@@ -11,16 +11,13 @@ In an xCP parameterisation, PPP use are typically defined related to land use ty
 Note: This section provides an introduction to xCP scenarios on a technical level with the intention to enable colleagues with technical experiance to build scenarios and to use xCP. However, we plan to develop a **graphical user interface** (GUI) that allows any user to intuitively build xCP scenarios. 
 
 ## Example Scenarios
-The [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main) models is packaged with example scenarios located in *\xCropProtection\scenario\\*. Example scenarios are of static land use types.  
+The [xCropProtectionDemo](https://github.com/xlandscape/xCropProtectionDemo/tree/main) model is packaged with example scenarios located in the *scenario* folder. Example scenarios are of static land use types.  
 
-- A landscape scenario in Rummen, Belgium (*Rummen-full*):  
-<img src="img/rummen-full-geo.jpg" width="400" >  
+- A scenario in Rummen, Belgium ([*Rummen-full*](scenarios/rummen-scenario.md))
 
-- A subset of the Rummen-full scenario in Rummen, Belgium (*Rummen-xCP-TestingScenario*) which contains 1,000 fields with land use (LULC) codes equally split between 222 and 444:  
-<img src="img/rummen-subset-geo.png" width="400" >  
+- A subset of the Rummen-full scenario in Rummen, Belgium ([*Rummen-xCP-TestingScenario*](scenarios/rummen-subset.md))
 
-- A small scenario located in the Wetterau (Hessian, Germany) (*Wetterau-scenario-subset*)  
-<img src="img/wetterau-geo.jpg" width="350" >  
+- A small scenario located in the Wetterau (Hessian, Germany) ([*Wetterau-scenario-subset*](scenarios/wetterau-scenario.md))  
 
 
 ## Custom Scenarios

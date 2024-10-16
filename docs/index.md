@@ -6,6 +6,7 @@ Welcome to the xCropProtection (xCP) documentation. This documentation provides 
 
 Chemical Crop Protection is under scientific and public debate. There seems broad concensus that chemical crop protection will have to be more targeted and generally reduced in the future. In this context also well established risk assessment principles and schemes are questioned.  
 In context of these developments, today already specific risk assessment and risk management questions come up which require operational instruments to model real-world chemical plant protection and its environmental impact, eg., 
+
 - **Holistic view to risk**, multiple stressors analysis, eg, bee risk assessment (honey bee, wild bees, pollinators, systems-based approach, [EFSA, Bee Guidance](https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2021.6607)) 
 - Risk Assessment **Recovery Option** ([EFSA, Aquatic Guidance](https://www.efsa.europa.eu/en/efsajournal/pub/3290)) 
 - **Environmental Impact Reduction** (EIR), eg, *what if* analysis, assessment and documentation of real-world EIR by new products and digital environmental safety solutions 

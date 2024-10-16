@@ -47,7 +47,12 @@ markdown_extensions:
 
 nav:
   - Home: 'index.md'
-  - Scenarios: 'create-scenario.md'
+  - Scenarios:
+    - Create a scenario: 'create-scenario.md'
+    - North Rhine-Westphalia: 'scenarios/north-rhine-westphalia.md'
+    - Rummen (full): 'scenarios/rummen-scenario.md'
+    - Rummen (subset): 'scenarios/rummen-subset.md'
+    - Wetterau: 'scenarios/wetterau-scenario.md'
   - Templates:
     - Intro: 'scenarios/templates-intro.md'
     - Simple Scenario: 'scenarios/simple-scenario.md'
@@ -72,4 +77,8 @@ nav:
       - Building Components: 'xLandscape/xLandscape-buildingComponents.md'
       - Building Landscape Models: 'xLandscape/xLandscape-buildingModels.md'
     - References: 'xLandscape/xLandscape-references.md'
+  - xToxicLoad:
+    - Introduction: 'xToxicLoad/xToxicLoad-intro.md'
+    - Parameterization: 'xToxicLoad/xToxicLoad-parameterization.md'
+    - Output: 'xToxicLoad/xToxicLoad-output.md'
     
