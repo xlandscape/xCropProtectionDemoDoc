@@ -131,6 +131,8 @@ You will read the term ***component*** quite often in the context of *xLandscape
 
 ## Multidimensional Data Store - *'The Landscape'* (in preparation)
 
+Explicit modelling of a phenomenon like PPP use in space and time makes a 3-dimensional model. A multidimensional landscape model is built when more than a single phenomenon is modelled (eg, exposure of different compartments, multiple PPP uses, effects of different species).  
+
 
 represents 'the landscape', ie such data that is defined (by model design and configuration) to be input or generated, representing the landscape information that is inteded to be kept for the model purpose (outcome)  
 
