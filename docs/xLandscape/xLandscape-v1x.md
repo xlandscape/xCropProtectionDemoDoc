@@ -129,33 +129,32 @@ This mechanism of scale-dependent definition and use of *PDFs* enables to build 
 You will read the term ***component*** quite often in the context of *xLandscape*. xLandscape is a modular landscape modelling framework that architecture is derived from *Component-Based Software Engineering (CBSE)*. This is, why the elements of a modular xLandscape model are called [*components*](#modules-and-components) ([xDrift](../xLandscape/xLandscape-components.md#xdrift) is an example for a frequently used *component*).  
 *Components* contain *moduls*. *Modules* represent the software that provides the actual functionality of a *component*, typically a *model* (eg, an exposure or environmental fate model).  
 
-## Multidimensional Data Store - *'The Landscape'* (in preparation)
+## Multidimensional Data Store
 
-Explicit modelling of a phenomenon like PPP use in space and time makes a 3-dimensional model. A multidimensional landscape model is built when more than a single phenomenon is modelled (eg, exposure of different compartments, multiple PPP uses, effects of different species).  
-
-
-represents 'the landscape', ie such data that is defined (by model design and configuration) to be input or generated, representing the landscape information that is inteded to be kept for the model purpose (outcome)  
-
-might ask *'what is actually the landscape in your landscape model'*  
-> There is only those data in the data store that is required by the modelling purposes and defined valuable for analysis by the user  
-
-the *multidimensional store* provides the landscape 'status' (eg, including the parameterisation and configuration)
-
-currently, [HDF](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used.  
+Landscape models based on xLandscape is at minimum 3-dimensional (space, time, modelled value). Typically, landscape modelling is using and interested in multiple values in space and time (eg, exposure of different compartments, multiple PPP uses, effects of different species), which makes it a **multidimensional landscape model**.  
+Corresponding **multidimentsional data is stored using a multidimensional data store**. At present, [**HDF**](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used. All landscape model data as defined by the model designer is stored in an *HDF* store (basically, the in- and outputs of *components*). Data in the store can come in independent resolutions (eg, PPP use might be represented by the spatial scale *field*, whereas local exposure of off-field areas might be calculated and stored by m2 as spatial scale). The same applies to any other dimension and scale.  
+As the multidimensional store contains the data relevant to the specific landscape model, it represents *'the landscape'* of the model. Thus, *'the landscape'* is built of such data/information that is defined by model design (and configuration). In particular, the *store* contains the actual model outcome, yet, also any other data is kept as defined by the model designer that might be of interest for the analysis.  
+At present, a single data store is being used. This, and the technology [*HDF*](xLandscape/xLandscape-intro.md#multidimensional-data-store) can be adapted according to future needs.  
 
 <img src="../img/multidimensional data store HDF.png" alt="Multidimensional Data Store" width="880"/>  
 
-*Multidimensional Data Store xxx*
+*Multidimensional Data Store is implemented in the xAquatic landscape model*
+
+## Relational Data Representation
+
+With the key aim to facilitate model outcome analysis using common data access technologies, a *component* (*xSQLite*) is available that exports defined data from the *HDF* to *SQLite* database. Further data exports are under development.  
 
 ## Sequential Processing
 
-At version 1.x, xLandscape has a linear processing sequence
+At version 1.x, xLandscape has a linear processing sequence. Eg, in a given (or modelled) land use the farmer applies PPPs. These PPPs cause exposure which is subject to substance environmental fate (eg, degradation, distribution). The exposure might cause effects to non-target-organisms. This sequence matches natural causality in a majority of landscape modelling applications, in particular in pesticide risk assessment. However, future demands for landscape modelling might lead to increased autonomy of components' operation.  
+This sequence is defined in the model configuration file (currently the *mc.xml*) in the landscape model design phase.  
+Thus, there are no feedback loops from subsequent *components* to predecessors.  
 
 <img src="../img/xAquatic linear processing sequence.png" alt="xAquatic" width="900"/>  
 
-*Example sequential processing in xAquatic (status date: xAquatic 2022)*
+*Example sequential processing in xAquatic (2022)*
 
-## Semantics
+## Semantics (in preparation)
 
 ## Model Input (Geo)Data
 
