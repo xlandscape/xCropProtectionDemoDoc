@@ -1,0 +1,69 @@
+﻿Survey crop name,Crop map LULC code,Crop map LULC description
+Apple,4003,Orchard
+Apples / only Herbicides,4003,Orchard
+Apples / without Herbicides,4003,Orchard
+Asparagus,1603,Vegetables
+"Barley, Spring",1201,Spring barley
+"Barley, spring -seed treatment",1201,Spring barley
+"Barley, Winter",1102,Winter barley
+"Barley, winter-seed treatment",1102,Winter barley
+Broccoli,1603,Vegetables
+Cauliflower,1603,Vegetables
+Cherries in general,4003,Orchard
+Field beans,1612,Broad beans
+Field peas,1611,Peas
+Hop,4002,Hops
+Hop / only hebicides,4002,Hops
+Hop / without Herbicides,4002,Hops
+litter meadow,200,Permanent grassland
+litter meadow - old version,200,Permanent grassland
+Lupins,1613,Lupine
+Maize,1300,Maize
+meadow,200,Permanent grassland
+meadow - old version,200,Permanent grassland
+non perman. grassl.old version,3002,Other areas
+non permanent grassland,3002,Other areas
+"Oats, Spring",1202,Oat
+"Oats, spring-seed treatment",1202,Oat
+pasture,1602,Cultivated grassland
+pasture - old version,1602,Cultivated grassland
+pasture for cutt.-old version,1602,Cultivated grassland
+pasture for cutting,1602,Cultivated grassland
+Pears,4003,Orchard
+Pears / only Herbicides,4003,Orchard
+Pears / without Herbicides,4003,Orchard
+Permanent grassland,200,Permanent grassland
+Plums,4003,Orchard
+Plums / only Herbicides,4003,Orchard
+Plums / without Herbicides,4003,Orchard
+Potatoes,1401,Potato
+Potatoes-seed treatment,1401,Potato
+"Rape, Spring",1501,Rapeseed
+"Rape, Winter",1501,Rapeseed
+Red cabbage,1603,Vegetables
+Rough grazing,1602,Cultivated grassland
+rough grazing - old version,1602,Cultivated grassland
+"Rye, Winter",1103,Winter rye
+"Rye, winter-seed treatment",1103,Winter rye
+Savoy cabbage,1603,Vegetables
+Sour cherries,4003,Orchard
+Sour cherries/only Herbicides,4003,Orchard
+Sour cherries/without Herbic,4003,Orchard
+Strawberries,1603,Vegetables
+Sugar beets,1402,Sugar beet
+Sunflowers,1502,Sunflower
+Sweet cherries,4003,Orchard
+Sweet cherries/only Herbicides,4003,Orchard
+Sweet cherries/without Herbic,4003,Orchard
+"Triticale, Winter",1101,Winter wheat
+"Triticale, winter-seed treatm.",1101,Winter wheat
+Vegetables,1603,Vegetables
+Vine,4001,Grapevine
+Vine / only Herbicides,4001,Grapevine
+Vine / without Herbicides,4001,Grapevine
+"Wheat, Spring",1201,Spring barley
+"Wheat, spring-seed treatment",1201,Spring barley
+"Wheat, Winter",1101,Winter wheat
+"Wheat, winter-seed treatment",1101,Winter wheat
+White cabbage,1603,Vegetables
+"X Wheat, spring/incl. Glyphos.",1201,Spring barley
