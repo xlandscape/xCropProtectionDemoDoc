@@ -156,6 +156,14 @@ Thus, there are no feedback loops from subsequent *components* to predecessors.
 
 ## Semantics (in preparation)
 
+When building larger models from individual *components*, these *components* need to 'understand' each other, ie, the **meaning of values** exchanged in inputs and outputs of *components* need to be clearly described.  
+The goal in xLandscape is that *components* 'understand' each other on a machine-level, ie, without any human interference. This level of semantic representation can be reached using ***ontologies***.  
+However, the implementation towards this goal is stepwise: 
+1. documentation; **values have units**; metadata; in a design phase, where developer communicate.
+1. scales
+1. ontolgies
+
+
 ## Model Input (Geo)Data
 
 ## Analysis
