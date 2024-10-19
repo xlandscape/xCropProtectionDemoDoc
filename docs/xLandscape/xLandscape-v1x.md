@@ -154,17 +154,20 @@ Thus, there are no feedback loops from subsequent *components* to predecessors.
 
 *Example sequential processing in xAquatic (2022)*
 
-## Semantics (in preparation)
+## Semantics
 
-When building larger models from individual *components*, these *components* need to 'understand' each other, ie, the **meaning of values** exchanged in inputs and outputs of *components* need to be clearly described.  
+When building larger models from individual *components*, these *components* need to have a correct 'understanding' of the data/information they exchange. The **meaning of values** exchanged in inputs and outputs of *components* need to be clearly described.  
 The goal in xLandscape is that *components* 'understand' each other on a machine-level, ie, without any human interference. This level of semantic representation can be reached using ***ontologies***.  
-However, the implementation towards this goal is stepwise: 
-1. documentation; **values have units**; metadata; in a design phase, where developer communicate.
-1. scales
-1. ontolgies
+In any case, data/information need to be sufficiently documented and described (metadata).  
 
+The implementation towards this goal is stepwise:
+- Current version: **values have units**, **explicit scales**; in the landscape model design phase, module developer might need to communicate to clarify semantics.
+- Next: apply **ontolgies**
 
-## Model Input (Geo)Data
+## Model Input (Geo)Data (in preparation)
+
+Input data is specific to the actual landscape model built with the xLandscape framework. can come in any format. 
+semantically enriched 
 
 ## Analysis
 
@@ -186,3 +189,8 @@ However, the implementation towards this goal is stepwise:
 [Today-need for a model]: ../xLandscape/xLandscape-intro.md#today---applicable-landscape-models-needed
 
 ## Technical Implementation
+
+The xLandscape core is written in Python, hence, building *components* is done in Python as well.  
+The actual *modules*, ie, the models within *components* that provide the actual modelling functionality of a *component* can be written in any language.  
+
+Code documentation can be found in the corresponding Github repository (eg, https://github.com/xlandscape).
