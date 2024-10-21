@@ -184,7 +184,7 @@ Jupyter notebooks (using Python) are used as a means for data analysis. Template
 ## Development and User Level
 
 Typically, landscape models developed built using the xLandscape framework address an expert user level, like any other model used in the regulatory scientific field (eg, FOCUS exposure models, effect models).  
-However, irrespective of their complexity, these landscape models can be operated in the background (eg, on a back-end server) and only their key outcome displayed or integrated at a user front-end level (like a simple weather forecast is derived from complex weather models). 
+However, irrespective of their complexity, these landscape models can be operated in the background (eg, on a back-end server) and only their key outcome displayed or integrated at a user front-end level (like a simple weather forecast is derived from complex weather models).
 
 Differentiation of developer levels are shown in the graphic below.
 
