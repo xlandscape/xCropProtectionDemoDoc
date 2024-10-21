@@ -156,17 +156,17 @@ Thus, there are no feedback loops from subsequent *components* to predecessors.
 
 ## Semantics
 
-When building larger models from individual *components*, these *components* need to have a correct 'understanding' of the data/information they exchange. The **meaning of values** exchanged in inputs and outputs of *components* need to be clearly described.  
-The goal in xLandscape is that *components* 'understand' each other on a machine-level, ie, without any human interference. This level of semantic representation can be reached using ***ontologies***.  
+When building larger models from individual *components*, these *components* need to have a correct understanding of the data/information they exchange. The **meaning of values** exchanged in inputs and outputs of *components* need to be clearly described.  
+The goal in xLandscape is that *components* understand each other on a machine-level, ie, without any human interference. This level of semantic representation can be reached using ***ontologies***.  
 In any case, data/information need to be sufficiently documented and described (metadata).  
 
 The implementation towards this goal is stepwise:
-- Current version: **values have units**, **explicit scales**; in the landscape model design phase, module developer might need to communicate to clarify semantics.
-- Next: apply **ontolgies**
+- Current version: **values have units**, **explicit scales**; in the landscape model design phase, module developer might need to communicate to clarify semantics (in addition to proper use of metadata).
+- Next: apply **ontolgies** (eg, using RDF format)
 
 ## Model Input (Geo)Data
 
-Input data is specific to the actual landscape model built with the xLandscape framework. Basically, input data are read by individual *components* and transferred into the [Multidimensional Store](../xLandscape/xLandscape-v1x.md#multidimensional-data-store). In this process the data get's semantically enriched. All *components* then **consistently** use the same data, eg, environmental or landuse data. 
+Input data is specific to the actual landscape model built with the xLandscape framework. Basically, input data are read by individual *components* and transferred into the [Multidimensional Store](../xLandscape/xLandscape-v1x.md#multidimensional-data-store). In this process the data get's semantically enriched. All *components* then **consistently** use the same data, eg, environmental or landuse data.  
 Data typically come in their native format, eg, geodata as shapefiles, weather data as textfiles or database tables, etc.  
 
 ## Model Output
@@ -190,9 +190,7 @@ Differentiation of developer levels are shown in the graphic below.
 
 <img src="../img/development and user level.png" alt="Development and User Levels" width="950"/>  
 
-
 *Development and User Levels*
-
 
 [Today-need for a model]: ../xLandscape/xLandscape-intro.md#today---applicable-landscape-models-needed
 
