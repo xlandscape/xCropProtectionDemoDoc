@@ -1,4 +1,4 @@
-# Version 1.x
+# Version 1 - Summary
 
 The first major release (version 1.x) implements key goals as summarised the [Introduction][Today-need for a model]. The design is based on *Component-Base-Software-Engineering* (CBSE). So, xLandscape is not a model but a framework to build models, with a core functionality for numeric, multidimensional landscape modelling.  
 
@@ -154,27 +154,51 @@ Thus, there are no feedback loops from subsequent *components* to predecessors.
 
 *Example sequential processing in xAquatic (2022)*
 
-## Semantics (in preparation)
+## Semantics
+
+When building larger models from individual *components*, these *components* need to have a correct 'understanding' of the data/information they exchange. The **meaning of values** exchanged in inputs and outputs of *components* need to be clearly described.  
+The goal in xLandscape is that *components* 'understand' each other on a machine-level, ie, without any human interference. This level of semantic representation can be reached using ***ontologies***.  
+In any case, data/information need to be sufficiently documented and described (metadata).  
+
+The implementation towards this goal is stepwise:
+- Current version: **values have units**, **explicit scales**; in the landscape model design phase, module developer might need to communicate to clarify semantics.
+- Next: apply **ontolgies**
 
 ## Model Input (Geo)Data
 
+Input data is specific to the actual landscape model built with the xLandscape framework. Basically, input data are read by individual *components* and transferred into the [Multidimensional Store](../xLandscape/xLandscape-v1x.md#multidimensional-data-store). In this process the data get's semantically enriched. All *components* then **consistently** use the same data, eg, environmental or landuse data. 
+Data typically come in their native format, eg, geodata as shapefiles, weather data as textfiles or database tables, etc.  
+
+## Model Output
+
+At present, modelling outcome of landscape models built using the xLandscape framework are stored in a (multidimensional) [**HDF Store**](../xLandscape/xLandscape-v1x.md#multidimensional-data-store). Common data analysis software and programming languages provide interfaces to HDF.  
+In addition, *components* are available and being developed that enable export of data that resides in the HDF store to common data formates (eg, SQLite, other relational databases, csv, or excel).
+
 ## Analysis
 
-### Jupyter notebooks
+Landscape model outcome can be analysed using common analysis software package or own developed processes.  
+Typically, landscape models built on the basis of xLandscape contain *analysis components* that process raw model outcome and provide first insights into the results of an *experiment*.  
 
-### Dashboards
-
-### GIS
+Jupyter notebooks (using Python) are used as a means for data analysis. Templates are provided in corresponding [Github](https://github.com/xlandscape) repositories. Dashboards provide an ideal means to derive insights.
 
 ## Development and User Level
 
+Typically, landscape models developed built using the xLandscape framework address an expert user level, like any other model used in the regulatory scientific field (eg, FOCUS exposure models, effect models).  
+However, irrespective of their complexity, these landscape models can be operated in the background (eg, on a back-end server) and only their key outcome displayed or integrated at a user front-end level (like a simple weather forecast is derived from complex weather models).
+
+Differentiation of developer levels are shown in the graphic below.
 
 <img src="../img/development and user level.png" alt="Development and User Levels" width="950"/>  
 
 
-*Development and User Levels (status date: 2022)*
+*Development and User Levels*
 
 
 [Today-need for a model]: ../xLandscape/xLandscape-intro.md#today---applicable-landscape-models-needed
 
 ## Technical Implementation
+
+The xLandscape core is written in Python, hence, building *components* is done in Python as well.  
+The actual *modules*, ie, the models within *components* that provide the actual modelling functionality of a *component* can be written in any language.  
+
+Code documentation can be found in the corresponding Github repository (eg, https://github.com/xlandscape).
