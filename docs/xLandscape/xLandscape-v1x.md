@@ -1,4 +1,4 @@
-# Version 1.x
+# Version 1 - Summary
 
 The first major release (version 1.x) implements key goals as summarised the [Introduction][Today-need for a model]. The design is based on *Component-Base-Software-Engineering* (CBSE). So, xLandscape is not a model but a framework to build models, with a core functionality for numeric, multidimensional landscape modelling.  
 
@@ -106,85 +106,99 @@ The graphic below shows the composition of a very simple Landscape Model that in
 
 *Illustration of a simple Landscape Model, built from 2 *components* (Weather_MARS, Stream_Temperature) and the xlandscape core*
 
-### Propagation of Variability (in preparation)
+### Propagation of Variability
 
 Taking the protection of species' populations in cultivated landscapes as an example topic for xLandscape, from the use of PPPs in landscapes to the exposure pattern of non-target-organisms many processes and phenomenons come with a range of variabilities (eg, weather conditions, land use/cover dynamics, agricultural management and PPP use, species occurrence and behaviour, etc.).  
 
 xLandscape basically 'resolves' such variabilities by discretisation, ie by making things ***explicit*** (this is, what the suffix 'x' represents). Eg, the actually continuous (simulation) time is discretised into time steps (of any interval, often [day] or [hour]), spatial entities are discretised using resolutions depending on the individual process (eg, [1m2] for local spray-drift exposure, [100m] segments of stream networks).  
-However, *explicitness* alone is not a sufficient means to represent natural variability of phenomenons, events and processes, of natural systems, eg, an *explicit* representation of land use (in space and time) requires that land use is deterministically know for the simulation region and the simulation period (eg use satellite classification). This is often not the case and only general knowledge is available (eg, statistical data and crop cultivation and rotation). Even if full deterministic data is available for a phenomenon (eg, for weather representation by using long-term records) the ***purpose*** of a landscape simulation might require to go beyond actual data and consider situations (eg, extremes) which are not part of an actual record. This is a typical situation in regulatory risk assessment where the *range of conditions* that might happen has to be considered as the (prospective) decision making should cover these.  
-This is where the use of  ***distributions*** come in. (*Probability Density Functions*) 
-
-This ***expliciteness*** is accompanied by introducing ***scales*** (or certain 'units' as synonyms). ***Scales*** 
-applies two approaches to 
-1. Making explicitness (descretisation, eg, )
-1. Variability propagation, using *Probability Density Functions*
-
-
-at a certain location, at a certain point in time,  
-
+However, *explicitness* alone is not a sufficient means to represent natural variability of phenomenons, events and processes, of natural systems, eg, an *explicit* representation of land use (in space and time) requires that land use is deterministically know for the simulation region and the simulation period (eg use satellite classification). This is often not the case and only general knowledge is available (eg, statistical data and crop cultivation and rotation). Even if full deterministic data is available for a phenomenon (eg, for weather representation by using long-term records) the ***purpose*** of a landscape simulation might require to go beyond actual data and consider situations (eg, extremes) which are not part of an actual record. This is a typical situation in regulatory risk assessment where the *range of conditions* that might happen has to be considered in order for the (prospective) decision making to cover these.  
+This is where the use of ***distributions*** comes in. In xLandscape, variability can be represented as ***Probability Density Functions*** (PDFs). Examples for using PDFs are wind direction distributions, PPP application windows and application rates, local spray-drift depositions in the ([xDrift](../xLandscape/xLandscape-components.md#xdrift)) *component* or drift-filtering by riparian vegetation.  
+The scope of validity of a *PDF* and its elements have to be defined, eg, a weather conditions representing *PDF* might be valid for a certain geographic regions and a certain time period, it's elements might be valid for a certain day. Thus, samples drawn from this *PDF* are associated to the scales [region,day]. Irrespective which *component* asks for weather conditions, the result should be the same for the same region and day, but different for different regions and/or days (corresponding to the random sample of the *PDF*).  
+This mechanism of scale-dependent definition and use of *PDFs* enables to build a **Monte Carlo** approach that **generates naturally occuring pattern of the simulated agro-environmental system**. In other words, **real-world variability comes with pattern**, ie, is not just random (an overly simple, independently sampling Monte Carlo approach would just generate chaotic situations).  
 
 <img src="../img/variability propagation 1a.png" alt="Propagation of Variability" width="900"/>  
 
-*Propagation of landscape system variability to variability of model predictions*
-
-**Real-world variability has structure**, it is not purely random. 
+*Propagation of landscape agro-environmental system variability to variability of model predictions*
 
 <img src="../img/variability propagation 2.png" alt="Propagation of Variability" width="1000"/>  
 
-*Real-world variability has structure*
+*Real-world variability has structure, ie, comes with pattern*
 
+## Components, Modules and Models
 
-## Modules and Components
+You will read the term ***component*** quite often in the context of *xLandscape*. xLandscape is a modular landscape modelling framework that architecture is derived from *Component-Based Software Engineering (CBSE)*. This is, why the elements of a modular xLandscape model are called [*components*](#modules-and-components) ([xDrift](../xLandscape/xLandscape-components.md#xdrift) is an example for a frequently used *component*).  
+*Components* contain *moduls*. *Modules* represent the software that provides the actual functionality of a *component*, typically a *model* (eg, an exposure or environmental fate model).  
 
-You will read the term ***component*** quite often in the context of *xLandscape* and so *xCP*.  = Mo-Based Software
-[*components*](#modules-and-components)  
-early module: [xDrift](../xLandscape/xLandscape-components.md#xdrift).
+## Multidimensional Data Store
 
-## Multidimensional Data Store - *'The Landscape'*
-
-
-represents 'the landscape', ie such data that is defined (by model design and configuration) to be input or generated, representing the landscape information that is inteded to be kept for the model purpose (outcome)  
-
-might ask *'what is actually the landscape in your landscape model'*  
-> There is only those data in the data store that is required by the modelling purposes and defined valuable for analysis by the user  
-
-the *multidimensional store* provides the landscape 'status' (eg, including the parameterisation and configuration)
-
-currently, [HDF](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used.  
+Landscape models based on xLandscape is at minimum 3-dimensional (space, time, modelled value). Typically, landscape modelling is using and interested in multiple values in space and time (eg, exposure of different compartments, multiple PPP uses, effects of different species), which makes it a **multidimensional landscape model**.  
+Corresponding **multidimentsional data is stored using a multidimensional data store**. At present, [**HDF**](xLandscape/xLandscape-intro.md#multidimensional-data-store) is being used. All landscape model data as defined by the model designer is stored in an *HDF* store (basically, the in- and outputs of *components*). Data in the store can come in independent resolutions (eg, PPP use might be represented by the spatial scale *field*, whereas local exposure of off-field areas might be calculated and stored by m2 as spatial scale). The same applies to any other dimension and scale.  
+As the multidimensional store contains the data relevant to the specific landscape model, it represents *'the landscape'* of the model. Thus, *'the landscape'* is built of such data/information that is defined by model design (and configuration). In particular, the *store* contains the actual model outcome, yet, also any other data is kept as defined by the model designer that might be of interest for the analysis.  
+At present, a single data store is being used. This, and the technology [*HDF*](xLandscape/xLandscape-intro.md#multidimensional-data-store) can be adapted according to future needs.  
 
 <img src="../img/multidimensional data store HDF.png" alt="Multidimensional Data Store" width="880"/>  
 
-*Multidimensional Data Store xxx*
+*Multidimensional Data Store is implemented in the xAquatic landscape model*
+
+## Relational Data Representation
+
+With the key aim to facilitate model outcome analysis using common data access technologies, a *component* (*xSQLite*) is available that exports defined data from the *HDF* to *SQLite* database. Further data exports are under development.  
 
 ## Sequential Processing
 
-At version 1.x, xLandscape has a linear processing sequence
+At version 1.x, xLandscape has a linear processing sequence. Eg, in a given (or modelled) land use the farmer applies PPPs. These PPPs cause exposure which is subject to substance environmental fate (eg, degradation, distribution). The exposure might cause effects to non-target-organisms. This sequence matches natural causality in a majority of landscape modelling applications, in particular in pesticide risk assessment. However, future demands for landscape modelling might lead to increased autonomy of components' operation.  
+This sequence is defined in the model configuration file (currently the *mc.xml*) in the landscape model design phase.  
+Thus, there are no feedback loops from subsequent *components* to predecessors.  
 
 <img src="../img/xAquatic linear processing sequence.png" alt="xAquatic" width="900"/>  
 
-*Example sequential processing in xAquatic (status date: xAquatic 2022)*
+*Example sequential processing in xAquatic (2022)*
 
 ## Semantics
 
+When building larger models from individual *components*, these *components* need to have a correct 'understanding' of the data/information they exchange. The **meaning of values** exchanged in inputs and outputs of *components* need to be clearly described.  
+The goal in xLandscape is that *components* 'understand' each other on a machine-level, ie, without any human interference. This level of semantic representation can be reached using ***ontologies***.  
+In any case, data/information need to be sufficiently documented and described (metadata).  
+
+The implementation towards this goal is stepwise:
+- Current version: **values have units**, **explicit scales**; in the landscape model design phase, module developer might need to communicate to clarify semantics.
+- Next: apply **ontolgies**
+
 ## Model Input (Geo)Data
+
+Input data is specific to the actual landscape model built with the xLandscape framework. Basically, input data are read by individual *components* and transferred into the [Multidimensional Store](../xLandscape/xLandscape-v1x.md#multidimensional-data-store). In this process the data get's semantically enriched. All *components* then **consistently** use the same data, eg, environmental or landuse data. 
+Data typically come in their native format, eg, geodata as shapefiles, weather data as textfiles or database tables, etc.  
+
+## Model Output
+
+At present, modelling outcome of landscape models built using the xLandscape framework are stored in a (multidimensional) [**HDF Store**](../xLandscape/xLandscape-v1x.md#multidimensional-data-store). Common data analysis software and programming languages provide interfaces to HDF.  
+In addition, *components* are available and being developed that enable export of data that resides in the HDF store to common data formates (eg, SQLite, other relational databases, csv, or excel).
 
 ## Analysis
 
-### Jupyter notebooks
+Landscape model outcome can be analysed using common analysis software package or own developed processes.  
+Typically, landscape models built on the basis of xLandscape contain *analysis components* that process raw model outcome and provide first insights into the results of an *experiment*.  
 
-### Dashboards
-
-### GIS
+Jupyter notebooks (using Python) are used as a means for data analysis. Templates are provided in corresponding [Github](https://github.com/xlandscape) repositories. Dashboards provide an ideal means to derive insights.
 
 ## Development and User Level
 
+Typically, landscape models developed built using the xLandscape framework address an expert user level, like any other model used in the regulatory scientific field (eg, FOCUS exposure models, effect models).  
+However, irrespective of their complexity, these landscape models can be operated in the background (eg, on a back-end server) and only their key outcome displayed or integrated at a user front-end level (like a simple weather forecast is derived from complex weather models).
+
+Differentiation of developer levels are shown in the graphic below.
 
 <img src="../img/development and user level.png" alt="Development and User Levels" width="950"/>  
 
 
-*Development and User Levels (status date: 2022)*
+*Development and User Levels*
 
 
 [Today-need for a model]: ../xLandscape/xLandscape-intro.md#today---applicable-landscape-models-needed
 
 ## Technical Implementation
+
+The xLandscape core is written in Python, hence, building *components* is done in Python as well.  
+The actual *modules*, ie, the models within *components* that provide the actual modelling functionality of a *component* can be written in any language.  
+
+Code documentation can be found in the corresponding Github repository (eg, https://github.com/xlandscape).
